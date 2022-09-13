@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import './Navbar.css';
+import './Navbar.scss';
 import { NavLink } from 'react-router-dom';
 import { APP_NAME, NAVBAR } from '../../utils/constants';
 import { useThemeContext } from '../../utils/ThemeContext';
@@ -7,12 +7,12 @@ import { useThemeContext } from '../../utils/ThemeContext';
 const Navbar = () => {
     const { theme, toggleTheme } = useThemeContext();
     const [scrolledDown, setScrolledDown] = useState(false);
-    const [resumeVisible, setResumeVisible] = useState(false);
+    // const [resumeVisible, setResumeVisible] = useState(false);
     const [menuIsOpen, setMenuIsOpen] = useState(false)
 
 
     useEffect(() => {
-        setTimeout(() => setResumeVisible(true), 1000)
+        // setTimeout(() => setResumeVisible(true), 1000)
         window.addEventListener('scroll', onScroll)
         return () => window.removeEventListener('scroll', onScroll)
     }, [])
@@ -23,7 +23,6 @@ const Navbar = () => {
 
     return (
         <nav id={theme} className={`navbar-nav ${scrolledDown ? 'navbar-nav--scroll' : ''}`}>
-        {/* <nav id={theme} className='navbar-nav'> */}
             <div className='navbar-wrapper'>
                 <NavLink className='ce-title-circle' to="/">
                     <label className='title'>CE</label>
@@ -38,7 +37,7 @@ const Navbar = () => {
                 )}
             </ul>
 
-            <button className='navbar-temp-mode-toggle' onClick={toggleTheme}>{theme}</button>
+            {/* <button className='navbar-temp-mode-toggle' onClick={toggleTheme}>{theme}</button> */}
         </nav>
     )
 }

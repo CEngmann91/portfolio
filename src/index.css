@@ -33,12 +33,12 @@ code {
 
 
 
-#light {
-  background-color: var(--colour-darkMode);
+/* #light { */
+  /* background-color: var(--colour-darkMode); */
   /* color: var(--colour-white); */
-}
+/* } */
 
-#dark {
-  background-color: var(--colour-lightMode);
+/* #dark { */
+  /* background-color: var(--colour-lightMode); */
   /* color: var(--colour-black); */
-}
+/* } */
