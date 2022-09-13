@@ -1,27 +1,62 @@
 .navbar-nav {
+    /* Ensures that it stays at the top of the screen. */
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 70px;
-    padding: 0 5rem;
-    backdrop-filter: blur(4px);
+    /* Ensures the navbar is above the content */
     z-index: 2;
+     /* Full width of the screen. */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* Center the content. */
+    align-items: center;
+
+    /* padding: 0rem 0rem; */
+
+    /* Add a blur */
+    backdrop-filter: blur(4px);
+    /* Makes it compatible with all browsers. */
+    -webkit-backdrop-filter: blur(4px);
+    /* box-shadow: 0 0 20px rgba(128, 128, 128, 0); */
 
     transition: var(--modeTransition);
 }
 
 #light .navbar-nav {
     /*background: rgba(255, 255, 255, 0.8); /* White w/opacity/see-through */
-    background: var(--colour-lightMode);
+    background-color: var(--colour-lightMode);
     border-bottom: 3px solid rgb(212, 212, 212);
 }
-
 #dark .navbar-nav {
     /*background: rgba(0,0,0, 0.8); /* Black w/opacity/see-through */
-    background: var(--colour-darkMode);
+    background-color: var(--colour-darkMode);
     border-bottom: 3px solid rgb(97, 97, 97);
 }
+
+
+
+
+
+
+.navbar-nav--scroll {
+    /* Background colour for the navbar. */
+    background-color: rgba(var(--colour-lightMode), 0.85);
+    box-shadow: 0 0 20px rgba(128, 128, 128, 0.5);
+}
+
+#light .navbar-nav--scroll {
+    /* Background colour for the navbar. */
+    background-color: rgba(var(--colour-lightMode), 0.85);
+    box-shadow: 0 0 20px rgba(128, 128, 128, 0.5);
+}
+#dark .navbar-nav--scroll {
+    /* Background colour for the navbar. */
+    background-color: rgba(var(--colour-darkMode), 0.85);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+
+
 
 .navbar-wrapper {
     flex: 1;
@@ -31,23 +66,6 @@
 }
 
 
-
-
-
-
-.navbar-title {
-    font-size: 26px;
-    font-weight: 600;
-    text-decoration: none;
-    margin-left: 10px;
-}
-#light .navbar-title {
-    color: var(--colour-black);
-}
-#dark .navbar-title {
-    color: var(--colour-white);
-    /* text-shadow: -1px 0 rgb(133, 132, 132), 0 1px black, 1px 0 black, 0 -1px black; */
-}
 
 
 
@@ -65,12 +83,10 @@
     align-items: center;
     box-shadow: 6px 3px 3px rgba(150, 150, 150, 0.7);
 }
-
 #light .ce-title-circle {
     background: rgba(255, 255, 255, 0.7);
     /* background: var(--colour-lightMode); */
 }
-
 #dark .ce-title-circle {
     background: rgba(200, 200, 200, 0.7);
     /* background: var(--colour-darkMode); */
@@ -83,7 +99,6 @@
 #light .ce-title-circle .title {
     color: var(--colour-black);
 }
-
 #dark .ce-title-circle .title {
     color: var(--colour-white);
 }
@@ -97,8 +112,21 @@
 
 
 .navbar-links {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    
     overflow: hidden;
     list-style-type: none;
+
+    list-style: none;
+}
+
+@media screen and (max-width: 900px) {
+    .navbar-links {
+        /* display: none; */
+    }
 }
 
 .navbar-links a {
@@ -116,7 +144,6 @@
     color: var(--colour-white);
     transition: var(--modeTransition);
 }
-
 #dark .navbar-links a {
     color: var(--colour-dark);
     transition: var(--modeTransition);
@@ -136,7 +163,6 @@
 #light .navbar-links a:after {
     border-bottom: solid 3px var(--colour-lightMode);
 }
-
 #dark .navbar-links a:after {
     border-bottom: solid 3px var(--colour-darkMode);
 }
@@ -150,7 +176,6 @@
 #light .navbar-links a:hover {
     /* background-color: rgba(97, 97, 97, 0.4); */
 }
-
 #dark .navbar-links a:hover {
     /* background-color: rgba(255, 255, 255, 0.8); */
 }
@@ -166,12 +191,12 @@
         display: none;
     }
 
-    .navbar-center {
+    /* .navbar-center {
         display: flex;
-        max-width: 1170px;
+        max-width: 1170px; */
         /* margin: 0 auto; */
-        align-items: center;
-    }
+        /* align-items: center;
+    } */
 
     .navbar-links {
         display: flex;
@@ -192,12 +217,13 @@
 
 
 .navbar-temp-mode-toggle {
-    /* position: absolute;
-    left: 20px;
-    bottom: 0; */
-
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 180px;
+    position: fixed;
+    right: 10;
+    display: flex;
+    width: 100px;
+    height: 35px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    cursor: pointer;
 }
