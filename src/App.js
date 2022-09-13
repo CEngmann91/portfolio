@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import { useThemeContext } from './utils/ThemeContext';
+import { useThemeContext } from './utils/ThemeContext';
 import Navbar from './components/navbar/Navbar';
 import Landing from './pages/Landing/Landing';
 import About from './pages/About/About';
