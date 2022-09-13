@@ -15,7 +15,7 @@ function App() {
 
   return (
     <Router
-      // id={theme}
+      id={theme}
       >
       <Navbar />
 
