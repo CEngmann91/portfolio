@@ -10,9 +10,7 @@ const Navbar = () => {
 
 
     return (
-        <nav
-        // id={theme} 
-        className='navbar-nav'>
+        <nav id={theme} className='navbar-nav'>
             <div className='navbar-center'>
                 <div className='navbar-wrapper'>
                     <NavLink className='ce-title-circle' to="/">
