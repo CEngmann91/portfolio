@@ -1,11 +1,11 @@
 import Navbar from './components/navbar/Navbar';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useThemeContext } from './utils/ThemeContext';
+// import { useThemeContext } from './utils/ThemeContext';
 import { Landing, About, Projects, Skills, Footer } from './pages';
 
 function App() {
-  const { theme } = useThemeContext();
+  // const { theme } = useThemeContext();
 
 
   const renderRoutes = (
@@ -21,7 +21,9 @@ function App() {
   )
 
   return (
-    <Router id={theme}>
+    <Router
+    // id={theme}
+    >
       <Navbar />
 
       <Routes>
