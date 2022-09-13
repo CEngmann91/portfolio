@@ -2,7 +2,12 @@ import Navbar from './components/navbar/Navbar';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import { useThemeContext } from './utils/ThemeContext';
-import { Landing, About, Projects, Skills, Footer } from './pages';
+// import { Landing, About, Projects, Skills, Footer } from './pages';
+import Landing from './pages/Landing/Landing';
+import About from './pages/About/About';
+import Projects from './pages/Projects/Projects';
+import Skills from './pages/Skills/Skills';
+import Footer from './pages/Footer/Footer';
 
 function App() {
   // const { theme } = useThemeContext();
