@@ -3,7 +3,7 @@ import './Landing.scss';
 
 const Landing = () => {
     return (
-        <div className='landing'>
+        <div id='/landing' className='landing'>
             <label>Landing</label>
             <label>Landing</label>
             <label>Landing</label>

@@ -22,11 +22,31 @@ function App() {
         {/* Use it in this way, and it should work: */}
         <Route path='*' element={<NotFound />} />
 
-        <Route exact path="/" element={<Landing />} />
+        <Route exact path="/" element={
+          <>
+            <Landing />
+            <About />
+            <Projects />
+            <Skills />
+            <Footer />
+          </>
+        } />
         <Route exact path="/about" element={<About />} />
         <Route exact path="/projects" element={<Projects />} />
         <Route exact path="/skills" element={<Skills />} />
         <Route exact path="/footer" element={<Footer />} />
+
+
+
+
+
+
+
+        {/* <Route exact path="/" element={<Landing />} />
+        <Route exact path="/about" element={<About />} />
+        <Route exact path="/projects" element={<Projects />} />
+        <Route exact path="/skills" element={<Skills />} />
+        <Route exact path="/footer" element={<Footer />} /> */}
         
       </Routes>
     </Router>
