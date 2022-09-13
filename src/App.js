@@ -1,4 +1,3 @@
-import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useThemeContext } from './utils/ThemeContext';
 import Navbar from './components/navbar/Navbar';
@@ -14,7 +13,7 @@ function App() {
   const { theme } = useThemeContext();
 
   return (
-    <Router id={theme}>
+    <Router>
       <Navbar />
 
       <Routes>
@@ -23,13 +22,13 @@ function App() {
         <Route path='*' element={<NotFound />} />
 
         <Route exact path="/" element={
-          <>
+          <div id={theme}>
             <Landing />
             <About />
             <Projects />
             <Skills />
             <Footer />
-          </>
+          </div>
         } />
         <Route exact path="/about" element={<About />} />
         <Route exact path="/projects" element={<Projects />} />
