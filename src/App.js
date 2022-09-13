@@ -11,7 +11,7 @@ import NotFound from './pages/NotFound/NotFound';
 
 
 function App() {
-  // const { theme } = useThemeContext();
+  const { theme } = useThemeContext();
 
   return (
     <Router
