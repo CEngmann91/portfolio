@@ -14,9 +14,7 @@ function App() {
   const { theme } = useThemeContext();
 
   return (
-    <Router
-      id={theme}
-      >
+    <Router id={theme}>
       <Navbar />
 
       <Routes>
