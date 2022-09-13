@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root {
+  --main-white: #dfddd6;
+  --main-font: 'Stardos Stencil'; /*, cursive; */
+  /* Transitions for navbar link selection. */
+  --mainTransition: all 0.25s ease-in-out;
+  /* Transitions for mode (dark/light) selection. */
+  --modeTransition: all 0.25s ease-in-out;
+
+
+  /* Colours */
+  --colour-white: #fff;
+  --colour-black: #000;
+
+
+  --colour-lightMode: rgba(255, 255, 255, 0.8);;
+  --colour-darkMode: rgba(83, 83, 83, 0.8);
+
+  /* color: var(--colour-black); */
+}
