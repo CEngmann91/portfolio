@@ -28,7 +28,7 @@ const Navbar = () => {
 
             </div>
 
-            {/* <button className='navbar-temp-mode-toggle' onClick={toggleTheme}>Change to {theme} mode</button> */}
+            <button className='navbar-temp-mode-toggle' onClick={toggleTheme}>Change to {theme} mode</button>
         </nav>
     )
 }
