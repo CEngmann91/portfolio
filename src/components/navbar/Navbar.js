@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import './Navbar.css';
 import { NavLink } from 'react-router-dom';
 import { APP_NAME, NAVBAR } from '../../utils/constants';
-// import { useThemeContext } from '../../utils/ThemeContext';
+import { useThemeContext } from '../../utils/ThemeContext';
 
 const Navbar = () => {
-    // const { theme, toggleTheme } = useThemeContext();
+    const { theme, toggleTheme } = useThemeContext();
     const [menuIsOpen, setMenuIsOpen] = useState(false)
 
 
