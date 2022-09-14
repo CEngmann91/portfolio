@@ -140,6 +140,34 @@
         background: white;
 
         box-shadow: 0 0 20px rgb(128, 128, 128);
+
+        transform-origin: center;
+        animation: slide-l-fade-In .3s ease-out;
+        animation-fill-mode: both;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            margin: 4.5rem 1.4rem;
+
+            a {
+                margin: 1rem;
+
+                color: gray;
+                text-decoration: none;
+                font-size: 1rem;
+                text-transform: uppercase;
+                font-weight: 500;
+
+                transition: all 0.3s ease-in-out;
+
+                // &:hover {
+                //     color: $secondary-colour;
+                // }
+            }
+        }
     }
 
     &--menuBtn-container {
@@ -149,7 +177,6 @@
             display: flex;
             width: 35px;
             height: 35px;
-            margin-right: 20px;
 
             justify-content: center;
             align-items: center;
@@ -189,9 +216,27 @@
     
     .ce-title-circle {
 		background: rgba(200, 200, 200, 0.7);
+        width: 40px;
+        height: 40px;
 
 		.title {
 			color: $white-colour;
 		}
 	}
+}
+
+
+
+@keyframes slide-l-fade-In {
+    0% {
+        opacity: 0;
+        transform: translate(200px, 0);
+    }
+    80% {
+        opacity: 0.2;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
 }

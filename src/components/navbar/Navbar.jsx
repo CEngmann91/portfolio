@@ -4,6 +4,8 @@ import { NavLink } from 'react-router-dom';
 import { APP_NAME, NAVBAR } from '../../utils/constants';
 import { useThemeContext } from '../../utils/ThemeContext';
 
+import { GiHamburgerMenu as Menu } from 'react-icons/gi';
+
 const Navbar = () => {
     const { theme, toggleTheme } = useThemeContext();
     const [scrolledDown, setScrolledDown] = useState(false);
@@ -57,13 +59,17 @@ const Navbar = () => {
             <div className='app__drawer'>
                 <div className="app__drawer--menuBtn-container">
                     <button onClick={toggleVisibility}>
-                        =
+                        <Menu />
                     </button>
                 </div>  
 
                 {menuIsOpen &&
                     <div className='app__drawer--panel'>
-                        <h1>Text</h1>
+                        <div>
+                            {NAVBAR.MENU_DATA.map(({ title, to }, index) =>
+                                <NavLink to={to} onClick={hide}>{title}</NavLink>
+                            )}
+                        </div>
                     </div>
                 }
             </div>

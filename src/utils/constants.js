@@ -9,6 +9,7 @@ export const NAVBAR = {
         { title: 'Projects',             to: 'projects' },
         { title: 'Skills',               to: 'skills' },
         { title: 'Contact',              to: 'contact' },
+        { title: 'Not Found',            to: 'ab' },
         // { title: 'View My C.V.',         to: 'cv' },
         // { title: 'Request A Project >',  to: 'hire' },
     ]
