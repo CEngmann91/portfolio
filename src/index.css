@@ -34,3 +34,26 @@ code {
 
   /* color: var(--colour-black); */
 }
+
+
+
+.app__flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+}
+
+.app__pad-hor {
+  /* top | right | bottom | left */
+  padding: 0rem 3rem 0rem 3rem;
+}
+
+@media screen and (max-width: 550px) {
+
+  .app__pad-hor {
+    /* top | right | bottom | left */
+    padding: 0rem 5rem 0rem 4rem;
+  }
+}

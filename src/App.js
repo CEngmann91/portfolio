@@ -48,10 +48,8 @@ function App() {
       <Navbar />
 
       <Routes>
-
         {/* Use it in this way, and it should work: */}
         <Route path='*' element={<NotFound />} />
-
         <Route exact path="/" element={
           <>
             <Landing />
@@ -64,7 +62,7 @@ function App() {
         <Route exact path="/about" element={<About />} />
         <Route exact path="/projects" element={<Projects />} />
         <Route exact path="/skills" element={<Skills />} />
-        <Route exact path="/contact" element={<Contact />} />
+        <Route exact path="/contacts" element={<Contact />} />
         {/* <Route exact path="/footer" element={<Footer />} /> */}
 
 
@@ -84,7 +82,7 @@ function App() {
 
       <FloatingButton
           style={styles.floatingBtnStyle}
-          className='mode-button'
+          className='app__theme-button'
           onPress={() => toggleTheme()}
         >
           <img src={ renderModeIcon() } alt="" style={styles.floatingBtnImgStyle} />

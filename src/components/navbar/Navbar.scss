@@ -58,7 +58,7 @@
          // Access the nested 'li' component inside of this
          li {
             @media screen and (max-width: 900px) {
-                // display: none;
+                display: none;
             }
     
             justify-content: center;
@@ -74,6 +74,7 @@
                 transition: var(--modeTransition);
         
                 &:hover {
+                    color: $secondary-colour;
         
                     &:after {
                         transform: scaleX(1);
@@ -83,7 +84,7 @@
                 &:after {
                     display: block;
                     content: '';
-                    border-bottom: solid 3px var(--colour-lightMode);
+                    border-bottom: solid 3px $secondary-colour;
                     
                     transform: scaleX(0);
                     transition: transform 250ms ease-in-out;
@@ -118,6 +119,47 @@
 	}
 }
 
+.app__drawer {
+    // Hide this menu when the screen is larger than 900px
+    @media screen and (min-width: 900px) {
+        display: none;
+    }
+
+    display: flex;
+
+
+    &--panel {
+        position: fixed;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 80%;
+        height: 100vh;
+        z-index: 5;
+
+        background: white;
+
+        box-shadow: 0 0 20px rgb(128, 128, 128);
+    }
+
+    &--menuBtn-container {
+        z-index: 10;
+
+        button {
+            display: flex;
+            width: 35px;
+            height: 35px;
+            margin-right: 20px;
+
+            justify-content: center;
+            align-items: center;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+    }
+}
+
 
 #dark {
 
@@ -135,6 +177,11 @@
                 
                 a {
                     color: $white-colour;
+
+
+                    &:after {
+                        border-bottom: solid 3px $white-colour;
+                    }
                 }
             }
         }
@@ -147,27 +194,4 @@
 			color: $white-colour;
 		}
 	}
-}
-
-
-
-
-
-
-
-.navbar-temp-mode-toggle {
-    flex: 1;
-    display: flex;
-    position: absolute;
-    // width: 100%;
-    justify-content: center;
-    align-items: center;
-    margin-left: 65px;
-    
-    button {
-        cursor: pointer;
-        border-radius: 50px;
-        width: 90px;
-        
-    }
 }

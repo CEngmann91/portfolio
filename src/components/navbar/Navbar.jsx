@@ -7,7 +7,6 @@ import { useThemeContext } from '../../utils/ThemeContext';
 const Navbar = () => {
     const { theme, toggleTheme } = useThemeContext();
     const [scrolledDown, setScrolledDown] = useState(false);
-    // const [resumeVisible, setResumeVisible] = useState(false);
     const [menuIsOpen, setMenuIsOpen] = useState(false)
 
 
@@ -21,6 +20,24 @@ const Navbar = () => {
         setScrolledDown((window.scrollY > 100))
     }
 
+    const show = () => {
+        // Prevents scrolling whilst the menu is visible.
+        document.body.style.overflow = "hidden";
+        setMenuIsOpen(true);
+    }
+
+    const hide = () => {
+        document.body.style.overflow = "scroll";
+        setMenuIsOpen(false);
+    }
+
+    const toggleVisibility = () => {
+        if (!menuIsOpen)
+            show();
+        else
+            hide();
+    }
+
     return (
         <nav id={theme} className={`navbar-nav ${scrolledDown ? 'navbar-nav--scroll' : ''}`}>
             <div className='navbar-nav--wrapper'>
@@ -29,7 +46,7 @@ const Navbar = () => {
                 </NavLink>
             </div>
 
-            <ul className={menuIsOpen ? "navbar-nav--links show-nav" : "navbar-nav--links"}>
+            <ul className="navbar-nav--links">
                 {NAVBAR.MENU_DATA.map(({ title, to }, index) =>
                     <li>
                         <NavLink to={to} key={index}>{title}</NavLink>
@@ -37,9 +54,20 @@ const Navbar = () => {
                 )}
             </ul>
 
-            <div className='navbar-temp-mode-toggle'>
-                <button onClick={toggleTheme}>{theme}</button>
+            <div className='app__drawer'>
+                <div className="app__drawer--menuBtn-container">
+                    <button onClick={toggleVisibility}>
+                        =
+                    </button>
+                </div>  
+
+                {menuIsOpen &&
+                    <div className='app__drawer--panel'>
+                        <h1>Text</h1>
+                    </div>
+                }
             </div>
+
         </nav>
     )
 }

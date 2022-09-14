@@ -1,45 +1,31 @@
 @import './utils/colours.scss';
 
 
-#light {
-  background: $background-colour;
-  /* background: var(--colour-darkMode); */
+body {
+    // #light {
+    background: $background-colour;
+    /* background: var(--colour-darkMode); */
 }
 
-#dark {
-  background: $background-colour-dark;
-  /* background: var(--colour-lightMode); */
-}
+.app__theme-button {
+    // background: rgba(255, 255, 255, 0.7);
+    // box-shadow: 6px 3px 3px rgba(150, 150, 150, 0.7);
 
+    /* transition: all 0.1s ease 0s; */
+    // backdrop-filter: blur(3px);
 
-.app__flex {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    // height: 100vh;
-}
-
-.app__pad-hor {
-    /* top | right | bottom | left */
-    padding: 0rem 3rem 0rem 3rem;
-
-    @media screen and (max-width: 550px) {
-        /* top | right | bottom | left */
-        padding: 0rem 5rem 0rem 4rem;
+    &:hover {
+        // transform: rotate(-90turn);
     }
 }
 
+#dark {
+    background: $background-colour-dark;
+    /* background: var(--colour-lightMode); */
 
 
-
-
-
-.mode-button {
-    /* transition: all 0.1s ease 0s; */
-    backdrop-filter: blur(3px);
-
-    &:hover {
-        /* transform: rotate(-90turn); */
+    .app__theme-button {
+        background: rgba(150, 150, 150, 0.7);
+        box-shadow: 6px 3px 3px rgba(255, 255, 255, 0.7);;
     }
 }

@@ -1,5 +1,5 @@
 export const APP_NAME = 'Christian Engmann';
-export const MODE = 'dark';
+export const MODE = 'light'; // light/dark
 
 export const NAVBAR = {
 
