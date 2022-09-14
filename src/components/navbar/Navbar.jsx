@@ -48,8 +48,8 @@ const Navbar = () => {
 
             <ul className="navbar-nav--links">
                 {NAVBAR.MENU_DATA.map(({ title, to }, index) =>
-                    <li>
-                        <NavLink to={to} key={index}>{title}</NavLink>
+                    <li key={index}>
+                        <NavLink to={to}>{title}</NavLink>
                     </li>
                 )}
             </ul>

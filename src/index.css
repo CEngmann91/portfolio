@@ -9,6 +9,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -47,13 +54,13 @@ code {
 
 .app__pad-hor {
   /* top | right | bottom | left */
-  padding: 0rem 3rem 0rem 3rem;
+  /* padding: 0rem 3rem 0rem 3rem; */
 }
 
 @media screen and (max-width: 550px) {
 
   .app__pad-hor {
     /* top | right | bottom | left */
-    padding: 0rem 5rem 0rem 4rem;
+    /* padding: 0rem 5rem 0rem 4rem; */
   }
 }
