@@ -1,0 +1,26 @@
+.float-button-content {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    width: 100px;
+    height: 100px;
+    background-color: #2681C6;
+    
+    margin: auto;
+
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 10px;
+    box-shadow: 6px 3px 3px grey;
+}
+
+.hover-zoom {
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}

@@ -23,13 +23,13 @@ const Navbar = () => {
 
     return (
         <nav id={theme} className={`navbar-nav ${scrolledDown ? 'navbar-nav--scroll' : ''}`}>
-            <div className='navbar-wrapper'>
+            <div className='navbar-nav--wrapper'>
                 <NavLink className='ce-title-circle' to="/">
                     <label className='title'>CE</label>
                 </NavLink>
             </div>
 
-            <ul className={menuIsOpen ? "navbar-links show-nav" : "navbar-links"}>
+            <ul className={menuIsOpen ? "navbar-nav--links show-nav" : "navbar-nav--links"}>
                 {NAVBAR.MENU_DATA.map(({ title, to }, index) =>
                     <li>
                         <NavLink to={to} key={index}>{title}</NavLink>
@@ -37,7 +37,9 @@ const Navbar = () => {
                 )}
             </ul>
 
-            <button className='navbar-temp-mode-toggle' onClick={toggleTheme}>{theme}</button>
+            <div className='navbar-temp-mode-toggle'>
+                <button onClick={toggleTheme}>{theme}</button>
+            </div>
         </nav>
     )
 }

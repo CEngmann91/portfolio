@@ -1,10 +1,13 @@
-import React from 'react'
 import './Projects.scss';
+import React from 'react'
+import { useThemeContext } from '../../utils/ThemeContext';
 
 const Projects = () => {
+  const { theme } = useThemeContext();
+
   return (
-    <div id='/projects' className='projects'>
-        Projects
+    <div id={theme} className='app__projects app__flex app__pad-hor'>
+      Projects
     </div>
   )
 }

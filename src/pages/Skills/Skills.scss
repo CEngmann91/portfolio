@@ -1,5 +1,16 @@
-.skills {
+@import '../../utils/colours.scss';
+
+.app__skills {
     min-height: 100vh;
     
     padding-top: 100px;
+
+    color: $black-colour;
+}
+
+#dark {
+
+    .app__skills {
+        color: $white-colour;
+    }    
 }

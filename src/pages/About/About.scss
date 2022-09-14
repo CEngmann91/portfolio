@@ -1,6 +1,20 @@
-.about {
-    min-height: 100vh;
+@import '../../utils/colours.scss';
+
+#light {
+    .app__about {
+        min-height: 100vh;
+        
+        padding-top: 100px;
+        background: yellow;
     
-    padding-top: 100px;
-    background-color: yellow;
+        
+        color: $black-colour;
+    }
+}
+
+#dark {
+
+    .app__about {
+        color: $white-colour;
+    }    
 }

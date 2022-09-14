@@ -1,20 +1,20 @@
 @import '../../utils/colours.scss';
 
-.app__landing {
+.app__contact {
     flex: 1;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     
-    padding-top: 100px;
-    /* background-color: blue; */
+    background-color: yellow;
 
+    
     color: $black-colour;
 }
 
 #dark {
 
-    .app__landing {
+    .app__contact {
         color: $white-colour;
     }    
 }

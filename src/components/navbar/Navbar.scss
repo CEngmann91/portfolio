@@ -1,29 +1,10 @@
 @import '../../utils/colours.scss';
 
-#light {
-    background: $background-colour;
-    // background: var(--colour-darkMode);
-    color: $black-colour;
-}
-
-#dark {
-    background: $background-colour-dark;
-    // background: var(--colour-lightMode);
-    color: $white-colour;
-
-
-    .navbar-links {
-
-        li {
-
-            a {
-                color: $white-colour;
-            }
-        }
-    }
-}
-
 .navbar-nav {
+    @media screen and (max-width: 900px) {
+        padding: .5rem 1rem;
+    }
+
 	// Full widht of the screen.
     width: 100%;
     display: flex;
@@ -37,7 +18,6 @@
     backdrop-filter: blur(4px);
     // Makes it compatible with all browsers.
     -webkit-backdrop-filter: blur(4px);
-    // box-shadow: 0 0 20px rgba(128, 128, 128, 0);
 
     // Ensures that it stays at the top of the screen.
     position: fixed;
@@ -47,22 +27,74 @@
 	
     transition: var(--modeTransition);
 
+
+    &--wrapper {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     &--scroll {
-        background: rgba(var(--colour-lightMode), 0.85);
+        // Background colour for the navbar.
+        background: rgba($navbar-colour, 0.85);
         box-shadow: 0 0 20px rgba(128, 128, 128, 0.5);
     }
 
-
-    @media screen and (max-width: 900px) {
-        padding: 0px 10px;
+    &--links {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 0px 40px;
+        // Remove the generic link styles.
+        list-style: none;
+    
+        @media screen and (max-width: 900px) {
+            padding: 0px 20px;
+        }
+    
+    
+         // Access the nested 'li' component inside of this
+         li {
+            @media screen and (max-width: 900px) {
+                // display: none;
+            }
+    
+            justify-content: center;
+            align-items: center;
+            margin: 0 0.6rem;
+            // Lets the user know that is it clickable.
+            cursor: pointer;
+    
+            a {
+                text-decoration: none;
+                color: $black-colour;
+    
+                transition: var(--modeTransition);
+        
+                &:hover {
+        
+                    &:after {
+                        transform: scaleX(1);
+                    }
+                }
+        
+                &:after {
+                    display: block;
+                    content: '';
+                    border-bottom: solid 3px var(--colour-lightMode);
+                    
+                    transform: scaleX(0);
+                    transition: transform 250ms ease-in-out;
+                }
+            }
+        }
+    
+        // .selected {
+        // 	font-weight: bold;
+        // }
     }
-}
-
-.navbar-wrapper {
-	flex: 1;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
 }
 
 .ce-title-circle {
@@ -86,98 +118,56 @@
 	}
 }
 
-.navbar-links {
-	flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 0px 40px;
-    // Remove the generic link styles.
-    list-style: none;
-
-    @media screen and (max-width: 900px) {
-        padding: 0px 20px;
-    }
-
-
-     // Access the nested 'li' component inside of this
-     li {
-        @media screen and (max-width: 900px) {
-            // display: none;
-        }
-
-        justify-content: center;
-        align-items: center;
-        margin: 0 0.6rem;
-        // Lets the user know that is it clickable.
-        cursor: pointer;
-
-        a {
-            text-decoration: none;
-            color: $black-colour;
-
-            transition: var(--modeTransition);
-    
-            &:hover {
-    
-                &:after {
-                    transform: scaleX(1);
-                }
-            }
-    
-            &:after {
-                display: block;
-                content: '';
-                border-bottom: solid 3px var(--colour-lightMode);
-                
-                transform: scaleX(0);
-                transition: transform 250ms ease-in-out;
-            }
-        }
-    }
-
-	// .selected {
-	// 	font-weight: bold;
-	// }
-}
-
 
 #dark {
 
-	.navbar-nav {
-		// background: var(--colour-darkMode);
-		// border-bottom: 3px solid rgb(97, 97, 97);
-        background-color: red;
+    .navbar-nav {
 
         &--scroll {
-            // background: rgba(var(--colour-darkMode), 0.85);
-            // box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            // Background colour for the navbar.
+            background: rgba($navbar-colour-dark, 0.85);
+            box-shadow: 0 0 20px rgba(128, 128, 128, 0.5);
         }
-	}
 
-	.ce-title-circle {
+        &--links {
+        
+            li {
+                
+                a {
+                    color: $white-colour;
+                }
+            }
+        }
+    }
+    
+    .ce-title-circle {
 		background: rgba(200, 200, 200, 0.7);
 
 		.title {
 			color: $white-colour;
 		}
 	}
+}
 
-	.navbar-links {
 
-        li {
 
-            a {
-                color: $black-colour;
-                transition: var(--modeTransition);
 
-                &:after {
-                    border-bottom: solid 3px var(--colour-darkMode);
-                }
 
-                &:hover {
-                }
-            }
-        }
-	}
+
+
+.navbar-temp-mode-toggle {
+    flex: 1;
+    display: flex;
+    position: absolute;
+    // width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 65px;
+    
+    button {
+        cursor: pointer;
+        border-radius: 50px;
+        width: 90px;
+        
+    }
 }

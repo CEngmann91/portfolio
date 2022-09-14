@@ -1,9 +1,12 @@
-import React from 'react'
 import './Skills.scss';
+import React from 'react'
+import { useThemeContext } from '../../utils/ThemeContext';
 
 const Skills = () => {
+  const { theme } = useThemeContext();
+
   return (
-    <div id='/skills' className='skills'>
+    <div id={theme} className='app__skills app__flex app__pad-hor'>
       Skills
     </div>
   )

@@ -3,7 +3,7 @@ import './NotFound.scss';
 
 const NotFound = () => {
   return (
-    <div className='not-found'>
+    <div className='app__not-found app__flex'>
       NotFound
     </div>
   )
