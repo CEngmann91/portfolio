@@ -1,18 +1,12 @@
 import './App.scss';
 import { Routes, Route } from 'react-router-dom';
 import { useThemeContext } from './utils/ThemeContext';
-import Navbar from './components/navbar/Navbar';
-import Landing from './pages/Landing/Landing';
-import About from './pages/About/About';
-import Projects from './pages/Projects/Projects';
-import Skills from './pages/Skills/Skills';
-import Footer from './pages/Footer/Footer';
-import NotFound from './pages/NotFound/NotFound';
+import { NotFound, Landing, About, Projects, Skills, Contact, Footer } from './pages';
 
+import Navbar from './components/navbar/Navbar';
 import FloatingButton from './components/FloatingButton/FloatingButton';
 import Moon_Dark from './assets/images/Misc/Moon - Dark.png';
 import Sun_Light from './assets/images/Misc/sun.png';
-import Contact from './pages/Contact/Contact';
 
 function App() {
   const { theme, toggleTheme } = useThemeContext();

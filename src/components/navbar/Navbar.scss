@@ -56,18 +56,16 @@
         }
 
         /* Specific styles for non-active links */
-        &-link {
+        &-link-item {
             color: $black-colour;
+
+            /* Specific styles for active links */
+            &-active {
+                color: $secondary-colour;
+                border-bottom: solid 3px $secondary-colour;
+                // font-weight: bold;
+            }
         }
-
-        /* Specific styles for active links */
-        &-link-active {
-            color: $secondary-colour;
-            border-bottom: solid 3px $secondary-colour;
-
-            font-weight: bold;
-        }
-
 
         // Access the nested 'li' component inside of this
         li {

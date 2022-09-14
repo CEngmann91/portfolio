@@ -13,7 +13,6 @@ const Navbar = () => {
 
 
     useEffect(() => {
-        // setTimeout(() => setResumeVisible(true), 1000)
         window.addEventListener('scroll', onScroll)
         return () => window.removeEventListener('scroll', onScroll)
     }, [])
@@ -51,7 +50,7 @@ const Navbar = () => {
             <ul className="navbar-nav--links">
                 {NAVBAR.MENU_DATA.map(({ title, to }, index) =>
                     <li key={index}>
-                        <NavLink to={to} className={({ isActive }) => (isActive ? "navbar-nav--links-link-active" : "navbar-nav--links-link")}>{title}</NavLink>
+                        <NavLink to={to} className={({ isActive }) => (isActive ? "navbar-nav--links-link-item-active" : "navbar-nav--links-link-item")}>{title}</NavLink>
                     </li>
                 )}
             </ul>
@@ -67,7 +66,10 @@ const Navbar = () => {
                     <div className='app__drawer--panel'>
                         <div>
                             {NAVBAR.MENU_DATA.map(({ title, to }, index) =>
-                                <NavLink to={to} className={({ isActive }) => (isActive ? "navbar-nav--links-link-active" : "navbar-nav--links-link")} onClick={hideMenu}>{title}</NavLink>
+                                <NavLink
+                                    to={to} onClick={hideMenu}
+                                    className={({ isActive }) => (isActive ? "navbar-nav--links-link-item-active" : "navbar-nav--links-link-item")}
+                                >{title}</NavLink>
                                 // <NavLink to={to} onClick={hideMenu}>{title}</NavLink>
                             )}
                         </div>
