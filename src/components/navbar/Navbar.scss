@@ -5,7 +5,7 @@
         padding: .5rem 1rem;
     }
 
-	// Full widht of the screen.
+    // Full widht of the screen.
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -24,8 +24,9 @@
     top: 0;
     // Ensures the navbar is above the content
     z-index: 2;
-	
+
     transition: var(--modeTransition);
+
 
 
     &--wrapper {
@@ -49,49 +50,62 @@
         padding: 0px 40px;
         // Remove the generic link styles.
         list-style: none;
-    
+
         @media screen and (max-width: 900px) {
             padding: 0px 20px;
         }
-    
-    
-         // Access the nested 'li' component inside of this
-         li {
+
+        /* Specific styles for non-active links */
+        &-link {
+            color: $black-colour;
+        }
+
+        /* Specific styles for active links */
+        &-link-active {
+            color: $secondary-colour;
+            border-bottom: solid 3px $secondary-colour;
+
+            font-weight: bold;
+        }
+
+
+        // Access the nested 'li' component inside of this
+        li {
             @media screen and (max-width: 900px) {
                 display: none;
             }
-    
+
             justify-content: center;
             align-items: center;
             margin: 0 0.6rem;
             // Lets the user know that is it clickable.
             cursor: pointer;
-    
+
             a {
                 text-decoration: none;
                 color: $black-colour;
-    
+
                 transition: var(--modeTransition);
-        
+
                 &:hover {
                     color: $secondary-colour;
-        
+
                     &:after {
                         transform: scaleX(1);
                     }
                 }
-        
+
                 &:after {
                     display: block;
                     content: '';
                     border-bottom: solid 3px $secondary-colour;
-                    
+
                     transform: scaleX(0);
                     transition: transform 250ms ease-in-out;
                 }
             }
         }
-    
+
         // .selected {
         // 	font-weight: bold;
         // }
@@ -106,20 +120,21 @@
     align-items: center;
     border-radius: 50%;
     text-decoration: none;
-    box-shadow: 6px 3px 3px  rgba(150, 150, 150, 0.7);
+    box-shadow: 6px 3px 3px rgba(150, 150, 150, 0.7);
     // Lets the user know that is it clickable.
     // cursor: pointer;
 
-	.title {
+    .title {
         color: var(--colour-black);
-		font-size: 22px;
+        font-size: 22px;
 
         // Lets the user know that is it clickable.
         cursor: pointer;
-	}
+    }
 }
 
 .app__drawer {
+
     // Hide this menu when the screen is larger than 900px
     @media screen and (min-width: 900px) {
         display: none;
@@ -199,9 +214,16 @@
         }
 
         &--links {
-        
+
+            /* Specific styles for active links */
+            &-link-active {
+                color: $white-colour;
+                border-bottom: solid 3px $white-colour;
+                // font-weight: bold;
+            }
+
             li {
-                
+
                 a {
                     color: $white-colour;
 
@@ -213,16 +235,16 @@
             }
         }
     }
-    
+
     .ce-title-circle {
-		background: rgba(200, 200, 200, 0.7);
+        background: rgba(200, 200, 200, 0.7);
         width: 40px;
         height: 40px;
 
-		.title {
-			color: $white-colour;
-		}
-	}
+        .title {
+            color: $white-colour;
+        }
+    }
 }
 
 
@@ -232,9 +254,11 @@
         opacity: 0;
         transform: translate(200px, 0);
     }
+
     80% {
         opacity: 0.2;
     }
+
     100% {
         transform: translate(0, 0);
         opacity: 1;

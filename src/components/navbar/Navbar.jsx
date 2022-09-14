@@ -7,7 +7,7 @@ import { useThemeContext } from '../../utils/ThemeContext';
 import { GiHamburgerMenu as Menu } from 'react-icons/gi';
 
 const Navbar = () => {
-    const { theme, toggleTheme } = useThemeContext();
+    const { theme } = useThemeContext();
     const [scrolledDown, setScrolledDown] = useState(false);
     const [menuIsOpen, setMenuIsOpen] = useState(false)
 
@@ -22,22 +22,22 @@ const Navbar = () => {
         setScrolledDown((window.scrollY > 100))
     }
 
-    const show = () => {
+    const showMenu = () => {
         // Prevents scrolling whilst the menu is visible.
         document.body.style.overflow = "hidden";
         setMenuIsOpen(true);
     }
 
-    const hide = () => {
+    const hideMenu = () => {
         document.body.style.overflow = "scroll";
         setMenuIsOpen(false);
     }
 
-    const toggleVisibility = () => {
+    const toggleMenu = () => {
         if (!menuIsOpen)
-            show();
+            showMenu();
         else
-            hide();
+            hideMenu();
     }
 
     return (
@@ -51,14 +51,14 @@ const Navbar = () => {
             <ul className="navbar-nav--links">
                 {NAVBAR.MENU_DATA.map(({ title, to }, index) =>
                     <li key={index}>
-                        <NavLink to={to}>{title}</NavLink>
+                        <NavLink to={to} className={({ isActive }) => (isActive ? "navbar-nav--links-link-active" : "navbar-nav--links-link")}>{title}</NavLink>
                     </li>
                 )}
             </ul>
 
             <div className='app__drawer'>
                 <div className="app__drawer--menuBtn-container">
-                    <button onClick={toggleVisibility}>
+                    <button onClick={toggleMenu}>
                         <Menu />
                     </button>
                 </div>  
@@ -67,7 +67,8 @@ const Navbar = () => {
                     <div className='app__drawer--panel'>
                         <div>
                             {NAVBAR.MENU_DATA.map(({ title, to }, index) =>
-                                <NavLink to={to} onClick={hide}>{title}</NavLink>
+                                <NavLink to={to} className={({ isActive }) => (isActive ? "navbar-nav--links-link-active" : "navbar-nav--links-link")} onClick={hideMenu}>{title}</NavLink>
+                                // <NavLink to={to} onClick={hideMenu}>{title}</NavLink>
                             )}
                         </div>
                     </div>
