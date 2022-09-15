@@ -8,10 +8,6 @@
     
 
     &--content {
-        
-
-
-        // padding-right: 150px;
         z-index: 1;
 
         &-header {
@@ -64,9 +60,12 @@
 
 .bg-image {
     position: fixed;
-    width: 100%;
     height: 100vh;
+    background-size: contain;
+    background-repeat: no-repeat;
 
+    filter: brightness(40%) grayscale(80%);
 
-    filter: brightness(60%) grayscale(80%);
+    @media screen and (max-width: 900px) {
+    }
 }

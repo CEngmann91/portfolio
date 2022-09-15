@@ -12,7 +12,7 @@ const NotFound = () => {
 
       <div className='app__not-found--content'>
         <h1 className='app__not-found--content-header'>Error Code 404</h1>
-        <h2 className='app__not-found--content-sub'>Oops! It looks like my jokes were so funny that you took a wrong turn.</h2>
+        <h2 className='app__not-found--content-sub'>Oops! It looks like my jokes were soo funny that you took a wrong turn.</h2>
 
         <div className='back-button-container'>
           <BackButton className="back-button">
