@@ -55,18 +55,6 @@
             padding: 0px 20px;
         }
 
-        /* Specific styles for non-active links */
-        &-link-item {
-            color: $black-colour;
-
-            /* Specific styles for active links */
-            &-active {
-                color: $secondary-colour;
-                border-bottom: solid 3px $secondary-colour;
-                // font-weight: bold;
-            }
-        }
-
         // Access the nested 'li' component inside of this
         li {
             @media screen and (max-width: 900px) {
@@ -102,7 +90,21 @@
                     transition: transform 250ms ease-in-out;
                 }
             }
+
+            /* Specific styles for non-active links */
+            .navbar-nav--links-link-item {
+                // color: $black-colour;
+
+                /* Specific styles for active links */
+                &-active {
+                    color: $secondary-colour;
+                    border-bottom: solid 3px $secondary-colour;
+                    font-weight: bold;
+                }
+            }
         }
+
+
 
         // .selected {
         // 	font-weight: bold;

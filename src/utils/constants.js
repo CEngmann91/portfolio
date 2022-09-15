@@ -5,11 +5,11 @@ export const NAVBAR = {
 
     MENU_DATA: [
         { title: 'Home',                 to: '/' },
-        { title: 'About',                to: 'about' },
-        { title: 'Projects',             to: 'projects' },
-        { title: 'Skills',               to: 'skills' },
-        { title: 'Contact',              to: 'contact' },
-        { title: 'Not Found',            to: 'ab' },
+        { title: 'About',                to: '/about' },
+        { title: 'Projects',             to: '/projects' },
+        { title: 'Skills',               to: '/skills' },
+        { title: 'Contact',              to: '/contact' },
+        { title: 'Not Found',            to: '/ab' },
         // { title: 'View My C.V.',         to: 'cv' },
         // { title: 'Request A Project >',  to: 'hire' },
     ]

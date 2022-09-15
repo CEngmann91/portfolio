@@ -2,65 +2,70 @@ import './App.scss';
 import { Routes, Route } from 'react-router-dom';
 import { useThemeContext } from './utils/ThemeContext';
 import { NotFound, Landing, About, Projects, Skills, Contact, Footer } from './pages';
-
-import Navbar from './components/navbar/Navbar';
-import FloatingButton from './components/FloatingButton/FloatingButton';
-import Moon_Dark from './assets/images/Misc/Moon - Dark.png';
-import Sun_Light from './assets/images/Misc/sun.png';
+import { Navbar, FloatingButton } from './components';
+import images from './utils/images';
 
 function App() {
   const { theme, toggleTheme } = useThemeContext();
 
 
-  let styles = {
-    floatingBtnStyle: {
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: 50,
-      height: 50,
-      marginRight: '15px',
-      marginBottom: '15px',
-    },
-    floatingBtnImgStyle: {
-      width: '50%',
-      height: '50%'
-    }
-  }
+
+  const RenderFloatingButton = () => (
+    <FloatingButton
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: 50,
+        height: 50,
+        marginRight: '15px',
+        marginBottom: '15px',
+      }}
+      className='app__theme-button'
+      onPress={() => toggleTheme()}
+    >
+      <img src={theme !== 'light' ? images.Sun_Light : images.Moon_Dark} alt=""
+        style={{
+          width: '50%',
+          height: '50%'
+        }} />
+    </FloatingButton>
+  );
+
+  const RenderRoute = (component) => (
+    <>
+      <Navbar />
+      {component}
+      <Footer />
 
 
-  const renderModeIcon = () => {
-    if (theme !== 'light')
-      return Sun_Light;
-    return Moon_Dark;
-  }
-
-
+      { RenderFloatingButton() }
+    </>
+  );
 
   return (
     <div id={theme}>
-      <Navbar />
 
       <Routes>
         {/* Use it in this way, and it should work: */}
         <Route path='*' element={<NotFound />} />
+
         <Route exact path="/" element={
           <>
+            <Navbar />
             <Landing />
             <About />
             <Projects />
             <Skills />
             <Footer />
+
+            { RenderFloatingButton() }
           </>
         } />
-        <Route exact path="/about" element={<About />} />
-        <Route exact path="/projects" element={<Projects />} />
-        <Route exact path="/skills" element={<Skills />} />
-        <Route exact path="/contact" element={<Contact />} />
-        {/* <Route exact path="/footer" element={<Footer />} /> */}
-
-
-
+        <Route exact path="/about" element={RenderRoute(<About />)} />
+        <Route exact path="/projects" element={RenderRoute(<Projects />)} />
+        <Route exact path="/skills" element={RenderRoute(<Skills />)} />
+        <Route exact path="/contact" element={RenderRoute(<Contact />)} />
 
 
 
@@ -72,15 +77,6 @@ function App() {
         <Route exact path="/footer" element={<Footer />} /> */}
 
       </Routes>
-
-
-      <FloatingButton
-          style={styles.floatingBtnStyle}
-          className='app__theme-button'
-          onPress={() => toggleTheme()}
-        >
-          <img src={ renderModeIcon() } alt="" style={styles.floatingBtnImgStyle} />
-        </FloatingButton>
     </div>
   );
 }

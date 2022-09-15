@@ -2,6 +2,49 @@
     flex: 1;
     display: flex;
     min-height: 100vh;
+
+    justify-content: center;
+    align-items: center;
     
-    background-color: green;
+
+    &--content {
+        padding-right: 150px;
+        z-index: 1;
+
+        .header {
+            color: white;
+            font-size: 120px;
+        }
+
+        .sub {
+            color: white;
+            padding-bottom: 10px;
+        }
+
+        .back-button {
+            padding: 10px;
+            border-color: white;
+            border-width: 2px;
+            border-radius: 5px;
+            background: transparent;
+            color: white;
+
+            transition: var(--modeTransition);
+
+            &:hover {
+                background: white;
+                color: black;
+            }
+        }
+    }
+}
+
+
+.bg-image {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+
+
+    filter: brightness(60%) grayscale(80%);
 }

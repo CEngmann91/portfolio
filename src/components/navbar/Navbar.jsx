@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './Navbar.scss';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { APP_NAME, NAVBAR } from '../../utils/constants';
 import { useThemeContext } from '../../utils/ThemeContext';
 
@@ -8,6 +8,7 @@ import { GiHamburgerMenu as Menu } from 'react-icons/gi';
 
 const Navbar = () => {
     const { theme } = useThemeContext();
+    const navigate = useNavigate();
     const [scrolledDown, setScrolledDown] = useState(false);
     const [menuIsOpen, setMenuIsOpen] = useState(false)
 
@@ -70,7 +71,6 @@ const Navbar = () => {
                                     to={to} onClick={hideMenu}
                                     className={({ isActive }) => (isActive ? "navbar-nav--links-link-item-active" : "navbar-nav--links-link-item")}
                                 >{title}</NavLink>
-                                // <NavLink to={to} onClick={hideMenu}>{title}</NavLink>
                             )}
                         </div>
                     </div>
