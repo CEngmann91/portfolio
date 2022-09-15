@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import './Navbar.scss';
-import { NavLink, useNavigate } from 'react-router-dom';
-import { APP_NAME, NAVBAR } from '../../utils/constants';
+import { NavLink } from 'react-router-dom';
+import { NAVBAR } from '../../utils/constants';
 import { useThemeContext } from '../../utils/ThemeContext';
 
 import { GiHamburgerMenu as Menu } from 'react-icons/gi';
 
 const Navbar = () => {
     const { theme } = useThemeContext();
-    const navigate = useNavigate();
     const [scrolledDown, setScrolledDown] = useState(false);
     const [menuIsOpen, setMenuIsOpen] = useState(false)
 
@@ -33,13 +32,10 @@ const Navbar = () => {
         setMenuIsOpen(false);
     }
 
-    const toggleMenu = () => {
-        if (!menuIsOpen)
-            showMenu();
-        else
-            hideMenu();
-    }
+    const toggleMenu = () => !menuIsOpen ? showMenu() : hideMenu()
 
+
+    
     return (
         <nav id={theme} className={`navbar-nav ${scrolledDown ? 'navbar-nav--scroll' : ''}`}>
             <div className='navbar-nav--wrapper'>
@@ -64,13 +60,15 @@ const Navbar = () => {
                 </div>  
 
                 {menuIsOpen &&
-                    <div className='app__drawer--panel'>
+                    <div className={`app__drawer--panel ${menuIsOpen && 'app__drawer--show'}`}>
                         <div>
                             {NAVBAR.MENU_DATA.map(({ title, to }, index) =>
                                 <NavLink
-                                    to={to} onClick={hideMenu}
+                                    to={to} onClick={hideMenu} 
                                     className={({ isActive }) => (isActive ? "navbar-nav--links-link-item-active" : "navbar-nav--links-link-item")}
-                                >{title}</NavLink>
+                                >
+                                    {title}
+                                </NavLink>
                             )}
                         </div>
                     </div>

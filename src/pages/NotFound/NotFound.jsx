@@ -11,12 +11,14 @@ const NotFound = () => {
       <img src={images.miltonKeynes} alt="" className='bg-image' />
 
       <div className='app__not-found--content'>
-        <h1 className='header'>Error Code 404</h1>
-        <h2 className='sub'>Oops! It looks like my jokes were so funny that you took a wrong turn.</h2>
+        <h1 className='app__not-found--content-header'>Error Code 404</h1>
+        <h2 className='app__not-found--content-sub'>Oops! It looks like my jokes were so funny that you took a wrong turn.</h2>
 
-        <BackButton className="back-button">
-          Go Back
-        </BackButton>
+        <div className='back-button-container'>
+          <BackButton className="back-button">
+            Go Back
+          </BackButton>
+        </div>
       </div>
 
     </div>

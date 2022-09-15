@@ -23,7 +23,8 @@ code {
 
 :root {
   --main-white: #dfddd6;
-  --main-font: 'Stardos Stencil'; /*, cursive; */
+  --main-font: 'Stardos Stencil';
+  /*, cursive; */
   /* Transitions for navbar link selection. */
   --mainTransition: all 0.25s ease-in-out;
   /* Transitions for mode (dark/light) selection. */
@@ -52,15 +53,17 @@ code {
   /* height: 100vh; */
 }
 
-.app__pad-hor {
+.app__pading-horizontal {
   /* top | right | bottom | left */
   padding: 0rem 3rem 0rem 3rem;
-}
 
-@media screen and (max-width: 550px) {
-
-  .app__pad-hor {
+  @media screen and (max-width: 550px) {
     /* top | right | bottom | left */
     padding: 0rem 1rem 0rem 1rem;
   }
+}
+
+.app__bottom-border {
+  border-bottom: solid 3px black;
+  width: fit-content;
 }

@@ -90,18 +90,6 @@
                     transition: transform 250ms ease-in-out;
                 }
             }
-
-            /* Specific styles for non-active links */
-            .navbar-nav--links-link-item {
-                // color: $black-colour;
-
-                /* Specific styles for active links */
-                &-active {
-                    color: $secondary-colour;
-                    border-bottom: solid 3px $secondary-colour;
-                    font-weight: bold;
-                }
-            }
         }
 
 
@@ -109,6 +97,18 @@
         // .selected {
         // 	font-weight: bold;
         // }
+    }
+}
+
+/* Specific styles for non-active links */
+.navbar-nav--links-link-item {
+    // color: $black-colour;
+
+    /* Specific styles for active links */
+    &-active {
+        color: $secondary-colour;
+        border-bottom: solid 3px $secondary-colour;
+        font-weight: bold;
     }
 }
 
@@ -156,9 +156,7 @@
 
         box-shadow: 0 0 20px rgb(128, 128, 128);
 
-        transform-origin: center;
-        animation: slide-l-fade-In .3s ease-out;
-        animation-fill-mode: both;
+        transition: all 0.3s ease-in-out;
 
         div {
             display: flex;
@@ -176,7 +174,6 @@
                 text-transform: uppercase;
                 font-weight: 500;
 
-                transition: all 0.3s ease-in-out;
 
                 // &:hover {
                 //     color: $secondary-colour;
@@ -200,6 +197,18 @@
             cursor: pointer;
         }
     }
+
+    &--show {
+        transform-origin: center;
+        animation: slide-l .3s ease-out;
+        animation-fill-mode: both;
+    }
+
+    // &--hide {
+    //     transform-origin: center;
+    //     animation: slide-r .3s ease-out;
+    //     animation-fill-mode: both;
+    // }
 }
 
 
@@ -245,22 +254,55 @@
             color: $white-colour;
         }
     }
+
+    .navbar-nav--links-link-item {
+
+        /* Specific styles for active links */
+        &-active {
+            color: $white-colour;
+            border-bottom: solid 3px $white-colour;
+            font-weight: bold;
+        }
+    }
 }
 
 
 
-@keyframes slide-l-fade-In {
+@keyframes slide-l {
     0% {
-        opacity: 0;
-        transform: translate(200px, 0);
+        transform: translate(500px, 0);
     }
-
-    80% {
-        opacity: 0.2;
-    }
-
     100% {
         transform: translate(0, 0);
+    }
+}
+
+@keyframes slide-r {
+    0% {
+        transform: translate(0, 0);
+    }
+    // 80% {
+    //     opacity: 0.2;
+    // }
+    100% {
+        transform: translate(500px, 0);
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
         opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }

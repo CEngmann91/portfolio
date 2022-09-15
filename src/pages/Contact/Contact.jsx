@@ -6,7 +6,7 @@ const Contact = () => {
     const { theme } = useThemeContext();
 
     return (
-        <div id={theme} className='app__contact app__flex'>
+        <div id={theme} className='app__contact app__flex app__pading-horizontal'>
             Contact
         </div>
     )
