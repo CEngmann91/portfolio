@@ -10,7 +10,6 @@
     align-items: flex-start;
 
     padding: 1rem 1rem;
-    padding-right: 100px;
 
     background-color: gray;
 
@@ -26,10 +25,17 @@
 
 
         .socials {
+            @media screen and (max-width: 900px) {
+                margin-right: 10px;
+            }
             width: 20%;
             // background: blue;
 
             .title {
+                @media screen and (max-width: 900px) {
+                    font-size: 18px;
+                }
+
                 color: $white-colour;
                 font-weight: bold;
             }
@@ -38,6 +44,9 @@
                 display: flex;
     
                 &-icon {
+                    @media screen and (max-width: 900px) {
+                    }
+
                     width: 20px;
                     height: 20px;
                     margin-right: 15px;
@@ -58,8 +67,16 @@
             // background: green;
 
             .title {
+                @media screen and (max-width: 900px) {
+                    font-size: 18px;
+                }
+                
                 color: $white-colour;
+                font-size: 18px;
                 font-weight: bold;
+            }
+            .content {
+                font-size: 14px;
             }
         }
 
@@ -70,17 +87,30 @@
             // background: cyan;
 
             .title {
+                @media screen and (max-width: 900px) {
+                    font-size: 18px;
+                }
+
+                font-size: 18px;
                 color: $white-colour;
                 font-weight: bold;
+            }
+            .content {
+                font-size: 14px;
             }
         }
     }
 
     &--baseline {
+        @media screen and (max-width: 900px) {
+            padding-right: 70px;
+        }
+
         display: flex;
         flex-direction: column;
         width: 100%;
         // justify-content: space-between;
+        padding-right: 100px;
 
         .line {
             position: relative;
@@ -97,12 +127,17 @@
             flex: 1;
             display: flex;
             justify-content: space-between;
+
+            .copyright {
+                color: $white-colour;
+    
+                // @media screen and (max-width: 900px) {
+                // }
+                font-size: 12px;
+            }
         }
 
-        .copyright {
-            color: $white-colour;
-            // padding-bottom: 10px;
-        }
+        
 
         // .links {
         //     display: flex;

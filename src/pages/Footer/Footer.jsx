@@ -24,12 +24,16 @@ const Footer = () => {
 
         <div className='categories'>
           <p className='title'>Categories</p>
-          <p>Insert Text here</p>
+          <p className='content'>
+            Insert Text here
+          </p>
         </div>
 
         <div className='quick-links'>
           <p className='title'>Quick Links</p>
-          <p>Insert Text here</p>
+          <p className='content'>
+            Insert Text here
+          </p>
         </div>
       </div>
 

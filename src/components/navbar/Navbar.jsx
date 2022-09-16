@@ -53,7 +53,7 @@ const Navbar = () => {
             <div className='app__drawer'>
                 <div className="app__drawer--menuBtn-container">
                     <button onClick={toggleMenu}>
-                        <Menu />
+                        {!menuIsOpen ? <Menu /> : "X"}
                     </button>
                 </div>  
 
