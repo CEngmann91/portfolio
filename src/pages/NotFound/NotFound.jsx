@@ -11,8 +11,8 @@ const NotFound = () => {
       <img src={images.miltonKeynes} alt="" className='bg-image' />
 
       <div className='app__not-found--content'>
-        <h1 className='app__not-found--content-header'>Error Code 404</h1>
-        <h2 className='app__not-found--content-sub'>Oops! It looks like my jokes were soo funny that you took a wrong turn.</h2>
+        <h1 className='app__not-found--content-header'>Error - 404</h1>
+        <h2 className='app__not-found--content-sub'>It looks like the page you were looking for is no longer here.</h2>
 
         <div className='back-button-container'>
           <BackButton className="back-button">

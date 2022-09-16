@@ -12,17 +12,17 @@ const Landing = () => {
 
 
             <div className="app__landing--tags">
-                <div className="app__bottom-border app__landing--tags-tag">
+                <p className="app__bottom-border app__landing--tags-tag">
                     Designer
-                </div>
+                </p>
 
-                <div className="app__bottom-border app__landing--tags-tag">
+                <p className="app__bottom-border app__landing--tags-tag">
                     Full Stack Developer
-                </div>
+                </p>
 
-                <div className="app__bottom-border app__landing--tags-tag">
+                <p className="app__bottom-border app__landing--tags-tag">
                     Engineer
-                </div>
+                </p>
             </div>
 
         </div>

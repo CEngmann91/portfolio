@@ -47,7 +47,7 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        padding: 0px 40px;
+        padding: 0px 0px;
         // Remove the generic link styles.
         list-style: none;
 
@@ -124,6 +124,10 @@
     // Lets the user know that is it clickable.
     // cursor: pointer;
 
+    @media screen and (max-width: 900px) {
+        margin: 0.1rem;
+    }
+
     .title {
         color: var(--colour-black);
         font-size: 22px;
@@ -192,8 +196,9 @@
 
             justify-content: center;
             align-items: center;
-            border: none;
+            // border: none;
             border-radius: 50px;
+            border-width: 2px;
             cursor: pointer;
         }
     }

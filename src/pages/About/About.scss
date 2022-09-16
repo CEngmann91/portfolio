@@ -4,10 +4,9 @@
     min-height: 100vh;
     
     padding-top: 100px;
-    background: yellow;
-
-    
     color: $black-colour;
+
+    background: yellow;
 
 
     &--title {
@@ -17,7 +16,6 @@
 
     &--content {
         padding-top: 30px;
-
     }
 }
 

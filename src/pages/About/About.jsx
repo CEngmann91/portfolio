@@ -9,7 +9,6 @@ const About = () => {
         <div id={theme} className='app__about app__pading-horizontal'>
             <p className="app__bottom-border app__about--title">About Me</p>
 
-
             <p className="app__about--content">Insert Text Here</p>
 
         </div>

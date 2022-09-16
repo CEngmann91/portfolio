@@ -55,15 +55,23 @@ code {
 
 .app__pading-horizontal {
   /* top | right | bottom | left */
-  padding: 0rem 3rem 0rem 3rem;
+  padding: 0rem 3rem;
 
   @media screen and (max-width: 550px) {
     /* top | right | bottom | left */
-    padding: 0rem 1rem 0rem 1rem;
+    padding: 0rem 2rem;
   }
 }
 
 .app__bottom-border {
   border-bottom: solid 3px black;
   width: fit-content;
+}
+
+#dark {
+
+  .app__bottom-border {
+    border-bottom: solid 3px white;
+  }
+
 }

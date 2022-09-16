@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import './Navbar.scss';
 import { NavLink } from 'react-router-dom';
 import { NAVBAR } from '../../utils/constants';
@@ -14,12 +14,10 @@ const Navbar = () => {
 
     useEffect(() => {
         window.addEventListener('scroll', onScroll)
-        return () => window.removeEventListener('scroll', onScroll)
+        return () => window.removeEventListener('scroll', onScroll)//, { passive: true })
     }, [])
 
-    const onScroll = () => {
-        setScrolledDown((window.scrollY > 100))
-    }
+    const onScroll = () => setScrolledDown((window.scrollY > 100))
 
     const showMenu = () => {
         // Prevents scrolling whilst the menu is visible.
@@ -35,7 +33,7 @@ const Navbar = () => {
     const toggleMenu = () => !menuIsOpen ? showMenu() : hideMenu()
 
 
-    
+
     return (
         <nav id={theme} className={`navbar-nav ${scrolledDown ? 'navbar-nav--scroll' : ''}`}>
             <div className='navbar-nav--wrapper'>
@@ -43,7 +41,7 @@ const Navbar = () => {
                     <label className='title'>CE</label>
                 </NavLink>
             </div>
-
+            
             <ul className="navbar-nav--links">
                 {NAVBAR.MENU_DATA.map(({ title, to }, index) =>
                     <li key={index}>
@@ -66,9 +64,7 @@ const Navbar = () => {
                                 <NavLink
                                     to={to} onClick={hideMenu} 
                                     className={({ isActive }) => (isActive ? "navbar-nav--links-link-item-active" : "navbar-nav--links-link-item")}
-                                >
-                                    {title}
-                                </NavLink>
+                                >{title}</NavLink>
                             )}
                         </div>
                     </div>

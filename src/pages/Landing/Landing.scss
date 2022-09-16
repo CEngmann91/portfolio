@@ -10,11 +10,19 @@
     color: $black-colour;
 
     &--hi {
-        font-size: 1.2rem;
+        @media screen and (max-width: 900px) {
+            font-size: 1.5rem;
+        }
+
+        font-size: 2rem;
     }
 
     &--name {
-        font-size: 40px;
+        @media screen and (max-width: 900px) {
+            font-size: 50px;
+        }
+
+        font-size: 60px;
         text-align: left;
         padding-bottom: 10px;
     }
@@ -24,6 +32,11 @@
         flex-direction: row;
 
         &-tag {
+            @media screen and (max-width: 900px) {
+                font-size: 16px;
+            }
+            font-size: 20px;
+
             background: transparent;
             // padding: 10px;
             // border: 3px solid black;

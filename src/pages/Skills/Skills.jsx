@@ -6,8 +6,10 @@ const Skills = () => {
   const { theme } = useThemeContext();
 
   return (
-    <div id={theme} className='app__skills app__flex app__pading-horizontal'>
-      Skills
+    <div id={theme} className='app__skills app__pading-horizontal'>
+      <p className="app__bottom-border app__skills--title">Skills</p>
+
+      <p className="app__skills--content">Insert Text Here</p>
     </div>
   )
 }
