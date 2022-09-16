@@ -1,5 +1,124 @@
+@import '../../utils/colours.scss';
+
 .app__footer {
-    height: 200px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 170px;
+    // Center the content.
+    align-items: flex-start;
+
+    padding: 1rem 1rem;
+    padding-right: 100px;
 
     background-color: gray;
+
+
+    &--contents {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        // justify-content: space-between;
+        // background: red;
+
+
+
+        .socials {
+            width: 20%;
+            // background: blue;
+
+            .title {
+                color: $white-colour;
+                font-weight: bold;
+            }
+
+            .links {
+                display: flex;
+    
+                &-icon {
+                    width: 20px;
+                    height: 20px;
+                    margin-right: 15px;
+                    cursor: pointer;
+    
+                    svg {
+                        color: white;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+
+
+        .categories {
+            width: 40%;
+            // background: green;
+
+            .title {
+                color: $white-colour;
+                font-weight: bold;
+            }
+        }
+
+
+
+        .quick-links {
+            width: 40%;
+            // background: cyan;
+
+            .title {
+                color: $white-colour;
+                font-weight: bold;
+            }
+        }
+    }
+
+    &--baseline {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        // justify-content: space-between;
+
+        .line {
+            position: relative;
+            top: 0;
+            float:right;
+            width: 100%;
+            height: 2px;
+            background: $white-colour;
+            border-radius: 5px;
+            margin: 0.7rem 0rem;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .copyright {
+            color: $white-colour;
+            // padding-bottom: 10px;
+        }
+
+        // .links {
+        //     display: flex;
+
+        //     &-icon {
+        //         width: 20px;
+        //         height: 20px;
+        //         margin-right: 15px;
+        //         cursor: pointer;
+
+        //         svg {
+        //             color: white;
+        //             width: 100%;
+        //             height: 100%;
+        //         }
+        //     }
+        // }
+    }
 }
