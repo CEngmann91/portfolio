@@ -7,10 +7,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-
-  outline: none;
-  box-shadow: none;
 }
 
 * {
@@ -18,6 +14,20 @@ body {
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
+
+
+  // button {
+
+
+  //   // &:active {
+  //   &:focus {
+  //     outline: none !important;
+  //     border: none !important;
+  //     -webkit-box-shadow: none !important;
+  //     box-shadow: none !important;
+      
+  //   }
+  // }
 }
 
 code {
