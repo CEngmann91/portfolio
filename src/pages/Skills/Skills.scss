@@ -32,11 +32,12 @@
 
 
             &::before {
-                content: "·";
+                content: "•";
                 display: inline-block;
                 // left: 0;
                 color: $black-colour;
                 font-size: 20px;
+                font-weight: bold;
                 padding: 0px 5px;
             }
         }
