@@ -1,13 +1,21 @@
+import React, { useLayoutEffect } from 'react';
+
 import './App.scss';
-import { Routes, Route } from 'react-router-dom';
+import { useLocation, Routes, Route } from 'react-router-dom';
 import { useThemeContext } from './utils/ThemeContext';
 import { NotFound, Landing, About, Projects, Skills, Contact, Footer } from './pages';
 import { Navbar, FloatingButton } from './components';
 import images from './utils/images';
 
 function App() {
+  const location = useLocation();
   const { theme, toggleTheme } = useThemeContext();
 
+
+  // Scroll to top if path changes
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
 
   const RenderFloatingButton = () => (
@@ -39,7 +47,7 @@ function App() {
       <Footer />
 
 
-      { RenderFloatingButton() }
+      {RenderFloatingButton()}
     </>
   );
 
@@ -59,7 +67,7 @@ function App() {
             <Skills />
             <Footer />
 
-            { RenderFloatingButton() }
+            {RenderFloatingButton()}
           </>
         } />
         <Route exact path="/about" element={RenderRoute(<About />)} />

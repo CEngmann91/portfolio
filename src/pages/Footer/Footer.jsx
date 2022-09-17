@@ -1,6 +1,8 @@
 import React from 'react'
 import './Footer.scss';
 import { Twitter, Facebook, Linkedin } from '../../utils/icons';
+import { NAVBAR } from '../../utils/constants';
+import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -12,14 +14,12 @@ const Footer = () => {
 
         <div className='socials'>
           <p className='title'>Socials</p>
-          {/* <p>Insert Text here</p> */}
           <div className='links'>
             <div className='links-icon'><Facebook /></div>
             <div className='links-icon'><Twitter /></div>
             <div className='links-icon'><Linkedin /></div>
           </div>
         </div>
-
 
 
         <div className='categories'>
@@ -31,9 +31,17 @@ const Footer = () => {
 
         <div className='quick-links'>
           <p className='title'>Quick Links</p>
-          <p className='content'>
-            Insert Text here
-          </p>
+
+          <ul className="page-links">
+            {NAVBAR.MENU_DATA.map(({ title, to }, index) =>
+              <li key={index}>
+                <NavLink to={to} 
+                // className={({ isActive }) => (isActive ? "navbar-nav--links-link-item-active" : "navbar-nav--links-link-item")}
+                >{title}</NavLink>
+              </li>
+            )}
+          </ul>
+
         </div>
       </div>
 
@@ -43,10 +51,12 @@ const Footer = () => {
         <div className='container'>
           <p className='copyright'>Copyright © 2022 All Rights Are Reserved by Christian Engmann</p>
 
-          {/* <div className='links'>
-            <div className='links-icon'><Facebook /></div>
-            <div className='links-icon'><Twitter /></div>
-            <div className='links-icon'><Linkedin /></div>
+          {/* <div className='socials'>
+            <div className='links'>
+              <div className='links-icon'><Facebook /></div>
+              <div className='links-icon'><Twitter /></div>
+              <div className='links-icon'><Linkedin /></div>
+            </div>
           </div> */}
 
         </div>

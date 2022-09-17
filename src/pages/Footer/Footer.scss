@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 170px;
+    min-height: 170px;
     // Center the content.
     align-items: flex-start;
 
@@ -21,7 +21,6 @@
         height: 100%;
         // justify-content: space-between;
         // background: red;
-
 
 
         .socials {
@@ -45,6 +44,9 @@
     
                 &-icon {
                     @media screen and (max-width: 900px) {
+                        width: 15px;
+                        height: 15px;
+                        margin-right: 5px;
                     }
 
                     width: 20px;
@@ -64,14 +66,13 @@
 
         .categories {
             width: 40%;
-            // background: green;
+            color: $white-colour;
 
             .title {
                 @media screen and (max-width: 900px) {
                     font-size: 18px;
                 }
                 
-                color: $white-colour;
                 font-size: 18px;
                 font-weight: bold;
             }
@@ -80,11 +81,9 @@
             }
         }
 
-
-
         .quick-links {
             width: 40%;
-            // background: cyan;
+            color: $white-colour;
 
             .title {
                 @media screen and (max-width: 900px) {
@@ -95,15 +94,29 @@
                 color: $white-colour;
                 font-weight: bold;
             }
-            .content {
+            .page-links {
                 font-size: 14px;
+                // Remove the generic link styles.
+                list-style: none;
+        
+                // Access the nested 'li' component inside of this
+                li {
+                    margin-bottom: 2px;
+                    // Lets the user know that is it clickable.
+                    cursor: pointer;
+        
+                    a {
+                        text-decoration: none;
+                        color: lightgray;
+                    }
+                }
             }
         }
     }
 
     &--baseline {
         @media screen and (max-width: 900px) {
-            padding-right: 70px;
+            padding-right: 60px;
         }
 
         display: flex;
@@ -131,29 +144,35 @@
             .copyright {
                 color: $white-colour;
     
-                // @media screen and (max-width: 900px) {
-                // }
+                @media screen and (max-width: 900px) {
+                    font-size: 10px;
+                }
                 font-size: 12px;
             }
-        }
 
+
+            // .socials {
+            //     @media screen and (max-width: 900px) {
+            //         display: none;
+            //     }
+
+            //     .links {
+            //         display: flex;
         
-
-        // .links {
-        //     display: flex;
-
-        //     &-icon {
-        //         width: 20px;
-        //         height: 20px;
-        //         margin-right: 15px;
-        //         cursor: pointer;
-
-        //         svg {
-        //             color: white;
-        //             width: 100%;
-        //             height: 100%;
-        //         }
-        //     }
-        // }
+            //         &-icon {
+            //             width: 20px;
+            //             height: 20px;
+            //             margin-right: 15px;
+            //             cursor: pointer;
+        
+            //             svg {
+            //                 color: white;
+            //                 width: 100%;
+            //                 height: 100%;
+            //             }
+            //         }
+            //     }
+            // }
+        }
     }
 }
