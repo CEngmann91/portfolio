@@ -4,6 +4,7 @@
     min-height: 100vh;
 
     padding-top: 100px;
+    padding-bottom: 30px;
 
     color: $black-colour;
     // background-color: cyan;
@@ -20,6 +21,7 @@
     .skill-list {
         flex: 1;
         display: flex;
+        flex-wrap: wrap;
         justify-content: flex-start;
         align-items: center;
 

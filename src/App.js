@@ -63,8 +63,8 @@ function App() {
             <Navbar />
             <Landing />
             <About />
-            <Projects />
             <Skills />
+            <Projects />
             <Footer />
 
             {RenderFloatingButton()}
