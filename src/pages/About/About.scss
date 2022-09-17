@@ -1,9 +1,10 @@
 @import '../../utils/colours.scss';
+@import '../../utils/values.scss';
 
 .app__about {
-    min-height: 100vh;
+    min-height: calc(100vh - $footer-height);
 
-    padding-top: 100px;
+    padding-top: 80px;
     padding-bottom: 30px;
 
     color: $black-colour;

@@ -67,7 +67,7 @@ function App() {
             <Projects />
             <Footer />
 
-            {RenderFloatingButton()}
+            { RenderFloatingButton() }
           </>
         } />
         <Route exact path="/about" element={RenderRoute(<About />)} />
