@@ -11,7 +11,7 @@
 
     padding: 1rem 1rem;
 
-    background-color: gray;
+    background-color: rgba(155, 155, 155, 0.7);
 
     @media screen and (max-width: 900px) {
         padding-right: 70px;
@@ -49,18 +49,18 @@
                 font-size: 14px;
                 // Remove the generic link styles.
                 list-style: none;
-
                 
 
                 // Access the nested 'li' component inside of this
                 li {
+                    display: flex;
+                    align-items: center;
                     // Lets the user know that is it clickable.
                     cursor: pointer;
 
-
                     a {
                         text-decoration: none;
-                        color: lightgray;
+                        color: $white-colour;
 
                         &::before {
                             content: "·";
@@ -68,8 +68,7 @@
                             left: 0;
                             color: #fff;
                             display: inline-block;
-                            padding-right: 5px;
-                            padding-left: 5px;
+                            padding: 0px 5px;
                         }
 
                         &:hover {
@@ -80,11 +79,13 @@
                         }
                     }
 
-                    // a {
-                    //     &::before {
-                    //         content: none;
-                    //     }
-                    // }
+                    :first-child {
+                        a {
+                            &::before {
+                                content: none;
+                            }
+                        }
+                    }
                 }
             }
         }

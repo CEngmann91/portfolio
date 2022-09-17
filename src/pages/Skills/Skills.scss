@@ -2,11 +2,11 @@
 
 .app__skills {
     min-height: 100vh;
-    
+
     padding-top: 100px;
 
     color: $black-colour;
-    background-color: cyan;
+    // background-color: cyan;
 
     &--title {
         font-size: 40px;
@@ -16,11 +16,42 @@
     &--content {
         padding-top: 30px;
     }
+
+    .skill-list {
+        flex: 1;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        &--item {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+
+            &::before {
+                content: "·";
+                display: inline-block;
+                // left: 0;
+                color: $black-colour;
+                font-size: 20px;
+                padding: 0px 5px;
+            }
+        }
+
+        :first-child {
+            padding: 0px 0px;
+
+            &::before {
+                content: none;
+            }
+        }
+    }
 }
 
 #dark {
 
     .app__skills {
         color: $white-colour;
-    }    
+    }
 }
