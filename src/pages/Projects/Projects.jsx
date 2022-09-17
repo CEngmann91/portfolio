@@ -9,6 +9,11 @@ const Projects = () => {
     { title: "title1", imgSrc: "imgSrc1" },
     { title: "title2", imgSrc: "imgSrc2" },
     { title: "title3", imgSrc: "imgSrc3" },
+    { title: "title4", imgSrc: "imgSrc4" },
+    { title: "title5", imgSrc: "imgSrc5" },
+    { title: "title6", imgSrc: "imgSrc6" },
+    { title: "title7", imgSrc: "imgSrc7" },
+    { title: "title8", imgSrc: "imgSrc8" },
   ]
 
   return (
