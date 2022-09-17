@@ -6,11 +6,27 @@ import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <div className='app__footer'>
+    <footer className='app__footer'>
       {/* Footer */}
 
 
       <div className='app__footer--contents'>
+        <div className='quick-links'>
+          <p className='title'>Quick Links</p>
+
+          <ul className="page-links">
+            {NAVBAR.MENU_DATA.map(({ title, to }, index) =>
+              <li key={index}>
+                <NavLink to={to}
+                // className={({ isActive }) => (isActive ? "navbar-nav--links-link-item-active" : "navbar-nav--links-link-item")}
+                >{title}</NavLink>
+              </li>
+            )}
+          </ul>
+
+        </div>
+
+
 
         <div className='socials'>
           <p className='title'>Socials</p>
@@ -22,27 +38,14 @@ const Footer = () => {
         </div>
 
 
-        <div className='categories'>
+        {/* <div className='categories'>
           <p className='title'>Categories</p>
           <p className='content'>
             Insert Text here
           </p>
-        </div>
+        </div> */}
 
-        <div className='quick-links'>
-          <p className='title'>Quick Links</p>
 
-          <ul className="page-links">
-            {NAVBAR.MENU_DATA.map(({ title, to }, index) =>
-              <li key={index}>
-                <NavLink to={to} 
-                // className={({ isActive }) => (isActive ? "navbar-nav--links-link-item-active" : "navbar-nav--links-link-item")}
-                >{title}</NavLink>
-              </li>
-            )}
-          </ul>
-
-        </div>
       </div>
 
       <div className='app__footer--baseline'>
@@ -64,7 +67,7 @@ const Footer = () => {
 
 
 
-    </div>
+    </footer>
   )
 }
 

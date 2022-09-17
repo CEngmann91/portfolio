@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 170px;
+    height: 120px;
     // Center the content.
     align-items: flex-start;
 
@@ -13,47 +13,124 @@
 
     background-color: gray;
 
+    @media screen and (max-width: 900px) {
+        padding-right: 70px;
+    }
+    padding-right: 100px;
+
 
     &--contents {
         display: flex;
         flex-direction: row;
         width: 100%;
         height: 100%;
-        // justify-content: space-between;
-        // background: red;
 
 
-        .socials {
+        .quick-links {
             @media screen and (max-width: 900px) {
-                margin-right: 10px;
+                display: none;
             }
-            width: 20%;
-            // background: blue;
+
+            width: 70%;
+            color: $white-colour;
 
             .title {
                 @media screen and (max-width: 900px) {
-                    font-size: 18px;
+                    font-size: 14px;
+                }
+                font-size: 18px;
+                color: $white-colour;
+                font-weight: bold;
+            }
+
+            .page-links {
+                display: flex;
+                flex-direction: row;
+                font-size: 14px;
+                // Remove the generic link styles.
+                list-style: none;
+
+                
+
+                // Access the nested 'li' component inside of this
+                li {
+                    // Lets the user know that is it clickable.
+                    cursor: pointer;
+
+
+                    a {
+                        text-decoration: none;
+                        color: lightgray;
+
+                        &::before {
+                            content: "·";
+                            font-size: 20px;
+                            left: 0;
+                            color: #fff;
+                            display: inline-block;
+                            padding-right: 5px;
+                            padding-left: 5px;
+                        }
+
+                        &:hover {
+                            color: $white-colour;
+                            transform: scale(1.1);
+                            -webkit-transform: scale(1.1);
+                            text-decoration: underline;
+                        }
+                    }
+
+                    // a {
+                    //     &::before {
+                    //         content: none;
+                    //     }
+                    // }
+                }
+            }
+        }
+
+        .socials {
+            @media screen and (max-width: 900px) {
+                width: 100%;
+                align-items: center;
+            }
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            width: 30%;
+
+            @media screen and (max-width: 900px) {
+                // margin-right: 10px;
+            }
+
+            .title {
+                @media screen and (max-width: 900px) {
+                    font-size: 14px;
                 }
 
+                font-size: 18px;
                 color: $white-colour;
                 font-weight: bold;
             }
 
             .links {
                 display: flex;
-    
+                align-items: flex-end;
+
                 &-icon {
                     @media screen and (max-width: 900px) {
                         width: 15px;
                         height: 15px;
-                        margin-right: 5px;
+                        margin-left: 5px;
                     }
 
                     width: 20px;
                     height: 20px;
-                    margin-right: 15px;
+                    margin-left: 15px;
+                    margin-top: 5px;
                     cursor: pointer;
-    
+
                     svg {
                         color: white;
                         width: 100%;
@@ -62,73 +139,18 @@
                 }
             }
         }
-
-
-        .categories {
-            width: 40%;
-            color: $white-colour;
-
-            .title {
-                @media screen and (max-width: 900px) {
-                    font-size: 18px;
-                }
-                
-                font-size: 18px;
-                font-weight: bold;
-            }
-            .content {
-                font-size: 14px;
-            }
-        }
-
-        .quick-links {
-            width: 40%;
-            color: $white-colour;
-
-            .title {
-                @media screen and (max-width: 900px) {
-                    font-size: 18px;
-                }
-
-                font-size: 18px;
-                color: $white-colour;
-                font-weight: bold;
-            }
-            .page-links {
-                font-size: 14px;
-                // Remove the generic link styles.
-                list-style: none;
-        
-                // Access the nested 'li' component inside of this
-                li {
-                    margin-bottom: 2px;
-                    // Lets the user know that is it clickable.
-                    cursor: pointer;
-        
-                    a {
-                        text-decoration: none;
-                        color: lightgray;
-                    }
-                }
-            }
-        }
     }
 
     &--baseline {
-        @media screen and (max-width: 900px) {
-            padding-right: 60px;
-        }
-
         display: flex;
         flex-direction: column;
         width: 100%;
-        // justify-content: space-between;
-        padding-right: 100px;
+
 
         .line {
             position: relative;
             top: 0;
-            float:right;
+            float: right;
             width: 100%;
             height: 2px;
             background: $white-colour;
@@ -143,10 +165,11 @@
 
             .copyright {
                 color: $white-colour;
-    
+
                 @media screen and (max-width: 900px) {
                     font-size: 10px;
                 }
+
                 font-size: 12px;
             }
 
@@ -158,13 +181,13 @@
 
             //     .links {
             //         display: flex;
-        
+
             //         &-icon {
             //             width: 20px;
             //             height: 20px;
             //             margin-right: 15px;
             //             cursor: pointer;
-        
+
             //             svg {
             //                 color: white;
             //                 width: 100%;
