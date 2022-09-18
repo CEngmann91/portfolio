@@ -6,14 +6,14 @@ const Projects = () => {
   const { theme } = useThemeContext();
 
   const list = [
-    { title: "title1", imgSrc: "imgSrc1" },
-    { title: "title2", imgSrc: "imgSrc2" },
-    { title: "title3", imgSrc: "imgSrc3" },
-    { title: "title4", imgSrc: "imgSrc4" },
-    { title: "title5", imgSrc: "imgSrc5" },
-    { title: "title6", imgSrc: "imgSrc6" },
-    { title: "title7", imgSrc: "imgSrc7" },
-    { title: "title8", imgSrc: "imgSrc8" },
+    { title: "title1", imgSrc: "https://w7.pngwing.com/pngs/79/518/png-transparent-js-react-js-logo-react-react-native-logos-icon-thumbnail.png" },
+    { title: "title2", imgSrc: "https://w7.pngwing.com/pngs/79/518/png-transparent-js-react-js-logo-react-react-native-logos-icon-thumbnail.png" },
+    { title: "title3", imgSrc: "https://w7.pngwing.com/pngs/79/518/png-transparent-js-react-js-logo-react-react-native-logos-icon-thumbnail.png" },
+    { title: "title4", imgSrc: "https://w7.pngwing.com/pngs/79/518/png-transparent-js-react-js-logo-react-react-native-logos-icon-thumbnail.png" },
+    { title: "title5", imgSrc: "https://w7.pngwing.com/pngs/79/518/png-transparent-js-react-js-logo-react-react-native-logos-icon-thumbnail.png" },
+    { title: "title6", imgSrc: "https://w7.pngwing.com/pngs/79/518/png-transparent-js-react-js-logo-react-react-native-logos-icon-thumbnail.png" },
+    { title: "title7", imgSrc: "https://w7.pngwing.com/pngs/79/518/png-transparent-js-react-js-logo-react-react-native-logos-icon-thumbnail.png" },
+    { title: "title8", imgSrc: "https://w7.pngwing.com/pngs/79/518/png-transparent-js-react-js-logo-react-react-native-logos-icon-thumbnail.png" },
   ]
 
   return (
@@ -24,8 +24,8 @@ const Projects = () => {
       <div className='list'>
         {list.map((item, index) =>
           <div className='list--item' key={index}>
-            <p>{item.title}</p>
-            <p>{item.imgSrc}</p>
+            <p className='list--item-title'>{item.title}</p>
+            <img src={item.imgSrc} alt={item.title} />
           </div>
         )}
       </div>

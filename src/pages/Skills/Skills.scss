@@ -57,5 +57,15 @@
 
     .app__skills {
         color: $white-colour;
+
+        .skill-list {
+    
+            &--item {
+    
+                &::before {
+                    color: $white-colour;
+                }
+            }
+        }
     }
 }

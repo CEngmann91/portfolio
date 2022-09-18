@@ -62,6 +62,7 @@ const Navbar = () => {
                         <div>
                             {NAVBAR.MENU_DATA.map(({ title, to }, index) =>
                                 <NavLink
+                                    key={index}
                                     to={to} onClick={hideMenu} 
                                     className={({ isActive }) => (isActive ? "navbar-nav--links-link-item-active" : "navbar-nav--links-link-item")}
                                 >{title}</NavLink>

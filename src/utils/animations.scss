@@ -1,0 +1,64 @@
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+
+
+
+
+// @keyframes up-down{
+@include keyframes(up-down) {
+    0%      { transform: translate(1px,20px); }
+    24%     { transform: translate(1px,30px); }
+    50%     { transform: translate(1px,12px); }
+    74%     { transform: translate(1px,22px); }
+    100%    { transform: translate(1px,22px); }
+}
+
+// @keyframes slide-left {
+@include keyframes(slide-left) {
+    0%      { transform: translate(500px, 0); }
+    100%    { transform: translate(0, 0); }
+}
+
+// @keyframes slide-right {
+@include keyframes(slide-right) {
+    0%      { transform: translate(0, 0); }
+    100%    { transform: translate(500px, 0); }
+}
+
+// @keyframes slide-up {
+@include keyframes(slide-up) {
+    0%      { transform: translate(0, 100px); }
+    100%    { transform: translate(0, 0); }
+}
+
+// @keyframes slide-down {
+@include keyframes(slide-down) {
+    0%      { transform: translate(0, 0); }
+    100%    { transform: translate(0, 100px); }
+}
+
+// @keyframes fade-in {
+@include keyframes(fade-in) {
+    0%      { opacity: 0; }
+    80%     { opacity: 0.2; }
+    100%    { opacity: 1; }
+}
+
+// @keyframes fade-out {
+@include keyframes(fade-out) {
+    0%      { opacity: 1; }
+    100%    { opacity: 0; }
+}

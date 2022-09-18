@@ -25,6 +25,10 @@ const Landing = () => {
                 </p>
             </div>
 
+            <div className='scroll-down-text'>
+                <p>Scroll Down</p>
+                <p className='arrowhead'>⌄</p>
+            </div>
         </div>
     )
 }
