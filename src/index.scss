@@ -78,13 +78,13 @@ code {
 }
 
 .app__bottom-border {
-  border-bottom: solid 3px black;
+  border-bottom: solid 3px $secondary-colour;
   width: fit-content;
 }
 
 #dark {
 
   .app__bottom-border {
-    border-bottom: solid 3px white;
+    border-bottom: solid 3px $secondary-colour-dark;
   }
 }

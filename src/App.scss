@@ -9,7 +9,7 @@ body {
 
 .app__theme-button {
     z-index: 1;
-    // background: rgba(255, 255, 255, 0.7);
+    background: $secondary-colour;
     // box-shadow: 6px 3px 3px rgba(150, 150, 150, 0.7);
 
     /* transition: all 0.1s ease 0s; */
@@ -26,7 +26,8 @@ body {
 
 
     .app__theme-button {
-        background: rgba(150, 150, 150, 0.7);
+        background: $secondary-colour-dark;
+        // background: rgba(150, 150, 150, 0.7);
         box-shadow: 6px 3px 3px rgba(255, 255, 255, 0.7);;
     }
 }

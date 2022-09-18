@@ -83,8 +83,8 @@
             }
             
             &:hover {
-                border: 3px solid lightgray;
-                box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+                // border: 3px solid lightgray;
+                box-shadow: 0px 0px 20px rgba($secondary-colour, 0.7);
             }
         }
     }
@@ -105,7 +105,7 @@
 
                 &:hover {
                     // border: 3px solid gray;
-                    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.7);
+                    box-shadow: 0px 0px 20px rgba($secondary-colour-dark, 0.7);
                 }
             }
         }

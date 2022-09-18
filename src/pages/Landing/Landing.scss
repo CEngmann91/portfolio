@@ -81,5 +81,15 @@
 
     .app__landing {
         color: $white-colour;
+
+
+
+
+        &--tags {
+            &-tag {
+                // border-bottom: solid 3px $secondary-colour-dark;
+                border-color: $secondary-colour-dark;
+            }
+        }
     }    
 }

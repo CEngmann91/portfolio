@@ -1,22 +1,30 @@
 @mixin keyframes($name) {
-    @-webkit-keyframes #{$name} {
-        @content;
-    }
-    @-moz-keyframes #{$name} {
-        @content;
-    }
-    @-ms-keyframes #{$name} {
-        @content;
-    }
-    @keyframes #{$name} {
-        @content;
-    }
+    @-webkit-keyframes #{$name} { @content; }
+    @-moz-keyframes #{$name} { @content; }
+    @-ms-keyframes #{$name} { @content; }
+    @-o-keyframes #{$name} { @content; }
+    @keyframes #{$name} { @content; }
+}
+
+// e.g. "@include animation(up-down) 0.3s;"
+@mixin animation($name) {
+    -webkit-animation: $name;
+    -moz-animation: $name;
+    -o-animation: $name;
+    animation: $name;
+}
+
+.stop-animation {
+    -webkit-animation: none;
+    -moz-animation: none;
+    -o-animation: none;
+    animation: none;
 }
 
 
 
 
-
+/////////////////// KEY FRAMES \\\\\\\\\\\\\\\\\\\
 // @keyframes up-down{
 @include keyframes(up-down) {
     0%      { transform: translate(1px,20px); }
@@ -53,12 +61,14 @@
 // @keyframes fade-in {
 @include keyframes(fade-in) {
     0%      { opacity: 0; }
-    80%     { opacity: 0.2; }
+    50%     { opacity: 0.2; }
     100%    { opacity: 1; }
 }
 
 // @keyframes fade-out {
 @include keyframes(fade-out) {
     0%      { opacity: 1; }
+    50%     { opacity: 0.2; }
     100%    { opacity: 0; }
 }
+/////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\
