@@ -264,7 +264,7 @@
     .navbar-nav--links-link-item {
         /* Specific styles for active links */
         &-active {
-            color: $white-colour;
+            color: $black-colour;
             border-bottom: solid 3px $secondary-colour-dark;
             font-weight: bold;
         }
