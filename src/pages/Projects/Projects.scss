@@ -3,13 +3,13 @@
 
 .app__projects {
     min-height: calc(100vh - $footer-height);
-    
+
     padding-top: 80px;
 
     color: $black-colour;
     // background-color: green;
 
-    
+
     &--title {
         font-size: 40px;
         text-align: left;
@@ -32,8 +32,12 @@
         // align-items: center;
 
         &--item {
+            @media screen and (max-width: 900px) {
+                width: 25rem;
+                height: 22rem;
+            }
             width: 18rem;
-            height: 12.9rem;
+            height: 15rem;
             // display: flex;
             position: relative;
             flex-direction: column;
@@ -44,19 +48,10 @@
             overflow: hidden;
             margin: 10px;
             cursor: pointer;
-            // padding: 8px;
 
             border: 3px solid transparent;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 
-
-            img {
-                position: absolute;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                z-index: 1;
-            }
 
             &-title {
                 position: absolute;
@@ -65,6 +60,28 @@
                 z-index: 3;
             }
 
+            &-img {
+                width: 100%;
+                height: 100%;
+                transition: 0.3s ease-in;
+
+                img {
+                    display: block;
+                    margin: 0 auto;
+
+                    object-fit: cover;
+                    object-position: center center;
+                    width: 100%;
+                    height: 100%;
+
+                    z-index: 1;
+                }
+
+                &:hover {
+                    transform: scale(1.3);
+                }
+            }
+            
             &:hover {
                 border: 3px solid lightgray;
                 box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
@@ -92,5 +109,5 @@
                 }
             }
         }
-    }    
+    }
 }

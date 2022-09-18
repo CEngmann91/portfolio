@@ -79,7 +79,7 @@
                         }
                     }
 
-                    :first-child {
+                    &:first-child {
                         a {
                             &::before {
                                 content: none;
