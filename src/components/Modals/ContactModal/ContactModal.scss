@@ -1,0 +1,117 @@
+@import '../../../utils/colours.scss';
+@import '../../../utils/Animations/animations.scss';
+
+.app__modal {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    .overlay {
+        background: rgba($black-colour, 0.75);
+        width: 100vw;
+        height: 100vh;
+
+        z-index: 10;
+
+        @include animation(fade-in);
+        animation-duration: .3s;
+    }
+
+
+    .container {
+        @media screen and (max-width: 900px) {
+            max-width: 450px;
+        }
+        @media screen and (max-width: 550px) {
+            max-width: 350px;
+        }
+
+        position: fixed;
+        max-width: 600px;
+        width: 100%;
+        height: 80vh;
+        box-shadow: 0px 0px 18px 0px rgba($black-colour, 0.75);
+        padding: 20px;
+
+        z-index: 11;
+
+
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        background: rgba(255, 255, 255, 0.75);
+        border-radius: 12px;
+        border: 1px solid rgba(209, 213, 219, 0.3);
+
+        @include animation(scale-bounce);
+        animation-duration: .3s;
+        animation-delay: 0s;
+
+
+        &--closeButton-container {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            padding: 10px;
+    
+            button {
+                display: flex;
+                width: 35px;
+                height: 35px;
+    
+                justify-content: center;
+                align-items: center;
+                // border: none;
+                border-radius: 50px;
+                border-width: 2px;
+                cursor: pointer;
+            }
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            // justify-content: center;
+            // text-align: center;
+            // margin-top: 3rem;
+            // padding: 1rem 2rem;
+        }
+    }
+    
+    
+    
+    
+}
+
+
+
+
+
+
+
+/*
+@import '../../utils/colours.scss';
+
+.app__contact {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+    background-color: pink;
+
+    
+    color: $black-colour;
+}
+
+#dark {
+
+    .app__contact {
+        color: $white-colour;
+    }    
+}
+*/

@@ -13,8 +13,8 @@
 
     width: 100px;
     height: 100px;
-    background-color: #2681C6;
-    
+    background: #2681C6;
+
     margin: auto;
 
     flex: 1;
@@ -26,7 +26,7 @@
 }
 
 .hover-zoom {
-    transition: all 0.3s ease 0s;
+    transition: 0.3s ease 0s;
 
     &:hover {
         transform: scale(1.1);

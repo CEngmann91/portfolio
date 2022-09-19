@@ -1,15 +1,17 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Navbar.scss';
 import { NavLink } from 'react-router-dom';
 import { NAVBAR } from '../../utils/constants';
 import { useThemeContext } from '../../utils/ThemeContext';
 
 import { GiHamburgerMenu as Menu } from 'react-icons/gi';
+import ContactModal from '../Modals/ContactModal/ContactModal';
 
 const Navbar = () => {
     const { theme } = useThemeContext();
     const [scrolledDown, setScrolledDown] = useState(false);
-    const [menuIsOpen, setMenuIsOpen] = useState(false)
+    const [menuIsOpen, setMenuIsOpen] = useState(false);
+    const [contactModelOpen, setContactModelOpen] = useState(false);
 
 
     useEffect(() => {
@@ -41,13 +43,23 @@ const Navbar = () => {
                     <label className='title'>CE</label>
                 </NavLink>
             </div>
-            
+
             <ul className="navbar-nav--links">
                 {NAVBAR.MENU_DATA.map(({ title, to }, index) =>
                     <li key={index}>
                         <NavLink to={to} className={({ isActive }) => (isActive ? "navbar-nav--links-link-item-active" : "navbar-nav--links-link-item")}>{title}</NavLink>
                     </li>
                 )}
+
+                {/* <NavLink 
+                    className={({ isActive }) => (isActive ? "navbar-nav--links-link-item-active" : "navbar-nav--links-link-item")}
+                    onClick={()=> {}}
+                >Contact</NavLink> */}
+
+                <p className='navbar-nav--contact-me-button app__hide-smaller-device' onClick={() => setContactModelOpen(true)}>
+                    Contact Me
+                </p>
+
             </ul>
 
             <div className='app__drawer'>
@@ -71,6 +83,8 @@ const Navbar = () => {
                     </div>
                 }
             </div>
+
+            <ContactModal isOpen={contactModelOpen} onClose={() => setContactModelOpen(false)} />
 
         </nav>
     )

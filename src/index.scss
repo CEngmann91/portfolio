@@ -82,6 +82,12 @@ code {
   width: fit-content;
 }
 
+.app__hide-smaller-device {
+  @media screen and (max-width: 550px) {
+    display: none;
+  }
+}
+
 #dark {
 
   .app__bottom-border {

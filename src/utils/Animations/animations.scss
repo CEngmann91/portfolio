@@ -1,0 +1,8 @@
+@import './keyframes.scss';
+
+.stop-animation {
+    -webkit-animation: none;
+    -moz-animation: none;
+    -o-animation: none;
+    animation: none;
+}

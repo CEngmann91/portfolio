@@ -1,0 +1,23 @@
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} { @content; }   /* Safari & Chrome */
+    @-moz-keyframes #{$name} { @content; }
+    @-ms-keyframes #{$name} { @content; }
+    @-o-keyframes #{$name} { @content; }
+    @keyframes #{$name} { @content; }
+}
+
+// e.g. "@include animation(animation-name-here)"
+@mixin animation($name) {
+    -webkit-animation: $name;   /* Safari & Chrome */
+    -moz-animation: $name;
+    -o-animation: $name;
+    animation: $name;
+}
+
+// e.g. "@include animation(animation-name-here, 1s, 1s)"
+// @mixin animation($name, $duration, $delay) {
+//     -webkit-animation: $name $duration $delay;   /* Safari & Chrome */
+//     -moz-animation: $name $duration $delay;
+//     -o-animation: $name $duration $delay;
+//     animation: $name $duration $delay;
+// }

@@ -1,0 +1,69 @@
+@import './mixin.scss';
+
+// @keyframes up-down{
+// @include keyframes(up-down) {
+//     0%      { transform: translate(0px,20px); }
+//     24%     { transform: translate(0px,30px); }
+//     50%     { transform: translate(0px,12px); }
+//     74%     { transform: translate(0px,22px); }
+//     100%    { transform: translate(0px,22px); }
+// }
+
+// @keyframes scale-bounce {
+@include keyframes(scale-bounce) {
+    0%      { transform: scale(0); }
+    80%     { transform: scale(1.10); }
+    100%    { transform: scale(1); }
+}
+
+// @keyframes bounce {
+@include keyframes(bounce) {
+    0%      { transform: translateY(0); }
+    20%     { transform: translateY(0); }
+    40%     { transform: translateY(-10px); }
+    50%     { transform: translateY(0); }
+    60%     { transform: translateY(-5px); }
+    80%     { transform: translateY(0); }
+    100%    { transform: translateY(0); }
+}
+
+@include keyframes(scale-fade-in) {
+    0%      { opacity: 0; scale: 0; }
+    100%    { opacity: 1; scale: 1; }
+}
+
+// @keyframes slide-left {
+@include keyframes(slide-left) {
+    0%      { transform: translate(500px, 0); }
+    100%    { transform: translate(0, 0); }
+}
+
+// @keyframes slide-right {
+@include keyframes(slide-right) {
+    0%      { transform: translate(0, 0); }
+    100%    { transform: translate(500px, 0); }
+}
+
+// @keyframes slide-up {
+@include keyframes(slide-up) {
+    0%      { transform: translate(0, 100px); }
+    100%    { transform: translate(0, 0); }
+}
+
+// @keyframes slide-down {
+@include keyframes(slide-down) {
+    0%      { transform: translate(0, 0); }
+    100%    { transform: translate(0, 100px); }
+}
+
+// @keyframes fade-in {
+@include keyframes(fade-in) {
+    0%      { opacity: 0; }
+    100%    { opacity: 1; }
+}
+
+// @keyframes fade-out {
+@include keyframes(fade-out) {
+    0%      { opacity: 1; }
+    100%    { opacity: 0; }
+}

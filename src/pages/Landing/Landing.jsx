@@ -10,21 +10,12 @@ const Landing = () => {
             <p className='app__landing--hi'>Hi, I'm</p>
             <h1 className='app__landing--name'><span>Christian Engmann</span></h1>
 
-
             <div className="app__landing--tags">
-                <p className="app__bottom-border app__landing--tags-tag">
-                    Designer
-                </p>
-
-                <p className="app__bottom-border app__landing--tags-tag">
-                    Full Stack Developer
-                </p>
-
-                <p className="app__bottom-border app__landing--tags-tag">
-                    Engineer
-                </p>
+                <p className="app__bottom-border app__landing--tags-tag">Designer</p>
+                <p className="app__bottom-border app__landing--tags-tag">Full Stack Developer</p>
+                <p className="app__bottom-border app__landing--tags-tag">Engineer</p>
             </div>
-
+            
             <div className='scroll-down-text'>
                 <p>Scroll Down</p>
                 <p className='arrowhead'>⌄</p>

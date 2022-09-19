@@ -3,7 +3,7 @@ import React, { useLayoutEffect } from 'react';
 import './App.scss';
 import { useLocation, Routes, Route } from 'react-router-dom';
 import { useThemeContext } from './utils/ThemeContext';
-import { NotFound, Landing, About, Projects, Skills, Contact, Footer } from './pages';
+import { NotFound, Landing, About, Projects, Skills, Footer } from './pages';
 import { Navbar, FloatingButton } from './components';
 import images from './utils/images';
 
@@ -73,7 +73,7 @@ function App() {
         <Route exact path="/about" element={RenderRoute(<About />)} />
         <Route exact path="/projects" element={RenderRoute(<Projects />)} />
         <Route exact path="/skills" element={RenderRoute(<Skills />)} />
-        <Route exact path="/contact" element={RenderRoute(<Contact />)} />
+        {/* <Route exact path="/contact" element={RenderRoute(<Contact />)} /> */}
 
 
 

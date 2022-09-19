@@ -1,5 +1,5 @@
 @import '../../utils/colours.scss';
-@import '../../utils/animations.scss';
+@import '../../utils/Animations/animations.scss';
 
 .navbar-nav {
     @media screen and (max-width: 900px) {
@@ -13,7 +13,7 @@
     // Center the content.
     align-items: center;
 
-    padding: 1rem 2rem;
+    padding: 0.6rem 2rem;
 
     // Add a blur
     backdrop-filter: blur(4px);
@@ -35,6 +35,32 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+
+        .ce-title-circle {
+            display: flex;
+            width: 45px;
+            height: 45px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            text-decoration: none;
+            box-shadow: 6px 3px 3px rgba(150, 150, 150, 0.7);
+            // Lets the user know that is it clickable.
+            // cursor: pointer;
+        
+            @media screen and (max-width: 900px) {
+                margin: 0.1rem;
+            }
+        
+            .title {
+                color: $black-colour;
+                font-size: 22px;
+        
+                // Lets the user know that is it clickable.
+                cursor: pointer;
+            }
+        }
     }
 
     &--scroll {
@@ -103,7 +129,8 @@
 
 /* Specific styles for non-active links */
 .navbar-nav--links-link-item {
-    // color: $black-colour;
+    margin-bottom: 5px;
+    cursor: pointer;
 
     /* Specific styles for active links */
     &-active {
@@ -113,28 +140,24 @@
     }
 }
 
-.ce-title-circle {
-    display: flex;
-    width: 45px;
-    height: 45px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
+.navbar-nav--contact-me-button {
+    display: inline-block;
+    padding: 0.3em 1.2em;
+    margin: 0 0.3em 0.3em 0;
+    box-sizing: border-box;
+    color: $black-colour;
+    text-align: center;
     text-decoration: none;
-    box-shadow: 6px 3px 3px rgba(150, 150, 150, 0.7);
-    // Lets the user know that is it clickable.
-    // cursor: pointer;
+    border: 0.1em solid $gray-colour;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
 
-    @media screen and (max-width: 900px) {
-        margin: 0.1rem;
-    }
+    transition: 0.3s ease-in-out;
 
-    .title {
-        color: var(--colour-black);
-        font-size: 22px;
-
-        // Lets the user know that is it clickable.
-        cursor: pointer;
+    &:hover {
+        color: $white-colour;
+        background: $secondary-colour;
     }
 }
 
@@ -222,6 +245,18 @@
 
     .navbar-nav {
 
+        &--wrapper {
+            .ce-title-circle {
+                background: rgba(200, 200, 200, 0.7);
+                width: 40px;
+                height: 40px;
+        
+                .title {
+                    color: $white-colour;
+                }
+            }
+        }
+
         &--scroll {
             // Background colour for the navbar.
             background: rgba($navbar-colour-dark, 0.85);
@@ -242,7 +277,6 @@
                 a {
                     color: $white-colour;
 
-
                     &:after {
                         border-bottom: solid 3px $secondary-colour-dark;
                     }
@@ -251,15 +285,7 @@
         }
     }
 
-    .ce-title-circle {
-        background: rgba(200, 200, 200, 0.7);
-        width: 40px;
-        height: 40px;
-
-        .title {
-            color: $white-colour;
-        }
-    }
+    
 
     .navbar-nav--links-link-item {
         /* Specific styles for active links */
@@ -267,6 +293,15 @@
             color: $black-colour;
             border-bottom: solid 3px $secondary-colour-dark;
             font-weight: bold;
+        }
+    }
+
+    .navbar-nav--contact-me-button {
+        color: $white-colour;
+    
+        &:hover {
+            color: $black-colour;
+            background: $secondary-colour-dark;
         }
     }
 }
