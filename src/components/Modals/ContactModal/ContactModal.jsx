@@ -4,9 +4,10 @@ import React, { useState, useCallback, useEffect } from 'react'
 const ContactModal = ({ isOpen, onClose }) => {
 
     useEffect(() => {
-        // Prevents scrolling whilst the menu is visible.
-        document.body.style.overflow = "hidden";
-    }, [])
+        if (isOpen)
+            // Prevents scrolling whilst the menu is visible.
+            document.body.style.overflow = "hidden";
+    }, [isOpen])
 
 
     const close = useCallback(() => {
