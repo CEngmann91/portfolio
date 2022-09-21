@@ -61,7 +61,7 @@ const RootModal = ({ id, width = '60%', height = '80vh', shown, children, onClos
           }
           // console.log(`Animation ${event?.animationName} ended`)
         }}
-        style={{ width: width, maxHeight: height }}
+        // style={{ width: width, maxHeight: height }}
       >
         <div className="container--closeButton-container">
           <button onClick={handleClose}>X</button>

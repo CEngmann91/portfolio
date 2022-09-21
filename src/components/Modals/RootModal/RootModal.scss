@@ -35,10 +35,10 @@ main {
             max-width: 450px;
         }
         @media screen and (max-width: 550px) {
-            max-width: 350px;
+            max-width: 400px;
         }
         position: fixed;
-        width: 100%;
+        width: 80%;
         max-width: 600px;
         height: 80vh;
         background: rgba(255, 255, 255, 0.75);
