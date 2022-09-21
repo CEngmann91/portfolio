@@ -5,7 +5,7 @@ import { NAVBAR } from '../../utils/constants';
 import { useThemeContext } from '../../utils/ThemeContext';
 
 import { GiHamburgerMenu as Menu } from 'react-icons/gi';
-import ContactModal from '../Modals/ContactModal/ContactModal';
+import { ContactModal } from '../Modals/';
 
 const Navbar = () => {
     const { theme } = useThemeContext();
@@ -16,10 +16,18 @@ const Navbar = () => {
 
     useEffect(() => {
         window.addEventListener('scroll', onScroll)
-        return () => window.removeEventListener('scroll', onScroll)//, { passive: true })
+        // window.addEventListener('keydown', onKeyDown)
+        return () => {
+            window.removeEventListener('scroll', onScroll)//, { passive: true })
+            // window.removeEventListener('keydown', onKeyDown)
+        }
     }, [])
 
     const onScroll = () => setScrolledDown((window.scrollY > 100))
+
+    // const onKeyDown = (e) => {
+    //     if (e.code === "Escape") hideMenu();
+    // };
 
     const showMenu = () => {
         // Prevents scrolling whilst the menu is visible.
@@ -28,6 +36,8 @@ const Navbar = () => {
     }
 
     const hideMenu = () => {
+        if (!menuIsOpen) return;
+
         document.body.style.overflow = "scroll";
         setMenuIsOpen(false);
     }
@@ -67,7 +77,7 @@ const Navbar = () => {
                     <button onClick={toggleMenu}>
                         {!menuIsOpen ? <Menu /> : "X"}
                     </button>
-                </div>  
+                </div>
 
                 {menuIsOpen &&
                     <div className={`app__drawer--panel ${menuIsOpen && 'app__drawer--show'}`}>
@@ -75,7 +85,7 @@ const Navbar = () => {
                             {NAVBAR.MENU_DATA.map(({ title, to }, index) =>
                                 <NavLink
                                     key={index}
-                                    to={to} onClick={hideMenu} 
+                                    to={to} onClick={hideMenu}
                                     className={({ isActive }) => (isActive ? "navbar-nav--links-link-item-active" : "navbar-nav--links-link-item")}
                                 >{title}</NavLink>
                             )}
@@ -84,8 +94,8 @@ const Navbar = () => {
                 }
             </div>
 
-            <ContactModal isOpen={contactModelOpen} onClose={() => setContactModelOpen(false)} />
-
+            <ContactModal shown={contactModelOpen} onClose={() => setContactModelOpen(false)} />
+            
         </nav>
     )
 }
