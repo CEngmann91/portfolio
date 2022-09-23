@@ -1,7 +1,7 @@
 import './RootModal.scss';
 import React, { useState, useEffect, useCallback } from 'react'
 
-const RootModal = ({ id, width = '60%', height = '80vh', shown, children, onClose, lockScrolling = true, suppressed, dismissOnEscKey = true }) => {
+const RootModal = ({ id, width = '60%', height = '80vh', shown, children, onClose, lockScrolling = true, suppressed, dismissOnEscKey = true, showCloseButton = true }) => {
 
   const STATE = { HIDDEN: "Hidden", ANIMATING: "Animating", VISIBLE: "Visible" }
   const [state, setState] = useState(STATE.HIDDEN);
@@ -61,11 +61,13 @@ const RootModal = ({ id, width = '60%', height = '80vh', shown, children, onClos
           }
           // console.log(`Animation ${event?.animationName} ended`)
         }}
-        // style={{ width: width, maxHeight: height }}
+        style={{ width: width }}
       >
-        <div className="container--closeButton-container">
-          <button onClick={handleClose}>X</button>
-        </div>
+        {showCloseButton &&
+          <div className="container--closeButton-container">
+            <button onClick={handleClose}>X</button>
+          </div>
+        }
         {children}
       </div>
     </main>

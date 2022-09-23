@@ -1,0 +1,73 @@
+div {
+    position: relative;
+
+    label {
+        position: absolute;
+        top: 15px;
+        left: 0;
+        color: #999;
+        pointer-events: none;
+        transition: var(--modeTransition);
+    }
+}
+
+input {
+    appearance: none;
+    width: calc(90% - 12px);
+    height: 48px;
+    line-height: 1.5;
+    outline: 0;
+    padding: 0 0 0 12px;
+
+    font-size: 16px;
+    color: black;
+    background: transparent;
+    border: 0;
+}
+
+
+input {
+    width: 100%;
+    // box-sizing: border-box;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #999;
+    transition: var(--modeTransition);
+
+    padding: 10px 0;
+
+    &:focus {
+        // border-bottom: 5px solid $secondary-colour;
+    }
+}
+
+input:focus~label,
+textarea:focus~label,
+input:valid~label,
+textarea:valid~label {
+    top: -12px;
+    left: 0;
+    color: black;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 20px;
+    width: 10%;
+    // max-width: 48px;
+    // height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    >svg {
+        display: block;
+    }
+}

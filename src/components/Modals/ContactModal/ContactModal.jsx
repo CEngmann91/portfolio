@@ -1,18 +1,38 @@
 import './ContactModal.scss';
-import React, { useState, useCallback, useEffect } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import RootModal from '../RootModal/RootModal';
+import { InputField, TextareaField } from '../../Form';
 
 const ContactModal = ({ shown, onClose }) => {
+    const nameInputRef = useRef();
+    const emailInputRef = useRef();
+    const messageInputRef = useRef();
     const [submitted, setSubmitted] = useState(false);
 
     const FORM_ENDPOINT = "";
 
 
 
-    const handleSubmit = () => {
-        setTimeout(() => {
-            setSubmitted(true);
-        }, 100);
+
+    useEffect(() => {
+        setSubmitted(false);
+    }, [shown])
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        // if (nameInputRef.current.value && emailInputRef.current.value && messageInputRef.current.value === "")
+        /*if (messageInputRef.current.value === "")
+        {
+            messageInputRef.current.focus();
+            return;
+        }*/
+
+        // setTimeout(() => {
+        //     setSubmitted(true);
+        // }, 100);
+        setSubmitted(true);
     };
 
 
@@ -20,43 +40,36 @@ const ContactModal = ({ shown, onClose }) => {
         <RootModal id={"Contact"}
             shown={shown}
             onClose={onClose}
+            width={"100%"}
+            showCloseButton={!submitted}
         >
-            {submitted ?
-                <div className='app__flex'>
-                    <div>Thank you!</div>
-                    <div>We'll be in touch soon.</div>
-                </div>
+            <div className="contact__modal--content">
+                {submitted ?
+                    <div className='app__flex'>
+                        <div>Thank you!</div>
+                        <div>We'll be in touch soon.</div>
+                        <button onClick={onClose}>Close</button>
+                    </div>
                 :
-                <div className="contact__modal--content">
-                    <h1 className='app__flex contact__modal--content-title'>Get In Contact With Me</h1>
+                    <>
+                        <header>Get In Contact With Me</header>
 
-                    <form
-                        // action={FORM_ENDPOINT}
-                        // onSubmit={handleSubmit}
-                        // method="POST"
-                        // target="_blank"
-                        className='contact__modal--content--fields'
-                    >
-                        <div className='contact__modal--content--fields-name'>
-                            <label>Name: </label>
-                            <input type="text" placeholder="Your name" name="name" required />
-                        </div>
-                        <div className='contact__modal--content--fields-email'>
-                            <label>Email: </label>
-                            <input required type="email" placeholder="Email" name="email" />
-                        </div>
-                        <div className='contact__modal--content--fields-message'>
-                            <label>Message: </label>
-                            <textarea required placeholder="Your message" name="message" />
-                        </div>
-                        <div className='contact__modal--content--fields-send-button'>
-                            <button type="submit">Send It!! ;)</button>
-                        </div>
-                    </form>
+                        <form
+                            // action={FORM_ENDPOINT}
+                            onSubmit={handleSubmit}
+                            // method="POST"
+                            // target="_blank"
+                            className='contact__modal--content--fields'
+                        >
+                            <InputField required name="name" type="text" placeholder={"Name"} ref={nameInputRef} />
+                            <InputField required name="email" type="email" placeholder={"Email"} ref={emailInputRef} />
+                            <TextareaField required name="message2" placeholder={"Message"} ref={messageInputRef} />
 
-
-                </div>
-            }
+                            <input id="submit" type="submit" value="Send" onClick={handleSubmit} />
+                        </form>
+                    </>
+                }
+            </div>
         </RootModal>
     )
 }
