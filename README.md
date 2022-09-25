@@ -1,34 +1,90 @@
 <div id="header" align="center">
-  <h1 style="margin: 1.3em 0px 1em; padding: 0px; font-weight: bold;font-size: 1.6em;">Welcome :nerd_face:</h1>
+  <h1 style="margin: 1.3em 0px 1em; padding: 0px; font-weight: bold;font-size: 2em;">Welcome :nerd_face:</h1>
 
   <img src="https://media.giphy.com/media/3o7aD5oU9qcCuAe9SU/giphy-downsized-large.gif" width="100"/>
   
   <div id="badges">
+    <!-- LinkedIn -->
     <a href="https://www.linkedin.com/in/cengmann/">
       <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
     </a>
+    <!-- Codepen -->
     <a href="https://codepen.io/CEngmann91">
       <img src="https://img.shields.io/badge/Codepen-black?style=for-the-badge&logo=codepen&logoColor=white" alt="Codepen Badge"/>
     </a>
+    <!-- Facebook -->
     <a href="https://www.facebook.com/cengmann">
       <img src="https://img.shields.io/badge/Facebook-blue?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook Badge"/>
     </a>
+    <!-- Twitter -->
     <a href="https://twitter.com/cengmann">
       <img src="https://img.shields.io/badge/Twitter-cyan?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter Badge"/>
     </a>
   </div>
-  <img src="https://komarev.com/ghpvc/?username=CEngmann91&style=flat-square&color=blue" alt=""/>
   
+  <!-- Page Views -->
+  ![github-views](https://komarev.com/ghpvc/?username=CEngmann91&style=flat-square&color=blue)
+  <!-- Page Follows -->
+  [![github-follow](https://img.shields.io/github/followers/CEngmann91?label=Follow&logoColor=lightgrey&style=social)](https://github.com/CEngmann91)
   
-  
+  <!-- Node version used -->
+  [![node.js](https://img.shields.io/node/v/c?color=brightgreen)](https://nodejs.org/en/)
+  <!-- NPM version used -->
+  [![npm](https://img.shields.io/npm/v/npm?color=blue&logo=npm)](https://www.npmjs.com/package/inquirer  
   
   <div align="center">
     <a href="https://www.christianjengmann.com/">View My Website</a>
   </div>
 </div>
 
----
-### About Me :
+
+## Description 
+My React Portfolio - A website that exhibits my projects, information about myself, how to get in contact with me, as well as my current resume.
+
+## Built With
+  [![ReactJS](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+  [![Firebase](https://img.shields.io/badge/Firebase?style=for-the-badge&logo=firebase&logoColor=61DAFB)](https://reactjs.org/)
+  
+## Project URL
+  https://github.com/CEngmann91/portfolio
+
+## Website Link
+* [Christian Engmann](https://www.christianjengmann.com/)
+
+## Demo/Screenshots
+
+
+
+
+
+
+
+## Technologies Used
+```
+React, React Router Dom, React Router, React Router Hash Link, Javascript, SASS
+```
+
+
+
+
+
+## Contact
+Email: christian.j.engmann@googlemail.com
+
+## Author
+Author(s): Christian Engmann  
+GitHub: https://github.com/CEngmann91/ 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
