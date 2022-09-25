@@ -24,13 +24,11 @@
   
   <!-- Page Views -->
   ![github-views](https://komarev.com/ghpvc/?username=CEngmann91&style=flat-square&color=blue)
-  <!-- Page Follows -->
   [![github-follow](https://img.shields.io/github/followers/CEngmann91?label=Follow&logoColor=lightgrey&style=social)](https://github.com/CEngmann91)
   
-  <!-- Node version used -->
+  <!-- Node version -->
   [![node.js](https://img.shields.io/node/v/c?color=brightgreen)](https://nodejs.org/en/)
-  <!-- NPM version used -->
-  [![npm](https://img.shields.io/npm/v/npm?color=blue&logo=npm)](https://www.npmjs.com/package/inquirer  
+  [![npm](https://img.shields.io/npm/v/npm?color=blue&logo=npm)](https://www.npmjs.com/package/inquirer)
   
   <div align="center">
     <a href="https://www.christianjengmann.com/">View My Website</a>
@@ -43,8 +41,24 @@ My React Portfolio - A website that exhibits my projects, information about myse
 
 ## Built With
   [![ReactJS](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
-  [![Firebase](https://img.shields.io/badge/Firebase?style=for-the-badge&logo=firebase&logoColor=61DAFB)](https://reactjs.org/)
+  [![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)](https://reactrouter.com/)
+  ![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white)
   
+## Hosted On 
+  [![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7)](https://www.netlify.com/)
+  
+## Technologies Used
+```
+React, React Router Dom, React Router, React Router Hash Link, Javascript, SASS
+```
+
+## How to use
+1. Clone/Download the repo.
+2. Run  ``` npm install ```.
+3. 
+4. Run ```npm start``` to spin the up the local dev server port 3000.(http://localhost:3000).
+5. 
+
 ## Project URL
   https://github.com/CEngmann91/portfolio
 
@@ -58,15 +72,9 @@ My React Portfolio - A website that exhibits my projects, information about myse
 
 
 
-
-## Technologies Used
-```
-React, React Router Dom, React Router, React Router Hash Link, Javascript, SASS
-```
-
-
-
-
+## Resources
+* [Create Your Own React App](https://facebook.github.io/create-react-app/docs/getting-started)
+* [React documentation](https://reactjs.org/)
 
 ## Contact
 Email: christian.j.engmann@googlemail.com
