@@ -1,4 +1,8 @@
 <div id="header" align="center">
+  <h1 style="margin: 1.3em 0px 1em; padding: 0px; font-weight: bold;font-size: 1.6em;">Welcome :nerd_face:</h1>
+
+  <img src="https://media.giphy.com/media/3o7aD5oU9qcCuAe9SU/giphy-downsized-large.gif" width="100"/>
+  
   <div id="badges">
     <a href="https://www.linkedin.com/in/cengmann/">
       <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
@@ -13,9 +17,19 @@
       <img src="https://img.shields.io/badge/Twitter-cyan?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter Badge"/>
     </a>
   </div>
-  
   <img src="https://komarev.com/ghpvc/?username=CEngmann91&style=flat-square&color=blue" alt=""/>
+  
+  
+  
+  
+  <div align="center">
+    <a href="https://www.christianjengmann.com/">View My Website</a>
+  </div>
 </div>
+
+---
+### About Me :
+
 
 
 # Getting Started with Create React App
