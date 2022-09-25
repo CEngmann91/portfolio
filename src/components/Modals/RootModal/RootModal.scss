@@ -16,10 +16,10 @@ main {
     z-index: 10;
 
 
-    .overlay {
+    overlay {
         flex: 1;
         display: flex;
-        background: rgba($black-colour, 0.75);
+        background: rgba($black-colour, 0.85);
         width: 100vw;
         height: 100vh;
 

@@ -55,9 +55,9 @@ const Navbar = () => {
             </div>
 
             <ul className="navbar-nav--links">
-                {NAVBAR.MENU_DATA.map(({ title, to }, index) =>
-                    <li key={index}>
-                        <NavLink to={to} className={({ isActive }) => (isActive ? "navbar-nav--links-link-item-active" : "navbar-nav--links-link-item")}>{title}</NavLink>
+                {NAVBAR.MENU_DATA.map(({ id, title, to }) =>
+                    <li key={id}>
+                        <NavLink to={to} className={({ isActive }) => (isActive ? "app__bottom-border" : "")}>{title}</NavLink>
                     </li>
                 )}
 
@@ -67,7 +67,7 @@ const Navbar = () => {
                 >Contact</NavLink> */}
 
                 <p className='navbar-nav--contact-me-button app__hide-smaller-device' onClick={() => setContactModelOpen(true)}>
-                    Contact Me
+                    Say Hello
                 </p>
 
             </ul>
@@ -82,9 +82,9 @@ const Navbar = () => {
                 {menuIsOpen &&
                     <div className={`app__drawer--panel ${menuIsOpen && 'app__drawer--show'}`}>
                         <div>
-                            {NAVBAR.MENU_DATA.map(({ title, to }, index) =>
+                            {NAVBAR.MENU_DATA.map(({ id, title, to }) =>
                                 <NavLink
-                                    key={index}
+                                    key={id}
                                     to={to} onClick={hideMenu}
                                     className={({ isActive }) => (isActive ? "navbar-nav--links-link-item-active" : "navbar-nav--links-link-item")}
                                 >{title}</NavLink>
@@ -95,7 +95,7 @@ const Navbar = () => {
             </div>
 
             <ContactModal shown={contactModelOpen} onClose={() => setContactModelOpen(false)} />
-            
+
         </nav>
     )
 }

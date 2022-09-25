@@ -1,7 +1,7 @@
 import './RootModal.scss';
 import React, { useState, useEffect, useCallback } from 'react'
 
-const RootModal = ({ id, width = '60%', height = '80vh', shown, children, onClose, lockScrolling = true, suppressed, dismissOnEscKey = true, showCloseButton = true }) => {
+const RootModal = ({ id, width = '60%', height = '80vh', shown, children, onClose, lockScrolling = true, suppressed, dismissOnEscKey = true, closeButtonClassName, showCloseButton = true }) => {
 
   const STATE = { HIDDEN: "Hidden", ANIMATING: "Animating", VISIBLE: "Visible" }
   const [state, setState] = useState(STATE.HIDDEN);
@@ -36,7 +36,7 @@ const RootModal = ({ id, width = '60%', height = '80vh', shown, children, onClos
 
   return (
     <main id={id}>
-      <div className="overlay" onClick={handleClose}
+      <overlay className="overlay" onClick={handleClose}
         onAnimationStart={event => {
           if (event?.animationName === "fade-in") {
           }
@@ -65,7 +65,7 @@ const RootModal = ({ id, width = '60%', height = '80vh', shown, children, onClos
       >
         {showCloseButton &&
           <div className="container--closeButton-container">
-            <button onClick={handleClose}>X</button>
+            <button className={closeButtonClassName} onClick={handleClose}>X</button>
           </div>
         }
         {children}

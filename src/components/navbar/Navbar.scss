@@ -125,41 +125,42 @@
         // 	font-weight: bold;
         // }
     }
+
+    &--contact-me-button {
+        display: inline-block;
+        padding: 0.3em 1.2em;
+        margin: 0 0.3em 0.3em 0;
+        box-sizing: border-box;
+        color: $black-colour;
+        text-align: center;
+        text-decoration: none;
+        border: 0.1em solid $gray-colour;
+        border-radius: 20px;
+        overflow: hidden;
+        cursor: pointer;
+    
+        transition: 0.3s ease-in-out;
+    
+        &:hover {
+            color: $white-colour;
+            background: $secondary-colour;
+        }
+    }
 }
 
 /* Specific styles for non-active links */
-.navbar-nav--links-link-item {
-    margin-bottom: 5px;
-    cursor: pointer;
+// .navbar-nav--links-link-item {
+//     margin-bottom: 5px;
+//     cursor: pointer;
 
-    /* Specific styles for active links */
-    &-active {
-        color: $secondary-colour;
-        border-bottom: solid 3px $secondary-colour;
-        // font-weight: bold;
-    }
-}
+//     /* Specific styles for active links */
+//     &-active {
+//         color: $secondary-colour;
+//         border-bottom: solid 3px $secondary-colour;
+//         // font-weight: bold;
+//     }
+// }
 
-.navbar-nav--contact-me-button {
-    display: inline-block;
-    padding: 0.3em 1.2em;
-    margin: 0 0.3em 0.3em 0;
-    box-sizing: border-box;
-    color: $black-colour;
-    text-align: center;
-    text-decoration: none;
-    border: 0.1em solid $gray-colour;
-    border-radius: 20px;
-    overflow: hidden;
-    cursor: pointer;
-
-    transition: 0.3s ease-in-out;
-
-    &:hover {
-        color: $white-colour;
-        background: $secondary-colour;
-    }
-}
 
 .app__drawer {
 
@@ -284,24 +285,22 @@
                 }
             }
         }
-    }
 
-    
-
-    .navbar-nav--links-link-item {
-        /* Specific styles for active links */
-        &-active {
-            color: $black-colour;
-            border-bottom: solid 3px $secondary-colour-dark;
+        &--links-link-item {
+            /* Specific styles for active links */
+            &-active {
+                color: $black-colour;
+                border-bottom: solid 3px $secondary-colour-dark;
+            }
         }
-    }
-
-    .navbar-nav--contact-me-button {
-        color: $white-colour;
     
-        &:hover {
-            color: $black-colour;
-            background: $secondary-colour-dark;
+        &--contact-me-button {
+            color: $white-colour;
+        
+            &:hover {
+                color: $black-colour;
+                background: $secondary-colour-dark;
+            }
         }
     }
 }

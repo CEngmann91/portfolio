@@ -4,13 +4,10 @@ export const MODE = 'light'; // light/dark
 export const NAVBAR = {
 
     MENU_DATA: [
-        { title: 'Home',                 to: '/' },
-        { title: 'About',                to: '/about' },
-        { title: 'Skills',               to: '/skills' },
-        { title: 'Projects',             to: '/projects' },
-        // { title: 'Contact',              to: '/contact' },
-        // { title: 'Not Found',            to: '/ab' },
-        // { title: 'View My C.V.',         to: 'cv' },
-        // { title: 'Request A Project >',  to: 'hire' },
+        { id: 0, title: 'Home',                 to: '/' },
+        { id: 1, title: 'About',                to: '/about' },
+        { id: 2, title: 'Projects',             to: '/projects' },
+        { id: 3, title: 'Skills',               to: '/skills' },
+        // { id: 4, title: 'Contact',              to: '/contact' },
     ]
 }

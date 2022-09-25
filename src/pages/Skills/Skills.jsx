@@ -5,7 +5,16 @@ import { useThemeContext } from '../../utils/ThemeContext';
 const Skills = () => {
   const { theme } = useThemeContext();
   const techs = [
-    "React", "Redux", "Firebase", "Git", "Figma", "NodeJS", "Typescript", "Javascript", "C#", "CSS/SCSS"
+    "React",
+    "Redux",
+    "Firebase",
+    "Git",
+    "Figma",
+    "NodeJS",
+    "Typescript",
+    "Javascript",
+    "C#",
+    "CSS/SCSS"
   ]
 
   return (

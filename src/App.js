@@ -24,19 +24,13 @@ function App() {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        width: 50,
-        height: 50,
-        marginRight: '15px',
-        marginBottom: '15px',
+        width: 50, height: 50,
+        marginRight: '15px', marginBottom: '15px',
       }}
       className='app__theme-button'
       onPress={() => toggleTheme()}
     >
-      <img src={theme !== 'light' ? images.Sun_Light : images.Moon_Dark} alt=""
-        style={{
-          width: '50%',
-          height: '50%'
-        }} />
+      <img src={theme !== 'light' ? images.Sun_Light : images.Moon_Dark} alt="" style={{ width: '50%', height: '50%' }} />
     </FloatingButton>
   );
 
@@ -45,7 +39,6 @@ function App() {
       <Navbar />
       {component}
       <Footer />
-
 
       {RenderFloatingButton()}
     </>

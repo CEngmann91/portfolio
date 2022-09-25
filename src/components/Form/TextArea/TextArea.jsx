@@ -1,12 +1,12 @@
 import './TextArea.scss';
 import React from 'react';
 
-const TextArea = ({ placeholder, icon, className, ...props }) => {
+const TextArea = ({ useRef, placeholder, icon, className, ...props }) => {
     return (
         <div>
-            <textarea {...props} className="textarea" />
+            <textarea {...props} ref={useRef} className="textarea" />
             <label>{placeholder}</label>
-            {icon && <span className='icon'>{icon}</span>}
+            {icon && <span className='textarea-icon'>{icon}</span>}
         </div>
     )
 }

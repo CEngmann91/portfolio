@@ -39,48 +39,6 @@
 
 
         form {
-            div {
-                position: relative;
-
-                label {
-                    position: absolute;
-                    top: 10px;
-                    left: 0;
-                    color: #999;
-                    pointer-events: none;
-                    transition: var(--modeTransition);
-                }
-
-                textarea {
-                    width: 300px;
-                    height: 150px;
-                }
-            }
-
-            textarea {
-                min-height: 80px;
-                max-height: 150px;
-                min-width: 100%;
-                max-width: 100%;
-            }
-
-            input,
-            textarea {
-                width: 100%;
-                // box-sizing: border-box;
-                box-shadow: none;
-                outline: none;
-                border: none;
-                border-bottom: 2px solid #999;
-                transition: var(--modeTransition);
-
-                padding: 10px 0;
-                margin-bottom: 30px;
-
-                &:focus {
-                    // border-bottom: 5px solid $secondary-colour;
-                }
-            }
 
             input[type="submit"] {
                 background: $secondary-colour;
@@ -97,19 +55,36 @@
                     // background: #37a000;
                 }
             }
+        }
 
-            input:focus~label,
-            textarea:focus~label,
-            input:valid~label,
-            textarea:valid~label {
-                top: -12px;
-                left: 0;
-                color: $secondary-colour;
-                font-size: 1em;
-                font-weight: bold;
-            }
+        .submited-close-button {
+            background: $secondary-colour;
+            color: #FFF;
+            font-size: 1.1em;
+            border-bottom: none;
+            cursor: pointer;
+            margin-bottom: 0;
+            text-transform: uppercase;
+
+            border-radius: 10px;
+
+            width: 100%; //50%;
+            // box-sizing: border-box;
+            box-shadow: none;
+            outline: none;
+            border: none;
+            border-bottom: 2px solid #999;
+            transition: var(--modeTransition);
+
+            padding: 10px 0;
+            margin-top: 20px;
         }
     }
+}
+
+.close-button {
+    background: $secondary-colour;
+    color: #FFF;
 }
 
 #dark {
@@ -118,19 +93,21 @@
     
         &--content {
 
-            form {
+            // form {
                 
-                input[type="submit"] {
-                    background: $secondary-colour-dark;
-                }
-    
-                input:focus~label,
-                textarea:focus~label,
-                input:valid~label,
-                textarea:valid~label {
-                    color: $secondary-colour-dark;
-                }
+            //     input[type="submit"] {
+            //         background: $secondary-colour-dark;
+            //     }
+            // }
+
+            .submited-close-button {
+                background: $secondary-colour-dark;
             }
         }
+    }
+
+    .close-button {
+        background: $secondary-colour-dark;
+        // color: #FFF;
     }
 }

@@ -15,8 +15,8 @@ const Footer = () => {
           <p className='title'>Quick Links</p>
 
           <ul className="page-links">
-            {NAVBAR.MENU_DATA.map(({ title, to }, index) =>
-              <li key={index}>
+            {NAVBAR.MENU_DATA.map(({ id, title, to }) =>
+              <li key={id}>
                 <NavLink to={to}
                 // className={({ isActive }) => (isActive ? "navbar-nav--links-link-item-active" : "navbar-nav--links-link-item")}
                 >{title}</NavLink>
