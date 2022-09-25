@@ -58,6 +58,7 @@ To build the site you need:
 - [Node](https://nodejs.org) - to run the build
 - [NPM](https://www.npmjs.com/) - to install an manage dependencies
 
+Then
 1. Clone/Download the repo.
 2. Run  ``` npm install ```.
 3. Run ```npm start``` to spin the up the local dev server port 3000.(http://localhost:3000).
@@ -86,8 +87,4 @@ Email: christian.j.engmann@googlemail.com
 
 ## Author
 Author(s): Christian Engmann  
-<<<<<<< HEAD
 GitHub: https://github.com/CEngmann91/
-=======
-GitHub: https://github.com/CEngmann91/
->>>>>>> 425c6c4591d858b404dbb4a0e2f9a8df1f1cf078
