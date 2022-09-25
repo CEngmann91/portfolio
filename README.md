@@ -86,4 +86,8 @@ Email: christian.j.engmann@googlemail.com
 
 ## Author
 Author(s): Christian Engmann  
+<<<<<<< HEAD
 GitHub: https://github.com/CEngmann91/
+=======
+GitHub: https://github.com/CEngmann91/
+>>>>>>> 425c6c4591d858b404dbb4a0e2f9a8df1f1cf078
