@@ -79,6 +79,7 @@ To build the site you need:
 ## Resources
 * [Create Your Own React App](https://facebook.github.io/create-react-app/docs/getting-started)
 * [React documentation](https://reactjs.org/)
+* [Netlify documentation](https://docs.netlify.com/)
 
 ## Contact
 Email: christian.j.engmann@googlemail.com
