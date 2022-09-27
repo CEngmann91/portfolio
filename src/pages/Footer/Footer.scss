@@ -16,10 +16,15 @@
     @media screen and (max-width: 900px) {
         padding-right: 80px;
     }
+
     padding-right: 100px;
 
 
     &--contents {
+        @media screen and (max-width: 900px) {
+            padding-left: 40px;
+        }
+
         display: flex;
         flex-direction: row;
         width: 100%;
@@ -38,6 +43,7 @@
                 @media screen and (max-width: 900px) {
                     font-size: 14px;
                 }
+
                 font-size: 18px;
                 color: $white-colour;
                 font-weight: bold;
@@ -49,7 +55,6 @@
                 font-size: 14px;
                 // Remove the generic link styles.
                 list-style: none;
-                
 
                 // Access the nested 'li' component inside of this
                 li {
@@ -95,7 +100,6 @@
                 width: 100%;
                 align-items: center;
             }
-
             display: flex;
             flex-direction: column;
             align-items: flex-end;
@@ -119,24 +123,33 @@
                 display: flex;
                 align-items: flex-end;
 
-                &-icon {
+                a {
                     @media screen and (max-width: 900px) {
                         width: 15px;
                         height: 15px;
                         margin-left: 5px;
                     }
-
                     width: 20px;
                     height: 20px;
                     margin-left: 15px;
                     margin-top: 5px;
                     cursor: pointer;
+                    transition: 0.3s ease-in-out;
 
                     svg {
                         color: white;
                         width: 100%;
                         height: 100%;
                     }
+                    
+                    // &:active {
+                    //     box-shadow: 0 0.5em 0.5em -0.4em grey;
+                    //     transform: translateY(-0.25em);
+
+                    //     // svg {
+                    //     //     color: red;
+                    //     // }
+                    // }
                 }
             }
         }
@@ -170,7 +183,6 @@
                 @media screen and (max-width: 900px) {
                     font-size: 10px;
                 }
-
                 font-size: 12px;
             }
 

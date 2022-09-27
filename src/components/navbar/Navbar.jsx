@@ -66,7 +66,7 @@ const Navbar = () => {
                     onClick={()=> {}}
                 >Contact</NavLink> */}
 
-                <p className='navbar-nav--contact-me-button app__hide-smaller-device' onClick={() => setContactModelOpen(true)}>
+                <p className='navbar-nav--contact-me-button app__hide-smaller-device' onClick={() => setContactModelOpen(true)} data-back="Back" data-front="Front">
                     Say Hello
                 </p>
 

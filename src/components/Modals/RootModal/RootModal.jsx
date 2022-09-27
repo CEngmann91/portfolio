@@ -12,6 +12,8 @@ const RootModal = ({ id, width = '60%', height = '80vh', shown, children, onClos
     if (lockScrolling && shown)
       // Prevents scrolling whilst the menu is visible.
       document.body.style.overflow = "hidden";
+    if (lockScrolling && !shown)
+      document.body.style.overflow = "scroll";
 
     if (dismissOnEscKey && shown) {
       window.addEventListener('keydown', onKeyDown)
@@ -21,12 +23,13 @@ const RootModal = ({ id, width = '60%', height = '80vh', shown, children, onClos
 
 
   const onKeyDown = (e) => {
-    if (e.code === "Escape") handleClose();
+    if (e.code === "Escape")
+      handleClose();
   };
 
   const handleClose = useCallback(() => {
-    if (lockScrolling)
-      document.body.style.overflow = "scroll";
+    // if (lockScrolling)
+    //   document.body.style.overflow = "scroll";
     setState(STATE.HIDDEN);
     onClose();
   }, [])
@@ -37,14 +40,14 @@ const RootModal = ({ id, width = '60%', height = '80vh', shown, children, onClos
   return (
     <main id={id}>
       <overlay className="overlay" onClick={handleClose}
-        onAnimationStart={event => {
-          if (event?.animationName === "fade-in") {
-          }
-        }}
-        onAnimationEnd={event => {
-          if (event?.animationName === "fade-in") {
-          }
-        }}
+        // onAnimationStart={event => {
+        //   if (event?.animationName === "fade-in") {
+        //   }
+        // }}
+        // onAnimationEnd={event => {
+        //   if (event?.animationName === "fade-in") {
+        //   }
+        // }}
       />
 
       <div className="container"

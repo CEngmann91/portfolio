@@ -33,10 +33,9 @@ main {
 
     .container {
         @media screen and (max-width: 900px) {
-            max-width: 450px;
         }
         @media screen and (max-width: 550px) {
-            max-width: 400px;
+            max-width: 95%;
         }
         position: absolute;
         // top: 50%;

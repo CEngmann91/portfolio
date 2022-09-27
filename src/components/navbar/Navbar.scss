@@ -48,15 +48,15 @@
             box-shadow: 6px 3px 3px rgba(150, 150, 150, 0.7);
             // Lets the user know that is it clickable.
             // cursor: pointer;
-        
+
             @media screen and (max-width: 900px) {
                 margin: 0.1rem;
             }
-        
+
             .title {
                 color: $black-colour;
                 font-size: 22px;
-        
+
                 // Lets the user know that is it clickable.
                 cursor: pointer;
             }
@@ -126,6 +126,14 @@
         // }
     }
 
+    &--links-link-item {
+
+        /* Specific styles for active links */
+        &-active {
+            border-bottom: solid 3px $secondary-colour;
+        }
+    }
+
     &--contact-me-button {
         display: inline-block;
         padding: 0.3em 1.2em;
@@ -138,12 +146,16 @@
         border-radius: 20px;
         overflow: hidden;
         cursor: pointer;
-    
+
         transition: 0.3s ease-in-out;
-    
+
         &:hover {
             color: $white-colour;
             background: $secondary-colour;
+        }
+        &:active {
+            box-shadow: 0 0.5em 0.5em -0.4em $secondary-colour;
+            transform: translateY(-0.25em);
         }
     }
 }
@@ -250,9 +262,9 @@
         &--wrapper {
             .ce-title-circle {
                 background: rgba(200, 200, 200, 0.7);
-                width: 40px;
-                height: 40px;
-        
+                // width: 40px;
+                // height: 40px;
+
                 .title {
                     color: $white-colour;
                 }
@@ -287,19 +299,25 @@
         }
 
         &--links-link-item {
+
             /* Specific styles for active links */
             &-active {
                 color: $black-colour;
                 border-bottom: solid 3px $secondary-colour-dark;
             }
         }
-    
+
         &--contact-me-button {
             color: $white-colour;
-        
+            border: 0.1em solid $white-colour;
+
             &:hover {
                 color: $black-colour;
                 background: $secondary-colour-dark;
+            }
+
+            &:active {
+                box-shadow: 0 0.5em 0.5em -0.4em $secondary-colour-dark;
             }
         }
     }

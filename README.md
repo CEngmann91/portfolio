@@ -22,10 +22,6 @@
     </a>
   </div>
   
-  <!-- Page Views -->
-  ![github-views](https://komarev.com/ghpvc/?username=CEngmann91&style=flat-square&color=blue)
-  [![github-follow](https://img.shields.io/github/followers/CEngmann91?label=Follow&logoColor=lightgrey&style=social)](https://github.com/CEngmann91)
-  
   <!-- Node version -->
   [![node.js](https://img.shields.io/node/v/c?color=brightgreen)](https://nodejs.org/en/)
   [![npm](https://img.shields.io/npm/v/npm?color=blue&logo=npm)](https://www.npmjs.com/package/inquirer)

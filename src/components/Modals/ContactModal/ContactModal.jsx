@@ -26,7 +26,7 @@ const ContactModal = ({ shown, onClose }) => {
             email: emailRef?.current?.value,
             message: messageRef?.current?.value
         };
-        console.log("Data", JSON.stringify(data));
+        // console.log("Data", JSON.stringify(data));
 
         // if (data['name'] && data['email'] && data['message'] === "")
 
@@ -54,7 +54,6 @@ const ContactModal = ({ shown, onClose }) => {
                 :
                     <>
                         <header>Get In Touch</header>
-
                         <form
                             // action={FORM_ENDPOINT}
                             // onSubmit={handleSubmit}
@@ -62,7 +61,6 @@ const ContactModal = ({ shown, onClose }) => {
                             // target="_blank"
                             className='contact__modal--content--fields'
                         >
-
                             <InputField useRef={nameRef} required name="name" type="text" placeholder={"Name"} />
                             <InputField useRef={emailRef} required name="email" type="email" placeholder={"Email"} />
                             <TextareaField useRef={messageRef} required name="message2" placeholder={"Message"} />

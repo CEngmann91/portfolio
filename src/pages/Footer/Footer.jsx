@@ -31,9 +31,9 @@ const Footer = () => {
         <div className='socials'>
           <p className='title'>Socials</p>
           <div className='links'>
-            <div className='links-icon'><Facebook /></div>
-            <div className='links-icon'><Twitter /></div>
-            <div className='links-icon'><Linkedin /></div>
+            <a className='links-icon'><Facebook /></a>
+            <a className='links-icon'><Twitter /></a>
+            <a className='links-icon'><Linkedin /></a>
           </div>
         </div>
 
