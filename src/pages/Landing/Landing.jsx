@@ -11,10 +11,10 @@ const Landing = () => {
             <h1 className='app__landing--name'><span>Christian Engmann</span></h1>
 
             <div className="app__landing--tags">
-                <p className="app__bottom-border app__landing--tags-tag">Computer Scientist</p>
-                <p className="app__bottom-border app__landing--tags-tag">Designer</p>
-                <p className="app__bottom-border app__landing--tags-tag">Full Stack Developer</p>
-                <p className="app__bottom-border app__landing--tags-tag">Engineer</p>
+                <span className="app__bottom-border app__landing--tags-tag">Computer Scientist</span>
+                <span className="app__bottom-border app__landing--tags-tag">Designer</span>
+                <span className="app__bottom-border app__landing--tags-tag">Full Stack Developer</span>
+                <span className="app__bottom-border app__landing--tags-tag">Engineer</span>
             </div>
             
             <div className='scroll-down-text'>
