@@ -73,7 +73,7 @@
 
         .arrowhead {
             position: absolute;
-            top: 20px;
+            top: 25px;
 
             @include animation(bounce);
             animation-duration: 2s;

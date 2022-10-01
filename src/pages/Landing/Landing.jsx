@@ -19,7 +19,7 @@ const Landing = () => {
             
             <div className='scroll-down-text'>
                 <p>Scroll Down</p>
-                <p className='arrowhead'>⌄</p>
+                <p className='arrowhead'>{'\u25BC'}</p>
             </div>
         </div>
     )
