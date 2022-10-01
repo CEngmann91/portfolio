@@ -16,18 +16,12 @@ body {
   scroll-behavior: smooth;
 
 
-  // button {
 
 
-  //   // &:active {
-  //   &:focus {
-  //     outline: none !important;
-  //     border: none !important;
-  //     -webkit-box-shadow: none !important;
-  //     box-shadow: none !important;
 
-  //   }
-  // }
+
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
 }
 
 code {
@@ -55,6 +49,14 @@ code {
   --colour-darkMode: rgba(66, 65, 65, 1);
 
   /* color: var(--colour-black); */
+}
+
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
 }
 
 
