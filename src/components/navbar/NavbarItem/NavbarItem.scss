@@ -1,0 +1,10 @@
+@import '../../../utils/colours.scss';
+@import '../../../utils/Animations/animations.scss';
+
+.link-item {
+
+    /* Specific styles for active links */
+    &-active {
+        border-bottom: solid 3px $secondary-colour;
+    }
+}

@@ -6,6 +6,7 @@ import { useThemeContext } from '../../utils/ThemeContext';
 
 import { GiHamburgerMenu as Menu } from 'react-icons/gi';
 import { ContactModal } from '../Modals/';
+import NavbarItem from './NavbarItem/NavbarItem';
 
 const Navbar = () => {
     const { theme } = useThemeContext();
@@ -57,14 +58,12 @@ const Navbar = () => {
             <ul className="navbar-nav--links">
                 {NAVBAR.MENU_DATA.map(({ id, title, to }) =>
                     <li key={id}>
-                        <NavLink to={to} className={({ isActive }) => (isActive ? "app__bottom-border" : "")}>{title}</NavLink>
+                        <NavbarItem
+                            key={id} to={to} onClick={hideMenu}
+                            idleClassName="" activeClassName="app__bottom-border"
+                        >{title}</NavbarItem>
                     </li>
                 )}
-
-                {/* <NavLink 
-                    className={({ isActive }) => (isActive ? "navbar-nav--links-link-item-active" : "navbar-nav--links-link-item")}
-                    onClick={()=> {}}
-                >Contact</NavLink> */}
 
                 <p className='navbar-nav--contact-me-button app__hide-smaller-device' onClick={() => setContactModelOpen(true)} data-back="Back" data-front="Front">
                     Say Hello
@@ -83,11 +82,12 @@ const Navbar = () => {
                     <div className={`app__drawer--panel ${menuIsOpen && 'app__drawer--show'}`}>
                         <div>
                             {NAVBAR.MENU_DATA.map(({ id, title, to }) =>
-                                <NavLink
+                                <NavbarItem
                                     key={id}
                                     to={to} onClick={hideMenu}
-                                    className={({ isActive }) => (isActive ? "navbar-nav--links-link-item-active" : "navbar-nav--links-link-item")}
-                                >{title}</NavLink>
+                                    idleClassName="navbar-nav--links-link-item"
+                                    activeClassName="navbar-nav--links-link-item-active"
+                                >{title}</NavbarItem>
                             )}
                         </div>
                     </div>
