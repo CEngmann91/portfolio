@@ -52,16 +52,14 @@ function App() {
         <Route path='*' element={<NotFound />} />
 
         <Route exact path="/" element={
-          <>
-            <Navbar />
-            <Landing />
-            <About />
-            <Skills />
-            <Projects />
-            <Footer />
-
-            { RenderFloatingButton() }
-          </>
+          RenderRoute(
+            <>
+              <Landing />
+              <About />
+              <Skills />
+              <Projects />
+            </>
+          )
         } />
         <Route exact path="/about" element={RenderRoute(<About />)} />
         <Route exact path="/projects" element={RenderRoute(<Projects />)} />

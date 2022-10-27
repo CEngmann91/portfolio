@@ -14,6 +14,22 @@
     animation: $name;
 }
 
+@mixin background-image-linear-gradient($from, $to) {
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from($from), to($to));
+    background-image: -webkit-linear-gradient($from, $to);
+    background-image: -moz-linear-gradient($from, $to);
+    background-image: -o-linear-gradient($from, $to);
+    background-image: linear-gradient($from, $to);
+}
+
+@mixin rotateZ($degree) {
+    transform: rotateZ($degrees);
+    -webkit-transform: rotateZ($degrees);
+    -moz-transform: rotateZ($degrees);
+    -o-transform: rotateZ($degrees);
+}
+
+
 // e.g. "@include animation(animation-name-here, 1s, 1s)"
 // @mixin animation($name, $duration, $delay) {
 //     -webkit-animation: $name $duration $delay;   /* Safari & Chrome */

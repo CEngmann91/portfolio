@@ -4,9 +4,9 @@ import { NavLink } from 'react-router-dom';
 import { NAVBAR } from '../../utils/constants';
 import { useThemeContext } from '../../utils/ThemeContext';
 
-import { GiHamburgerMenu as Menu } from 'react-icons/gi';
 import { ContactModal } from '../Modals/';
 import NavbarItem from './NavbarItem/NavbarItem';
+import { Menu } from '../../utils/icons';
 
 const Navbar = () => {
     const { theme } = useThemeContext();
@@ -74,7 +74,7 @@ const Navbar = () => {
             <div className='app__drawer'>
                 <div className="app__drawer--menuBtn-container">
                     <button onClick={toggleMenu}>
-                        {!menuIsOpen ? <Menu /> : "X"}
+                        {!menuIsOpen ? < Menu /> : "X"}
                     </button>
                 </div>
 

@@ -7,11 +7,11 @@ import { ThemeProvider } from './utils/ThemeContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Router>
-    <React.StrictMode>
-      <ThemeProvider>
+  <React.StrictMode>
+    <ThemeProvider>
+      <Router>
         <App />
-      </ThemeProvider>
-    </React.StrictMode>
-  </Router>
+      </Router>
+    </ThemeProvider>
+  </React.StrictMode>
 );

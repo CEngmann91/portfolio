@@ -66,6 +66,8 @@
         // background: blue;
 
         transform-origin: center;
+
+        // @include animation(zoom-in);
         animation: slide-up .3s, fade-in 1.2s forwards;
         animation-fill-mode: both;
         animation-delay: 6s;
