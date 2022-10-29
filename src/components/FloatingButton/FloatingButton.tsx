@@ -1,7 +1,13 @@
 import React, { useCallback } from 'react';
 import './FloatingButton.scss';
 
-function FloatingButton({ children, style, className, onPress }) {
+interface iProps {
+    children: React.ReactNode;
+    style: React.CSSProperties;
+    className?: string;
+    onPress: (e?: React.MouseEvent<HTMLElement>) => void;
+}
+const FloatingButton: React.FC<iProps> = ({ children, style, className, onPress, ...props}: iProps) => {
     const handlePress = useCallback(()=> { if (onPress) onPress() }, [onPress])
 
     return (

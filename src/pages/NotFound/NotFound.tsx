@@ -3,7 +3,7 @@ import React from 'react'
 import images from '../../utils/images';
 import { BackButton } from '../../components';
 
-const NotFound = () => {
+const NotFound: React.FC = () => {
 
 
   return (

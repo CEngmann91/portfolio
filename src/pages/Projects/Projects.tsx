@@ -1,8 +1,8 @@
 import './Projects.scss';
 import React from 'react'
-import { useThemeContext } from '../../utils/ThemeContext';
+import { useThemeContext } from '../../utils/providers/ThemeProvider';
 
-const Projects = () => {
+const Projects: React.FC = () => {
   const { theme } = useThemeContext();
 
   const list = [

@@ -1,13 +1,12 @@
-import React, { useLayoutEffect } from 'react';
-
 import './App.scss';
+import React, { ReactNode, useLayoutEffect } from 'react';
 import { useLocation, Routes, Route } from 'react-router-dom';
-import { useThemeContext } from './utils/ThemeContext';
 import { NotFound, Landing, About, Projects, Skills, Footer } from './pages';
 import { Navbar, FloatingButton } from './components';
 import images from './utils/images';
+import { useThemeContext } from './utils/providers/ThemeProvider';
 
-function App() {
+export const App = () => {
   const location = useLocation();
   const { theme, toggleTheme } = useThemeContext();
 
@@ -17,41 +16,27 @@ function App() {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
+  
 
-  const RenderFloatingButton = () => (
-    <FloatingButton
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: 50, height: 50,
-        marginRight: '15px', marginBottom: '15px',
-      }}
-      className='app__theme-button'
-      onPress={() => toggleTheme()}
-    >
-      <img src={theme !== 'light' ? images.Sun_Light : images.Moon_Dark} alt="" style={{ width: '50%', height: '50%' }} />
-    </FloatingButton>
-  );
-
-  const RenderRoute = (component) => (
+  const RenderRoute = (component : ReactNode) => (
     <>
       <Navbar />
       {component}
       <Footer />
 
-      {RenderFloatingButton()}
+      {/* {RenderFloatingButton()} */}
     </>
   );
 
   return (
-    <div id={theme}>
+    <div> 
+    {/* <div id={theme}> */}
 
       <Routes>
         {/* Use it in this way, and it should work: */}
         <Route path='*' element={<NotFound />} />
 
-        <Route exact path="/" element={
+        <Route path="/" element={
           RenderRoute(
             <>
               <Landing />
@@ -61,9 +46,9 @@ function App() {
             </>
           )
         } />
-        <Route exact path="/about" element={RenderRoute(<About />)} />
-        <Route exact path="/projects" element={RenderRoute(<Projects />)} />
-        <Route exact path="/skills" element={RenderRoute(<Skills />)} />
+        <Route path="/about" element={RenderRoute(<About />)} />
+        <Route path="/projects" element={RenderRoute(<Projects />)} />
+        <Route path="/skills" element={RenderRoute(<Skills />)} />
         {/* <Route exact path="/contact" element={RenderRoute(<Contact />)} /> */}
 
 

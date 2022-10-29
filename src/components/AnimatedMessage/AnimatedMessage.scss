@@ -1,0 +1,13 @@
+.app__anim-message {
+    display: flex;
+    flex-direction: column;
+    // width: 100%;
+    // height: 80vh;
+    justify-content: center;
+    align-items: center;
+    
+
+    @media screen and (max-width: 500px) {
+        // width: 120%;
+    }
+}

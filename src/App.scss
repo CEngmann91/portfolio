@@ -1,10 +1,17 @@
-@import './utils/colours.scss';
+@import './res/colours.scss';
 
 
 body {
-    // #light {
     background: $background-colour;
-    /* background: var(--colour-darkMode); */
+    
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    &::-webkit-scrollbar {
+        // display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    // -ms-overflow-style: none;  /* IE and Edge */
+    // scrollbar-width: none;  /* Firefox */
 }
 
 .app__theme-button {

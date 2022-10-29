@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import './Navbar.scss';
 import { NavLink } from 'react-router-dom';
-import { NAVBAR } from '../../utils/constants';
-import { useThemeContext } from '../../utils/ThemeContext';
-
-import { ContactModal } from '../Modals/';
+import { NAVBAR } from '../../constants/constants';
+import { ContactModal } from '../Modals';
 import NavbarItem from './NavbarItem/NavbarItem';
 import { Menu } from '../../utils/icons';
+import { useThemeContext } from '../../utils/providers/ThemeProvider';
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
     const { theme } = useThemeContext();
     const [scrolledDown, setScrolledDown] = useState(false);
     const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -59,9 +58,16 @@ const Navbar = () => {
                 {NAVBAR.MENU_DATA.map(({ id, title, to }) =>
                     <li key={id}>
                         <NavbarItem
+                            key={id} id={id}
+                            to={to} onClick={() => { }}
+                            idleClassName="" activeClassName="navbar-nav--links-active"
+                        >{title}</NavbarItem>
+
+
+                        {/* <NavbarItem
                             key={id} to={to} onClick={hideMenu}
                             idleClassName="" activeClassName="app__bottom-border"
-                        >{title}</NavbarItem>
+                        >{title}</NavbarItem> */}
                     </li>
                 )}
 
@@ -83,7 +89,7 @@ const Navbar = () => {
                         <div>
                             {NAVBAR.MENU_DATA.map(({ id, title, to }) =>
                                 <NavbarItem
-                                    key={id}
+                                    key={id} id={id}
                                     to={to} onClick={hideMenu}
                                     idleClassName="navbar-nav--links-link-item"
                                     activeClassName="navbar-nav--links-link-item-active"

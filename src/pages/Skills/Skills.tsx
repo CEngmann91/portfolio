@@ -1,8 +1,8 @@
 import './Skills.scss';
 import React from 'react'
-import { useThemeContext } from '../../utils/ThemeContext';
+import { useThemeContext } from '../../utils/providers/ThemeProvider';
 
-const Skills = () => {
+const Skills: React.FC = () => {
   const { theme } = useThemeContext();
   const techs = [
     "React",

@@ -1,0 +1,34 @@
+@import '../../utils/Animations/animations.scss';
+
+.app__joke {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    
+    &--pointer {
+        cursor: pointer;
+    }
+
+    @media screen and (max-width: 500px) {
+        width: 80%;
+    }
+
+
+
+    // circle {
+    //     width: 100px;
+    //     height: 100px;
+    //     position: absolute;
+    //     // transform: translate(0px, 80px);
+    //     margin-top: 150px;
+    //     margin-left: 250px;
+    //     background: gray; //#00BCD4;
+    //     opacity: 0.5;
+    //     border-radius: 50%;
+
+    //     animation: zoom-in 1s linear infinite;
+    // }
+}

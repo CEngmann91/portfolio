@@ -1,4 +1,4 @@
-@import './utils/colours.scss';
+@import './res/colours.scss';
 
 body {
   margin: 0;
@@ -14,11 +14,6 @@ body {
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
-
-
-
-
-
 
   -webkit-tap-highlight-color: transparent;
   outline: none;
@@ -71,11 +66,11 @@ a {
 
 .app__pading-horizontal {
   /* top | right | bottom | left */
-  padding: 0rem 3rem;
+  padding: 0rem 4rem 0rem 5rem;
 
   @media screen and (max-width: 550px) {
-    /* top | right | bottom | left */
-    padding: 0rem 1.5rem;
+      /* top | right | bottom | left */
+      padding: 0rem 1.5rem 0rem 1.5rem;
   }
 }
 
@@ -89,6 +84,15 @@ a {
     display: none;
   }
 }
+
+.app__full-height {
+  height: 100vh;
+}
+
+.app__page--padtop {
+  padding-top: 100px;
+}
+
 
 #dark {
 

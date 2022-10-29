@@ -3,7 +3,11 @@ import React, { useState, useRef, useEffect } from 'react'
 import RootModal from '../RootModal/RootModal';
 import { InputField, TextareaField } from '../../Form';
 
-const ContactModal = ({ shown, onClose }) => {
+interface iProps {
+    shown: boolean;
+    onClose: (e?: React.MouseEvent<HTMLElement>) => void;
+}
+const ContactModal: React.FC<iProps> = ({ shown, onClose, ...props}: iProps) => {
     const nameRef = useRef(null);
     const emailRef = useRef(null);
     const messageRef = useRef(null);

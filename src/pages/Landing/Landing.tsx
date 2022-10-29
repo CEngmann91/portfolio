@@ -1,8 +1,8 @@
 import React from 'react'
-import { useThemeContext } from '../../utils/ThemeContext';
+import { useThemeContext } from '../../utils/providers/ThemeProvider';
 import './Landing.scss';
 
-const Landing = () => {
+const Landing: React.FC = () => {
     const { theme } = useThemeContext();
 
     return (

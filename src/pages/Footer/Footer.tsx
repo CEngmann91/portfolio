@@ -1,10 +1,10 @@
 import React from 'react'
 import './Footer.scss';
 import { Twitter, Facebook, Linkedin } from '../../utils/icons';
-import { NAVBAR } from '../../utils/constants';
+import { NAVBAR } from '../../constants/constants';
 import { NavLink } from 'react-router-dom';
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <footer className='app__footer'>
       {/* Footer */}
