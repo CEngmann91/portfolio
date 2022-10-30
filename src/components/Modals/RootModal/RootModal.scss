@@ -16,7 +16,7 @@ main {
     z-index: 10;
 
 
-    overlay {
+    .overlay {
         flex: 1;
         display: flex;
         background: rgba($black-colour, 0.85);

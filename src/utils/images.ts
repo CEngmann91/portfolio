@@ -1,10 +1,5 @@
-import miltonKeynes from '../assets/images/backgrounds/Milton Keynes.jpg';
-import Moon_Dark from '../assets/images/Misc/Moon - Dark.png';
-import Sun_Light from '../assets/images/Misc/sun.png';
+/// <reference path='../types/images.d.ts'  />
 
-export default {
-    miltonKeynes,
-
-    Moon_Dark,
-    Sun_Light,
-};
+export { default as miltonKeynes } from '../assets/images/backgrounds/Milton Keynes.jpg';
+export { default as Moon_Dark } from '../assets/images/Misc/Moon - Dark.png';
+export { default as Sun_Light } from '../assets/images/Misc/sun.png';

@@ -66,11 +66,11 @@ a {
 
 .app__pading-horizontal {
   /* top | right | bottom | left */
-  padding: 0rem 4rem 0rem 5rem;
+  padding: 0rem 3rem 0rem 3rem;
 
   @media screen and (max-width: 550px) {
       /* top | right | bottom | left */
-      padding: 0rem 1.5rem 0rem 1.5rem;
+      padding: 0rem 1.5rem;
   }
 }
 

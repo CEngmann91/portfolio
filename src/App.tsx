@@ -1,9 +1,8 @@
 import './App.scss';
 import React, { ReactNode, useLayoutEffect } from 'react';
 import { useLocation, Routes, Route } from 'react-router-dom';
-import { NotFound, Landing, About, Projects, Skills, Footer } from './pages';
+import { Landing, About, Projects, Skills, Footer } from './pages';
 import { Navbar, FloatingButton } from './components';
-import images from './utils/images';
 import { useThemeContext } from './utils/providers/ThemeProvider';
 
 export const App = () => {
@@ -33,9 +32,6 @@ export const App = () => {
     {/* <div id={theme}> */}
 
       <Routes>
-        {/* Use it in this way, and it should work: */}
-        <Route path='*' element={<NotFound />} />
-
         <Route path="/" element={
           RenderRoute(
             <>

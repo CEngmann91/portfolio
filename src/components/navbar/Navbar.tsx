@@ -4,7 +4,8 @@ import { NavLink } from 'react-router-dom';
 import { NAVBAR } from '../../constants/constants';
 import { ContactModal } from '../Modals';
 import NavbarItem from './NavbarItem/NavbarItem';
-import { Menu } from '../../utils/icons';
+// import { Menu } from '../../utils/icons';
+import { Drawer } from '../../components';
 import { useThemeContext } from '../../utils/providers/ThemeProvider';
 
 const Navbar: React.FC = () => {
@@ -77,7 +78,7 @@ const Navbar: React.FC = () => {
 
             </ul>
 
-            <div className='app__drawer'>
+            {/* <div className='app__drawer'>
                 <div className="app__drawer--menuBtn-container">
                     <button onClick={toggleMenu}>
                         {!menuIsOpen ? < Menu /> : "X"}
@@ -98,7 +99,9 @@ const Navbar: React.FC = () => {
                         </div>
                     </div>
                 }
-            </div>
+            </div> */}
+
+            <Drawer />
 
             <ContactModal shown={contactModelOpen} onClose={() => setContactModelOpen(false)} />
 

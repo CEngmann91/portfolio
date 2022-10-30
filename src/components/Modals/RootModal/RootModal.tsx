@@ -1,8 +1,28 @@
 import './RootModal.scss';
 import React, { useState, useEffect, useCallback } from 'react'
 
-const RootModal = ({ id, width = '60%', height = '80vh', shown, children, onClose, lockScrolling = true, suppressed, dismissOnEscKey = true, closeButtonClassName, showCloseButton = true }) => {
-
+interface iProps {
+  // Set id for Modal
+  id: string;
+  // The width of the Modal.
+  width?: string | number;
+  // The height of the Modal.
+  height?: string | number;
+  // If true the Modal will be visible, otherwise visually hidden, but it will stay in the DOM.
+  shown: boolean;
+  // The content of the Modal.
+  children?: React.ReactNode;
+  // Function for handling onClose event.
+  onClose: (e?: React.MouseEvent<HTMLElement>) => void;
+  // Whether to prevent scrolling of the rest of the page while Modal is open. This is on by default to provide a better user experience.
+  lockScrolling?: boolean;
+  // If true, the Modal will have cloudy background.
+  suppressed?: boolean;
+  dismissOnEscKey?: boolean;
+  closeButtonClassName: string;
+  showCloseButton?: boolean;
+}
+const RootModal: React.FC<iProps> = ({ id, width = '60%', height = '80vh', shown, children, onClose, lockScrolling = true, suppressed, dismissOnEscKey = true, closeButtonClassName, showCloseButton = true, ...props}: iProps) => {
   const STATE = { HIDDEN: "Hidden", ANIMATING: "Animating", VISIBLE: "Visible" }
   const [state, setState] = useState(STATE.HIDDEN);
 
@@ -15,17 +35,21 @@ const RootModal = ({ id, width = '60%', height = '80vh', shown, children, onClos
     if (lockScrolling && !shown)
       document.body.style.overflow = "scroll";
 
-    if (dismissOnEscKey && shown) {
-      window.addEventListener('keydown', onKeyDown)
-      return () => window.removeEventListener('keydown', onKeyDown)
-    }
+    // if (dismissOnEscKey && shown) {
+    //   window.addEventListener('keydown', onKeyDown, true)
+    //   return () => {
+    //     window.removeEventListener('keydown', onKeyDown, true)
+    //   }
+    // }
   }, [shown])
 
 
-  const onKeyDown = (e) => {
-    if (e.code === "Escape")
-      handleClose();
-  };
+  // const onKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+  //   const { key } = e
+  //     if (key === "Escape") {
+  //       handleClose();
+  //     }
+  // }
 
   const handleClose = useCallback(() => {
     // if (lockScrolling)
@@ -39,7 +63,7 @@ const RootModal = ({ id, width = '60%', height = '80vh', shown, children, onClos
 
   return (
     <main id={id}>
-      <overlay className="overlay" onClick={handleClose}
+      <div className="overlay" onClick={handleClose}
         // onAnimationStart={event => {
         //   if (event?.animationName === "fade-in") {
         //   }
