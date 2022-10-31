@@ -1,0 +1,15 @@
+@import '../../res/theme/theme.scss';
+@import '../../utils/animations.scss';
+
+
+.app__loading {
+    cursor: none;
+
+    p {
+        font-size: 50px;
+    }
+
+    div {
+        animation: fade-in 2s, fade-out 0.2s 5s forwards;   // play one animation after the other and have a 5 second delay before the second.
+    }
+}

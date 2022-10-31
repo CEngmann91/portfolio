@@ -1,4 +1,4 @@
-import './App.scss';
+import './res/styles.scss';
 import React, { ReactNode, useLayoutEffect } from 'react';
 import { useLocation, Routes, Route } from 'react-router-dom';
 import { Landing, About, Projects, Skills, Footer } from './pages';
@@ -15,9 +15,9 @@ export const App = () => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  
 
-  const RenderRoute = (component : ReactNode) => (
+
+  const RenderRoute = (component: ReactNode) => (
     <>
       <Navbar />
       {component}
@@ -28,35 +28,12 @@ export const App = () => {
   );
 
   return (
-    <div> 
-    {/* <div id={theme}> */}
-
-      <Routes>
-        <Route path="/" element={
-          RenderRoute(
-            <>
-              <Landing />
-              <About />
-              <Skills />
-              <Projects />
-            </>
-          )
-        } />
-        <Route path="/about" element={RenderRoute(<About />)} />
-        <Route path="/projects" element={RenderRoute(<Projects />)} />
-        <Route path="/skills" element={RenderRoute(<Skills />)} />
-        {/* <Route exact path="/contact" element={RenderRoute(<Contact />)} /> */}
-
-
-
-
-        {/* <Route exact path="/" element={<Landing />} />
-        <Route exact path="/about" element={<About />} />
-        <Route exact path="/projects" element={<Projects />} />
-        <Route exact path="/skills" element={<Skills />} />
-        <Route exact path="/footer" element={<Footer />} /> */}
-
-      </Routes>
+    <div id={theme} className='app__flex'>
+      <Navbar />
+      <Landing />
+      <About />
+      <Skills />
+      {/* <Projects /> */}
     </div>
   );
 }

@@ -1,12 +1,42 @@
+// Fonts
+/* @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"); */
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap"); */
+// Colours
 @import './res/colours.scss';
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+:root {
+  --font-base: 
+  /* "DM Sans", sans-serif; */
+  Montserrat;
+  /* Menlo; */
+  /* Monaco; */
+  /* 'Courier New'; */
+  /* monospace; */
+
+
+
+
+
+  // --main-white: #dfddd6;
+  // --main-font: 'Stardos Stencil';
+  // /*, cursive; */
+  // /* Transitions for navbar link selection. */
+  // --mainTransition: 0.25s ease-in-out;
+  // /* Transitions for mode (dark/light) selection. */
+  // --modeTransition: 0.25s ease-in-out;
+
+
+  // /* Colours */
+  // --colour-white: #fff;
+  // --colour-black: #000;
+
+  // --colour-lightMode: rgba(237, 242, 248, 1);
+
+
+  // --colour-darkMode: rgba(66, 65, 65, 1);
+
+  // /* color: var(--colour-black); */
 }
 
 * {
@@ -19,33 +49,6 @@ body {
   outline: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-:root {
-  --main-white: #dfddd6;
-  --main-font: 'Stardos Stencil';
-  /*, cursive; */
-  /* Transitions for navbar link selection. */
-  --mainTransition: 0.25s ease-in-out;
-  /* Transitions for mode (dark/light) selection. */
-  --modeTransition: 0.25s ease-in-out;
-
-
-  /* Colours */
-  --colour-white: #fff;
-  --colour-black: #000;
-
-  --colour-lightMode: rgba(237, 242, 248, 1);
-
-
-  --colour-darkMode: rgba(66, 65, 65, 1);
-
-  /* color: var(--colour-black); */
-}
-
 input,
 textarea,
 button,
@@ -56,23 +59,23 @@ a {
 
 
 
-.app__flex {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /* height: 100vh; */
-}
+// .app__flex {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   /* height: 100vh; */
+// }
 
-.app__pading-horizontal {
-  /* top | right | bottom | left */
-  padding: 0rem 3rem 0rem 3rem;
+// .app__pading-horizontal {
+//   /* top | right | bottom | left */
+//   padding: 0rem 3rem 0rem 3rem;
 
-  @media screen and (max-width: 550px) {
-      /* top | right | bottom | left */
-      padding: 0rem 1.5rem;
-  }
-}
+//   @media screen and (max-width: 550px) {
+//       /* top | right | bottom | left */
+//       padding: 0rem 1.5rem;
+//   }
+// }
 
 .app__bottom-border {
   border-bottom: solid 3px $secondary-colour;

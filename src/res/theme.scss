@@ -1,0 +1,23 @@
+@import './colours.scss';
+
+#light {
+    background: $background-colour;
+    
+    // animation: fade-in 1s linear;
+    transition: all 0.3s ease-in;
+
+    p {
+        color: $black-colour;
+    }
+}
+
+#dark {
+    background: $background-colour-dark;
+    
+    // animation: fade-in 1s linear;
+    transition: all 0.3s ease-in;
+
+    p {
+        color: $white-colour;
+    }
+}

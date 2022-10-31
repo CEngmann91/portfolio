@@ -1,0 +1,205 @@
+@import './theme.scss';
+
+body {
+    font-family: var(--font-base);
+    // background: $background-colour;
+
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    &::-webkit-scrollbar {
+        // display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    // -ms-overflow-style: none;  /* IE and Edge */
+    // scrollbar-width: none;  /* Firefox */
+}
+
+
+
+
+
+.app__flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // height: 100vh;
+}
+
+.app__pad-hor {
+    /* top | right | bottom | left */
+    padding: 0rem 4rem 0rem 5rem;
+
+    @media screen and (max-width: 550px) {
+        /* top | right | bottom | left */
+        padding: 0rem 1.5rem 0rem 1.5rem;
+    }
+}
+
+.app__full-height {
+    height: 100vh;
+}
+
+.app__page--padtop {
+    padding-top: 100px;
+}
+
+// .app__vertical-line {
+//     width: 2px;
+//     background: $secondary-colour;
+//     border-radius: 5px;
+// }
+
+.head-text {
+    font-size: 2.75rem;
+    font-weight: 800;
+    text-align: center;
+    color: $black-colour;
+    text-transform: capitalize;
+
+    text-shadow: 0 2px 5px rgba($black-colour, 0.5);
+
+    span {
+        color: $secondary-colour;
+    }
+
+    @media screen and (min-width: 2000px) {
+        font-size: 4rem;
+    }
+
+    @media screen and (max-width: 550px) {
+        // @media screen and (max-width: 450px) {
+        font-size: 1.7rem;
+    }
+}
+
+.p-text {
+    font-size: 0.8rem;
+    // text-align: left;
+    text-align: center;
+    color: $gray-colour;
+    line-height: 1.5;
+
+    @media screen and (min-width: 2000px) {
+        font-size: 1.75rem;
+    }
+}
+
+.bold-text {
+    font-size: 1rem;
+    font-weight: 800;
+    color: $black-colour;
+    text-align: left;
+
+    @media screen and (min-width: 2000px) {
+        font-size: 2rem;
+    }
+
+    @media screen and (max-width: 450px) {
+        font-size: 0.9rem;
+    }
+}
+
+.app__love--message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 100%;
+}
+
+.app__hover-colour-fade {
+    color: $black-colour;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+        color: $secondary-colour;
+    }
+}
+
+.app__underline-anim {
+    // Remove the generic text decoration i.e. underline.
+    text-decoration: none;
+    flex-direction: column;
+
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+
+        &::after {
+            transform: scaleX(1);
+            transform-origin: right;
+        }
+    }
+
+    &:after {
+        display: block;
+        content: '';
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 250ms ease-in-out;
+
+        border-bottom: 3px solid $secondary-colour;
+    }
+}
+
+
+.app__box-shadow-indent {   // Doesn't work on all objects.
+    box-shadow:
+        inset 0px 5px 15px rgba(0, 0, 0, 0.4),
+        inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+}
+
+.app__hover-with-shadow {
+    transition: 0.3s ease-out;
+
+    &:hover {
+        box-shadow: 0 0.5em 0.5em -0.4em $secondary-colour;
+        transform: translateY(-0.25em);
+    }
+}
+
+
+
+
+
+#dark {
+
+    .app__vertical-line {
+        background: $secondary-colour-dark;
+    }
+
+    .head-text {
+        color: $white-colour;
+
+        text-shadow: 0 2px 5px rgba($black-colour, 0.5);
+
+        span {
+            color: $secondary-colour-dark;
+        }
+    }
+
+    .app__hover-colour-fade {
+        color: $white-colour;
+
+        &:hover {
+            color: $secondary-colour-dark;
+        }
+    }
+
+    .app__underline-anim {
+
+        &:after {
+            border-bottom: 3px solid $secondary-colour-dark;
+        }
+    }
+
+    .app__hover-with-shadow {
+    
+        &:hover {
+            box-shadow: 0 0.5em 0.5em -0.4em $secondary-colour-dark;
+        }
+    }
+}

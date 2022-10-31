@@ -2,100 +2,128 @@
 @import '../../utils/Animations/animations.scss';
 
 .app__landing {
-    flex: 1;
     display: flex;
-    flex-direction: column;
+    width: 100%;
     min-height: 100vh;
+
     justify-content: center;
-    
-    color: $black-colour;
+    align-items: flex-start;
+    // cursor: none;
+
+
+    /* top | right | bottom | left */
+    // padding: 0rem 0rem 0rem 5rem;
 
     &--hi {
-        @media screen and (max-width: 900px) {
-            font-size: 1.5rem;
-        }
+        font-size: 1.2rem;
 
-        font-size: 2rem;
-    }
-
-    &--name {
-        @media screen and (max-width: 900px) {
-            font-size: 50px;
-        }
-
-        font-size: 60px;
-        text-align: left;
-        padding-bottom: 10px;
-    }
-
-    &--tags {
-        display: flex;
-        flex-direction: row;
-
-        &-tag {
-            @media screen and (max-width: 900px) {
-                // font-size: 16px;
-            }
-            @media screen and (max-width: 550px) {
-                font-size: 0.9rem;
-            }
-            align-self: flex-end;
-            font-size: 1.1rem;
-
-            background: transparent;
-            // padding: 10px;
-            // border: 3px solid black;
-            // border-radius: 10px;
-            // border-bottom: solid 3px $secondary-colour;
-            border-color: $secondary-colour;
-
-            margin-right: 10px;
-        }
-    }
-    
-    .scroll-down-text {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        bottom: 30px;
-        right: 0;
-        width: 100%;
-        // background: blue;
 
         transform-origin: center;
-
-        // @include animation(zoom-in);
-        animation: slide-up .3s, fade-in 1.2s forwards;
+        animation: slide-b-fade-In .3s ease-out;
         animation-fill-mode: both;
-        animation-delay: 6s;
+        animation-delay: 0.35s;
+    }
+
+    &--myName {
+        font-size: clamp(40px, 8vw, 80px);
+        text-align: left;
+
+        transform-origin: center;
+        animation: slide-b-fade-In .3s ease-out;
+        animation-fill-mode: both;
+        animation-delay: 0.55s;
+    }
+
+    &--badge {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: row;
 
 
-        .arrowhead {
-            position: absolute;
-            top: 25px;
+        transform-origin: center;
+        animation: slide-b-fade-In .3s ease-out;
+        animation-fill-mode: both;
+        animation-delay: 0.75s;
 
-            @include animation(bounce);
-            animation-duration: 2s;
-            animation-delay: 6.5s;
-            animation-iteration-count: infinite;
+
+        .badge-cmp,
+        .tag-cmp {
+            padding: 1rem 2rem;
+            background: $white-colour;
+            border-radius: 15px;
+            flex-direction: row;
+            width: auto;
+
+            // box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
         }
+
+        .tag-cmp {
+            @media screen and (max-width: 550px) {
+                padding: .4rem .8rem;
+                margin: .2rem .1rem;
+                // margin-top: 0.8rem;
+            }
+            flex-direction: column;
+            // margin-top: 0.5rem;
+            // border-radius: 0px;
+            padding: .5rem 1rem;
+            margin: 1rem .2rem;
+
+            // transition: 0.3s ease-in-out;
+
+            p {
+                color: $black-colour;
+                text-transform: uppercase;
+                text-align: center;
+            }
+
+            &:hover {
+                // cursor: pointer;
+                // box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+
+                // margin: 1rem .5rem;
+                // transform: scale(1.1);
+                // transform-origin: center;
+
+                // p {
+                //     color: $secondary-colour;
+                // }
+            }
+        }
+
+
+        // Extra large or Desktop devices
+        @media screen and (min-width: 2000px) {}
+
+        // Mobile and tablet
+        @media screen and (max-width: 1200px) {
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        // Smaller mobiles
+        @media screen and (max-width: 450px) {}
     }
 }
 
+
 #dark {
-
     .app__landing {
-        color: $white-colour;
 
+        div {
+            color: $white-colour;
+        }
 
-        &--tags {
-            &-tag {
-                // border-bottom: solid 3px $secondary-colour-dark;
-                border-color: $secondary-colour-dark;
+        &--badge {
+
+            .badge-cmp,
+            .tag-cmp {
+                background: $black-colour;
+                color: $white-colour;
             }
         }
-    }    
+    }
 }

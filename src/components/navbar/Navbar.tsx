@@ -78,33 +78,9 @@ const Navbar: React.FC = () => {
 
             </ul>
 
-            {/* <div className='app__drawer'>
-                <div className="app__drawer--menuBtn-container">
-                    <button onClick={toggleMenu}>
-                        {!menuIsOpen ? < Menu /> : "X"}
-                    </button>
-                </div>
-
-                {menuIsOpen &&
-                    <div className={`app__drawer--panel ${menuIsOpen && 'app__drawer--show'}`}>
-                        <div>
-                            {NAVBAR.MENU_DATA.map(({ id, title, to }) =>
-                                <NavbarItem
-                                    key={id} id={id}
-                                    to={to} onClick={hideMenu}
-                                    idleClassName="navbar-nav--links-link-item"
-                                    activeClassName="navbar-nav--links-link-item-active"
-                                >{title}</NavbarItem>
-                            )}
-                        </div>
-                    </div>
-                }
-            </div> */}
-
             <Drawer />
 
             <ContactModal shown={contactModelOpen} onClose={() => setContactModelOpen(false)} />
-
         </nav>
     )
 }

@@ -5,23 +5,35 @@ import './Landing.scss';
 const Landing: React.FC = () => {
     const { theme } = useThemeContext();
 
-    return (
-        <div id={theme} className='app__landing app__pading-horizontal'>
-            <p className='app__landing--hi'>Hi, I'm</p>
-            <h1 className='app__landing--name'><span>Christian Engmann</span></h1>
+    const tags = ['Computer Scientist', 'Freelancer', 'Web & Mobile Developer', 'Designer', 'And Finally...A Comedian']
 
-            <div className="app__landing--tags">
-                <span className="app__bottom-border app__landing--tags-tag">Computer Scientist</span>
-                <span className="app__bottom-border app__landing--tags-tag">Designer</span>
-                <span className="app__bottom-border app__landing--tags-tag">Full Stack Developer</span>
-                <span className="app__bottom-border app__landing--tags-tag">Engineer</span>
+
+    return (
+        <div id='home' className='app__landing app__flex app__pad-hor'>
+      <p className='app__landing--hi'>Hi, my name is</p>
+      <h1 className='head-text app__landing--myName'><span>Christian Engmann</span></h1>
+
+      <div className='app__landing--badge'>
+          {tags.map((text) => (
+            <div className="tag-cmp app__flex app__hover-with-shadow">
+              <p className="p-text">{text}</p>
             </div>
-            
-            <div className='scroll-down-text'>
-                <p>Scroll Down</p>
-                <p className='arrowhead'>{'\u25BC'}</p>
-            </div>
-        </div>
+          ))}
+      </div>
+      
+      <div
+        style={{
+          display: 'flex',
+          position: 'absolute',
+          justifyContent: 'center', alignItems: 'center',
+          width: '100%',
+          bottom: 10, left: 0,
+          // background: 'red',
+        }}>
+        {/* <MagicMouse /> */}
+      </div>
+
+    </div>
     )
 }
 
