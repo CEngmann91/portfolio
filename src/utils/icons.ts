@@ -37,8 +37,8 @@ export {
 
     // GiHamburgerMenu as Menu,
     // HiX as Cross,
-    // FiSun as Sun,
-    // FiMoon as Crescent,
+    FiSun as Sun,
+    FiMoon as Crescent,
 
     // // BsFolder2Open as FolderIcon_Open,
     

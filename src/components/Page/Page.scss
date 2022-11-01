@@ -11,10 +11,12 @@
         .cell {
             display: table-cell;
         }
+
         .text {
             width: 1%;
             padding: 0 10px;
         }
+
         line {
             @media screen and (max-width: 900px) {
                 top: -0.8em;
@@ -30,10 +32,10 @@
 
 
 #dark {
-    main {
-    
+    .page {
+
         header {
-    
+
             line {
                 border-bottom: 3px solid rgba($secondary-colour-dark, 0.4);
             }
