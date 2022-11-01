@@ -101,15 +101,6 @@ body {
     }
 }
 
-.app__love--message {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-    width: 100%;
-}
-
 .app__hover-colour-fade {
     color: $black-colour;
     transition: 0.3s ease-in-out;

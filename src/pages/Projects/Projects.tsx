@@ -1,10 +1,10 @@
 import './Projects.scss';
 import React, { useCallback, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
-import { Codepen, Github, ReactIcon, FirebaseIcon, UnityIcon, MobileIcon, YoutubeIcon } from '../../utils/icons';
+import { AnimatePresence } from 'framer-motion'
 import { Page } from '../../components/';
+import ProjectCard from './ProjectCard/ProjectCard';
 
-enum Tags {
+export enum Tags {
   UI_UX,
   React,
   ReactNative,
@@ -15,17 +15,16 @@ enum Tags {
   MobileApp,
   YouTube,
 };
-
-enum Link {
+export enum Link {
   Codepen,
   Github,
   YouTube,
 };
-interface iLink {
+export interface iLink {
   link?: Link;
   url: string;
 }
-interface iProject {
+export interface iProject {
   id: number;
   title: string;
   description: string;
@@ -192,19 +191,21 @@ const projects: iProject[] = [
   },
 ]
 
+
+const cardVariantions = {
+  variants: {
+    hidden: { opacity: 0, x: 200 },
+    visible: { opacity: [0, 0.2, 0.3, 1], x: 0 },
+  },
+  ease: "easeIn",
+  duration: 0.3,
+  delay: 0.4,
+}
 const Projects: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState("All");
   const filters = ['UI/UX', 'Web Apps', 'Mobile App', 'React JS', 'Unity', 'All'];
 
-  const cardVariantions = {
-    variants: {
-      hidden: { opacity: 0, x: 200 },
-      visible: { opacity: [0, 0.2, 0.3, 1], x: 0 },
-    },
-    ease: "easeIn",
-    duration: 0.3,
-    delay: 0.4,
-  }
+
 
   const handleFilter = useCallback((item: string) => setActiveFilter(item), []);
 
@@ -214,7 +215,7 @@ const Projects: React.FC = () => {
 
       <div className="app__projects--filters">
         {filters.map((item, index) => (
-          <div key={index} className={`app__projects--filters-item app__flex p-text app__hover-with-shadow ${activeFilter === item ? "item-active" : ""}`} onClick={() => handleFilter(item)}>
+          <div key={index} className={`app__projects--filters-item app__flex p-text app__hover-with-shadow ${activeFilter === item ? "app__projects--filters-item-active" : ""}`} onClick={() => handleFilter(item)}>
             {item}
           </div>
         ))}
@@ -227,67 +228,15 @@ const Projects: React.FC = () => {
 
         {projects.map((item) => (
           <AnimatePresence>
-            <motion.div
-              key={item.id}
-              className="project__card--item"
-              variants={cardVariantions.variants}
-              initial="hidden"
-              whileInView="visible"
-              style={item.gradient ? { background: `linear-gradient(${item.gradient[0]}, ${item.gradient[1]});` } : {}}
-              // Play in viewport only once.
-              viewport={{ once: true }}
-              transition={{
-                ease: cardVariantions.ease,
-                duration: cardVariantions.duration,
-                delay: ((item.id % 3) * cardVariantions.delay),
-              }}
-            >
-
-              <div className='project__card--item-title'>
-                {/* <h3>{item.title} {item.gradient[0]} {item.gradient[1]}</h3> */}
-                <h3>{item.title}</h3>
-              </div>
-
-              <div className='project__card--item-img'>
-                <img src={item.imgUrl} alt={item.title} />
-                {/* <img src={urlFor(item.imgUrl)} alt={item.title} /> */}
-              </div>
-
-              {/* <div className='project__card--item-description'>
-                <p>{item.description}</p>
-              </div> */}
-
-              <div className='project__card--item-footer'>
-                {/* Techs used for project. */}
-                <div className='project__card--item-footer-techs'>
-                  {item.tags?.map((item) => {
-                    switch (item) {
-                      case Tags.React: return (<ReactIcon />)
-                      case Tags.ReactNative: return (<ReactIcon />)
-                      case Tags.Firebase: return (<FirebaseIcon />)
-                      case Tags.Unity: return (<UnityIcon />)
-                      case Tags.MobileApp: return (<MobileIcon />)
-                      case Tags.YouTube: return (<YoutubeIcon />)
-                      default: break;
-                    }
-                  })}
-                </div>
-
-                {/* Links for the project/website. */}
-                <div className='project__card--item-footer-links'>
-                  {item.links?.map((item) => {
-                    switch (item.link) {
-                      case Link.Codepen:
-                        return (<a href={item.url} className='project__card--item-links-item app__hover-with-shadow'><Codepen /></a>)
-                      case Link.Github:
-                        return (<a href={item.url} className='project__card--item-links-item app__hover-with-shadow'><Github /></a>)
-                      case Link.YouTube: return (<a href={item.url} className='project__card--item-links-item app__hover-with-shadow'><YoutubeIcon /></a>)
-                      default: break;
-                    }
-                  })}
-                </div>
-              </div>
-            </motion.div>
+            <ProjectCard
+              id={item.id}
+              title={item.title}
+              description={item.description}
+              imgUrl={item.imgUrl}
+              tags={item.tags}
+              links={item.links}
+              gradient={item.gradient}
+            />
           </AnimatePresence>
         ))}
       </div>

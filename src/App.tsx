@@ -2,7 +2,7 @@ import './res/styles.scss';
 import React, { ReactNode, useLayoutEffect } from 'react';
 import { useLocation, Routes, Route } from 'react-router-dom';
 import { Landing, About, Projects, Skills, Footer } from './pages';
-import { Navbar, FloatingButton } from './components';
+import { Navbar, FloatingButton, Joke, HeartFeltMessage } from './components';
 import { useThemeContext } from './utils/providers/ThemeProvider';
 
 export const App = () => {
@@ -31,9 +31,11 @@ export const App = () => {
     <div id={theme} className='app__flex'>
       <Navbar />
       <Landing />
+      <Joke />
       <About />
       <Skills />
-      {/* <Projects /> */}
+      <HeartFeltMessage />
+      <Projects />
     </div>
   );
 }

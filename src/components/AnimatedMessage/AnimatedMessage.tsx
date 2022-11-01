@@ -1,5 +1,5 @@
-import React from 'react';
 import './AnimatedMessage.scss';
+import React from 'react';
 import { motion } from 'framer-motion'
 
 interface iMessage {
