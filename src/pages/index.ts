@@ -1,3 +1,4 @@
+export { default as IntroScreen } from './IntroScreen/IntroScreen';
 export { default as Landing } from './Landing/Landing';
 export { default as About } from './About/About';
 export { default as Projects } from './Projects/Projects';
