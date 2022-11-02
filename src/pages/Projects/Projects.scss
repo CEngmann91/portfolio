@@ -37,10 +37,12 @@ $count: 8; //[data-count];
             flex-direction: row;
             margin-right: 10px;
             margin-bottom: .7rem;
+            border: 1.5px solid transparent;
 
             cursor: pointer;
 
             &-active {
+                border: 1.5px solid $secondary-colour;
                 box-shadow: 0 0.5em 0.5em -0.4em $secondary-colour;
                 transform: translateY(-0.25em);
             }
@@ -84,6 +86,7 @@ $count: 8; //[data-count];
                 color: $white-colour;
 
                 &-active {
+                    border: 1.5px solid $secondary-colour-dark;
                     box-shadow: 0 0.5em 0.5em -0.4em $secondary-colour-dark;
                 }
             }

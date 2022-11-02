@@ -19,6 +19,8 @@ body {
 
 
 
+
+
 .app__flex {
     display: flex;
     flex-direction: column;
@@ -45,11 +47,11 @@ body {
     padding-top: 100px;
 }
 
-// .app__vertical-line {
-//     width: 2px;
-//     background: $secondary-colour;
-//     border-radius: 5px;
-// }
+.app__vertical-line {
+    width: 2px;
+    background: $secondary-colour;
+    border-radius: 5px;
+}
 
 .head-text {
     font-size: 2.75rem;
@@ -136,8 +138,8 @@ body {
     }
 }
 
-
-.app__box-shadow-indent {   // Doesn't work on all objects.
+.app__box-shadow-indent {
+    // Doesn't work on all objects.
     box-shadow:
         inset 0px 5px 15px rgba(0, 0, 0, 0.4),
         inset 0px -5px 15px rgba(255, 255, 255, 0.4);
@@ -149,6 +151,17 @@ body {
     &:hover {
         box-shadow: 0 0.5em 0.5em -0.4em $secondary-colour;
         transform: translateY(-0.25em);
+    }
+}
+
+.app__bottom-border {
+    border-bottom: solid 3px $secondary-colour;
+    width: fit-content;
+}
+
+.app__hide-smaller-device {
+    @media screen and (max-width: 550px) {
+        display: none;
     }
 }
 
@@ -188,9 +201,13 @@ body {
     }
 
     .app__hover-with-shadow {
-    
+
         &:hover {
             box-shadow: 0 0.5em 0.5em -0.4em $secondary-colour-dark;
         }
+    }
+
+    .app__bottom-border {
+        border-bottom: solid 3px $secondary-colour-dark;
     }
 }

@@ -1,7 +1,7 @@
 import './ProjectCard.scss';
 import React from 'react'
 import { motion } from 'framer-motion'
-import { iProject, Link, Tags } from '../Projects';
+import { iProject, Link, Tag } from '../Projects';
 import { Codepen, Github, ReactIcon, FirebaseIcon, UnityIcon, MobileIcon, YoutubeIcon } from '../../../utils/icons';
 
 const variantions = {
@@ -17,6 +17,7 @@ const variantions = {
 const ProjectCard: React.FC<iProject> = (item, { ...props }: iProject) => {
     return (
         <motion.div
+            layout
             key={item.id}
             className="card"
             variants={variantions.variants}
@@ -51,12 +52,12 @@ const ProjectCard: React.FC<iProject> = (item, { ...props }: iProject) => {
                 <div className='card-footer-techs'>
                     {item.tags?.map((item) => {
                         switch (item) {
-                            case Tags.React: return (<ReactIcon />)
-                            case Tags.ReactNative: return (<ReactIcon />)
-                            case Tags.Firebase: return (<FirebaseIcon />)
-                            case Tags.Unity: return (<UnityIcon />)
-                            case Tags.MobileApp: return (<MobileIcon />)
-                            case Tags.YouTube: return (<YoutubeIcon />)
+                            case Tag.React: return (<ReactIcon />)
+                            case Tag.ReactNative: return (<ReactIcon />)
+                            case Tag.Firebase: return (<FirebaseIcon />)
+                            case Tag.Unity: return (<UnityIcon />)
+                            case Tag.MobileApp: return (<MobileIcon />)
+                            case Tag.YouTube: return (<YoutubeIcon />)
                             default: break;
                         }
                     })}

@@ -1,7 +1,7 @@
 import React from 'react'
 import './Footer.scss';
 import { Twitter, Facebook, Linkedin } from '../../utils/icons';
-import { NAVBAR } from '../../constants/constants';
+import { NAVIGATION } from '../../constants/constants';
 import { NavLink } from 'react-router-dom';
 
 const Footer: React.FC = () => {
@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
           <p className='title'>Quick Links</p>
 
           <ul className="page-links">
-            {NAVBAR.MENU_DATA.map(({ id, title, to }) =>
+            {NAVIGATION.ROUTE.map(({ id, title, to }) =>
               <li key={id}>
                 <NavLink to={to}
                 // className={({ isActive }) => (isActive ? "navbar-nav--links-link-item-active" : "navbar-nav--links-link-item")}

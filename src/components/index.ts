@@ -6,3 +6,4 @@ export { default as BackButton } from './BackButton/BackButton';
 export { default as Joke } from './Joke/Joke';
 export { default as HeartFeltMessage } from './HeartFeltMessage/HeartFeltMessage';
 export { default as AnimatedMessage } from './AnimatedMessage/AnimatedMessage';
+export { default as Footer } from './Footer/Footer';

@@ -6,9 +6,9 @@
 
 
 :root {
-  --font-base: 
-  /* "DM Sans", sans-serif; */
-  Montserrat;
+  --font-base:
+    /* "DM Sans", sans-serif; */
+    Montserrat;
   /* Menlo; */
   /* Monaco; */
   /* 'Courier New'; */
@@ -57,49 +57,14 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
-
-
-// .app__flex {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   /* height: 100vh; */
-// }
-
-// .app__pading-horizontal {
-//   /* top | right | bottom | left */
-//   padding: 0rem 3rem 0rem 3rem;
-
-//   @media screen and (max-width: 550px) {
-//       /* top | right | bottom | left */
-//       padding: 0rem 1.5rem;
-//   }
-// }
-
-.app__bottom-border {
-  border-bottom: solid 3px $secondary-colour;
-  width: fit-content;
+ul {
+  list-style-type: none;
 }
 
-.app__hide-smaller-device {
-  @media screen and (max-width: 550px) {
-    display: none;
-  }
+a {
+  text-decoration: none;
 }
 
-.app__full-height {
-  height: 100vh;
-}
-
-.app__page--padtop {
-  padding-top: 100px;
-}
-
-
-#dark {
-
-  .app__bottom-border {
-    border-bottom: solid 3px $secondary-colour-dark;
-  }
+.new-line {
+  white-space: pre-line;
 }

@@ -1,11 +1,9 @@
 @import '../../res/colours.scss';
 @import '../../utils/Animations/animations.scss';
 
-.navbar-nav {
-    @media screen and (max-width: 900px) {
-        padding: .5rem 1rem;
-    }
+$count: 5;
 
+.app__navbar {
     // Full widht of the screen.
     width: 100%;
     display: flex;
@@ -13,12 +11,13 @@
     // Center the content.
     align-items: center;
 
-    padding: 0.6rem 2rem;
+    padding: 1rem 2rem;
 
     // Add a blur
     backdrop-filter: blur(4px);
     // Makes it compatible with all browsers.
     -webkit-backdrop-filter: blur(4px);
+    // box-shadow: 0 0 20px rgba(128, 128, 128, 0);
 
     // Ensures that it stays at the top of the screen.
     position: fixed;
@@ -26,42 +25,16 @@
     // Ensures the navbar is above the content
     z-index: 2;
 
-    transition: var(--modeTransition);
+    transition: 0.3s ease-in;
 
 
 
-    &--wrapper {
-        flex: 1;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-
-        .ce-title-circle {
-            display: flex;
-            width: 45px;
-            height: 45px;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            text-decoration: none;
-            box-shadow: 6px 3px 3px rgba(150, 150, 150, 0.7);
-            // Lets the user know that is it clickable.
-            // cursor: pointer;
-
-            @media screen and (max-width: 900px) {
-                margin: 0.1rem;
-            }
-
-            .title {
-                color: $black-colour;
-                font-size: 22px;
-
-                // Lets the user know that is it clickable.
-                cursor: pointer;
-            }
-        }
+    .current-tab {
+        color: $secondary-colour;
+        // font-size: 16px;
+        // font-weight: bold;
     }
+
 
     &--scroll {
         // Background colour for the navbar.
@@ -69,256 +42,193 @@
         box-shadow: 0 0 20px rgba(128, 128, 128, 0.5);
     }
 
+    &--logo {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        animation: fade-in .75s ease-out;
+        animation-fill-mode: both;
+        animation-delay: 1.5s;
+
+        a {
+            color: $black-colour;
+
+            // Remove the generic text decoration i.e. underline.
+            text-decoration: none;
+
+            // text-transform: uppercase;
+            font-size: 24px;
+            font-weight: bold;
+
+            background: transparent;
+        }
+    }
+
     &--links {
         flex: 1;
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
         align-items: center;
-        padding: 0px 0px;
+        padding-top: 3px;
+
         // Remove the generic link styles.
         list-style: none;
-
-        @media screen and (max-width: 900px) {
-            padding: 0px 20px;
-        }
 
         // Access the nested 'li' component inside of this
         li {
             @media screen and (max-width: 900px) {
                 display: none;
             }
-
-            justify-content: center;
-            align-items: center;
-            margin: 0 0.6rem;
+            padding: 0px 5px 5px 5px;
+            margin: 0 1rem;
             // Lets the user know that is it clickable.
             cursor: pointer;
 
+            // flex-direction: column;
+
+            // Access the nested 'div' component inside of this
+            // div {
+            //     width: 5px;
+            //     height: 5px;
+            //     background: transparent;
+            //     border-radius: 50%;
+
+            //     margin-bottom: 5px;
+            // }
+
+            // Access the nested 'a' component inside of this
             a {
-                text-decoration: none;
-                color: $black-colour;
+                color: $gray-colour;
+                // text-transform: uppercase;
+                font-size: 18px;
+                font-weight: bold;
+            }
 
-                transition: var(--modeTransition);
-
-                &:hover {
-                    color: $secondary-colour;
-
-                    &:after {
-                        transform: scaleX(1);
+            @for $i from 1 through $count {
+                &:nth-child(#{$count}n+#{$i}) {
+                    a {
+                        transform-origin: center;
+                        animation: slide-l-fade-In .3s ease-out;
+                        animation-fill-mode: both;
+                        animation-delay: 0.25s + ($i * .15s);
                     }
-                }
-
-                &:after {
-                    display: block;
-                    content: '';
-                    border-bottom: solid 3px $secondary-colour;
-
-                    transform: scaleX(0);
-                    transition: transform 250ms ease-in-out;
                 }
             }
         }
-
-
-
-        // .selected {
-        // 	font-weight: bold;
-        // }
     }
 
-    &--links-link-item {
-
-        /* Specific styles for active links */
-        &-active {
-            border-bottom: solid 3px $secondary-colour;
+    &--resume {
+        @media screen and (max-width: 900px) {
+            display: none;
         }
-    }
 
-    &--contact-me-button {
         display: inline-block;
         padding: 0.3em 1.2em;
         margin: 0 0.3em 0.3em 0;
         box-sizing: border-box;
-        color: $black-colour;
+        color: #000000;
         text-align: center;
         text-decoration: none;
         border: 0.1em solid $gray-colour;
         border-radius: 20px;
         overflow: hidden;
-        cursor: pointer;
 
-        transition: 0.3s ease-in-out;
+        transition: 0.2s ease-in;
+
+        transform-origin: center;
+        animation: slide-l-fade-In .3s 0.55s ease-out;
+        animation-fill-mode: both;
+
 
         &:hover {
-            color: $white-colour;
-            background: $secondary-colour;
-        }
-        &:active {
-            box-shadow: 0 0.5em 0.5em -0.4em $secondary-colour;
-            transform: translateY(-0.25em);
-        }
-    }
-}
+            color: #FFFFFF;
 
-/* Specific styles for non-active links */
-// .navbar-nav--links-link-item {
-//     margin-bottom: 5px;
-//     cursor: pointer;
-
-//     /* Specific styles for active links */
-//     &-active {
-//         color: $secondary-colour;
-//         border-bottom: solid 3px $secondary-colour;
-//         // font-weight: bold;
-//     }
-// }
-
-
-.app__drawer {
-
-    // Hide this menu when the screen is larger than 900px
-    @media screen and (min-width: 900px) {
-        display: none;
-    }
-
-    display: flex;
-
-
-    &--panel {
-        position: fixed;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        width: 80%;
-        height: 100vh;
-        z-index: 5;
-
-        background: white;
-
-        box-shadow: 0 0 20px rgb(128, 128, 128);
-
-        transition: all 0.3s ease-in-out;
-
-        div {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-            margin: 4.5rem 1.4rem;
-
-            a {
-                margin: 1rem;
-
-                color: gray;
-                text-decoration: none;
-                font-size: 1rem;
-                text-transform: uppercase;
-                font-weight: 500;
-
-
-                // &:hover {
-                //     color: $secondary-colour;
-                // }
+            &:before {
+                top: 0;
             }
         }
-    }
 
-    &--menuBtn-container {
-        z-index: 10;
-
-        button {
-            display: flex;
-            width: 35px;
-            height: 35px;
-
-            justify-content: center;
-            align-items: center;
-            // border: none;
-            border-radius: 50px;
-            border-width: 2px;
-            cursor: pointer;
+        &:before {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: 0.5s ease-in-out;
+            z-index: -2;
         }
-    }
 
-    &--show {
-        transform-origin: center;
-        animation: slide-left .3s ease-out;
-        animation-fill-mode: both;
-    }
+        &:before {
+            background: $secondary-colour;
+        }
 
-    // &--hide {
-    //     transform-origin: center;
-    //     animation: slide-r .3s ease-out;
-    //     animation-fill-mode: both;
-    // }
+        /*@media all and (max-width:30em) {
+            display: block;
+            margin: 0.4em auto;
+        }*/
+    }
 }
 
 
 
 #dark {
+    .app__navbar {
+        // box-shadow: 0 0 20px rgba($white-colour, 0);
 
-    .navbar-nav {
-
-        &--wrapper {
-            .ce-title-circle {
-                background: rgba(200, 200, 200, 0.7);
-                // width: 40px;
-                // height: 40px;
-
-                .title {
-                    color: $white-colour;
-                }
-            }
+        .current-tab {
+            color: $secondary-colour-dark;
+            // border-bottom: 3px solid $secondary-colour-dark;
         }
 
         &--scroll {
             // Background colour for the navbar.
-            background: rgba($navbar-colour-dark, 0.85);
-            box-shadow: 0 0 20px rgba(128, 128, 128, 0.5);
+            background: rgba($navbar-colour-dark, .85);
+            box-shadow: 0 0 10px rgba($white-colour, 0.5);
         }
 
         &--links {
 
-            /* Specific styles for active links */
-            &-link-active {
-                color: $white-colour;
-                border-bottom: solid 3px $white-colour;
-                // font-weight: bold;
-            }
-
             li {
-
                 a {
                     color: $white-colour;
-
-                    &:after {
-                        border-bottom: solid 3px $secondary-colour-dark;
-                    }
                 }
             }
         }
 
-        &--links-link-item {
+        &--logo {
+            a {
+                // color: $white-colour;
+                filter: invert(100%);
 
-            /* Specific styles for active links */
-            &-active {
-                color: $black-colour;
-                border-bottom: solid 3px $secondary-colour-dark;
+                background: transparent;
             }
         }
 
-        &--contact-me-button {
-            color: $white-colour;
-            border: 0.1em solid $white-colour;
+        &--resume {
+            border: 0.1em solid #FFFFFF;
+            color: #FFFFFF;
 
             &:hover {
-                color: $black-colour;
-                background: $secondary-colour-dark;
+                // color: #000000;
             }
 
-            &:active {
-                box-shadow: 0 0.5em 0.5em -0.4em $secondary-colour-dark;
+            &:before {
+                background: $secondary-colour-dark;
             }
         }
     }
+}
+
+.app__vertical-line {
+    width: 2px;
+    background: $secondary-colour;
+    border-radius: 5px;
+
+    transform-origin: bottom;
+
+    animation: scale-bounce .75s ease-out;
+    animation-fill-mode: both;
+    animation-delay: 1.5s;
 }

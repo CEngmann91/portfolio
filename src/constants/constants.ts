@@ -1,31 +1,13 @@
 export const APP_NAME = 'Christian Engmann';
-export const MODE = 'light'; // light/dark
-
-export const NAVBAR = {
-
-    MENU_DATA: [
-        { id: "0", title: 'Home',                 to: '/' },
-        { id: "1", title: 'About',                to: '/about' },
-        { id: "2", title: 'Projects',             to: '/projects' },
-        { id: "3", title: 'Skills',               to: '/skills' },
-        // { id: 4, title: 'Contact',              to: '/contact' },
-    ]
-}
-
-
-
-
-
-
 export const NAVIGATION = {
 
     ROUTE: [
-        { name: '.home();',         to: 'home'},
-        { name: '.about();',        to: 'about'},
-        { name: '.projects();',     to: 'projects'},
-        // { name: '.skills();',       to: 'skills'},
-        { name: '.contact();',      to: 'contact'},
-        // { name: 'Request A Project >',  to: 'hire'},
+        { id: 0, title: '.home();',         to: 'home'},
+        { id: 1, title: '.about();',        to: 'about'},
+        { id: 2, title: '.projects();',     to: 'projects'},
+        // { id: 3, title: '.skills();',       to: 'skills'},
+        { id: 3, title: '.contact();',      to: 'contact'},
+        // { id: 5, title: 'Request A Project >',  to: 'hire'},
     ]
 }
 

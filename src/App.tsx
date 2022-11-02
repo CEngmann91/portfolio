@@ -1,9 +1,9 @@
 import './res/styles.scss';
-import React, { ReactNode, useLayoutEffect } from 'react';
-import { useLocation, Routes, Route } from 'react-router-dom';
+import React, { useLayoutEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useThemeContext } from './utils/providers/ThemeProvider';
-import { Landing, About, Projects, Skills, Footer } from './pages';
-import { Navbar, FloatingButton, Joke, HeartFeltMessage } from './components';
+import { Landing, About, Projects, Skills } from './pages';
+import { Navbar, Footer, FloatingButton, Joke, HeartFeltMessage } from './components';
 import { Widgets_Settings, Widgets_SocialMedia } from './components/Widgets';
 import images from './utils/images';
 
@@ -36,15 +36,6 @@ export const App = () => {
   );
 
 
-  // const RenderRoute = (component: ReactNode) => (
-  //   <>
-  //     <Navbar />
-  //     {component}
-  //     <Footer />
-
-  //     {/* {RenderFloatingButton()} */}
-  //   </>
-  // );
 
   return (
     <div id={theme} className='app__flex'>
@@ -55,11 +46,11 @@ export const App = () => {
       <Skills />
       <HeartFeltMessage />
       <Projects />
+      <Footer />
 
 
       <Widgets_SocialMedia />
       <Widgets_Settings />
-      {/* {RenderFloatingButton()} */}
     </div>
   );
 }

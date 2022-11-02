@@ -89,14 +89,14 @@ const Drawer: React.FC<iProps> = (props: iProps) => {
                             variants={sideVariants}
                         >
                             {/* {props.links.map(({ name, to }, index) => ( */}
-                            {NAVIGATION.ROUTE.map(({ name, to }, index) => (
+                            {NAVIGATION.ROUTE.map(({ title, to }, index) => (
                                 <motion.a
                                     key={index}
                                     href={`#${to}`}
                                     whileHover={{ scale: 1.1 }}
                                     variants={itemVariants}
                                     onClick={hide}
-                                >{name}</motion.a>
+                                >{title}</motion.a>
                             ))}
                         </motion.div>
 
