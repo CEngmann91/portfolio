@@ -49,7 +49,7 @@ const SocialMedia: React.FC = () => {
         <div className="app__social">
             <ul>
                 {socials.map((item, index) => (
-                    <li>
+                    <li key={index}>
                         <a href={item.path} data-index={index} data-colour={item.colour}>
                             {item.children}
                             {/* {index} */}

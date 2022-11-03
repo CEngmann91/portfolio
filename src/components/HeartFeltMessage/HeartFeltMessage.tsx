@@ -18,7 +18,7 @@ const HeartFeltMessage = () => {
     return (
         <div className='app__flex main'>
             {message.content.map((paragraph, index) => (
-                <AnimatedMessage delay={(index * 1.5)}>
+                <AnimatedMessage key={index} delay={(index * 1.5)}>
                     {paragraph}
                 </AnimatedMessage>
             ))}

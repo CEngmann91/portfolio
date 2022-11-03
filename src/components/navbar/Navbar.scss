@@ -71,9 +71,8 @@ $count: 5;
         justify-content: center;
         align-items: center;
         padding-top: 3px;
-
-        // Remove the generic link styles.
-        list-style: none;
+        padding-left: 70px;
+        
 
         // Access the nested 'li' component inside of this
         li {

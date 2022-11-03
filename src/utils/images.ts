@@ -1,9 +1,13 @@
 /// <reference path='../types/images.d.ts'  />
 
-import miltonKeynes from '../assets/images/backgrounds/Milton Keynes.jpg';
+import Me from '../assets/images/Me.jpg';
+
 import Moon_Dark from '../assets/images/Misc/Moon - Dark.png';
 import Sun_Light from '../assets/images/Misc/sun.png';
 
+
+// Projects
+import LashShack from '../assets/images/pages/projects/LashShack/Photo62.jpg';
 
 // Skills
 import figma from '../assets/images/pages/skills/figma.png';
@@ -18,11 +22,14 @@ import typescript from '../assets/images/pages/skills/typescript.png';
 import firebase from '../assets/images/pages/skills/firebase.png';
 
 export default {
-    
-    miltonKeynes,
+    Me,
+
     Moon_Dark,
     Sun_Light,
 
+
+    // Projects
+    LashShack,
 
     // Skills
     figma,

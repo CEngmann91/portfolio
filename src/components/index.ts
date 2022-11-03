@@ -1,3 +1,4 @@
+export { default as HeadText } from './HeadText/HeadText';
 export { default as Page } from './Page/Page';
 export { default as Navbar } from './navbar/Navbar';
 export { default as Drawer } from './Drawer/Drawer';

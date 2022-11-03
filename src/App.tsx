@@ -13,6 +13,7 @@ export const App = () => {
   const [loading, setLoading] = useState(true)
 
 
+  
   // Scroll to top if path changes
   useLayoutEffect(() => {
     window.scrollTo(0, 0);

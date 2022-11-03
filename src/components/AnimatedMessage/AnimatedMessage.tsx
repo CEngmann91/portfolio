@@ -6,10 +6,12 @@ interface iMessage {
     delay: number;
     children?: React.ReactNode;
     controls?: any; // 'AnimationControls/typeof useAnimation' error when used.
-    onClick?: (e: React.MouseEvent<HTMLElement>) => void;
+    // onClick?: (e: React.MouseEvent<HTMLElement>) => void;
+    onStart?: () => void;
+    onEnd?: () => void;
 }
 
-const AnimatedMessage: React.FC<iMessage> = ({children, delay, controls, ...props}: iMessage) => {
+const AnimatedMessage: React.FC<iMessage> = ({ children, delay, controls, onStart, onEnd, ...props}: iMessage) => {
     const variantions = {
         variants: {
             hidden: { opacity: 0, y: 100 },
@@ -22,7 +24,9 @@ const AnimatedMessage: React.FC<iMessage> = ({children, delay, controls, ...prop
     return (
         <div className='app__anim-message'>
             <motion.div
+                className="app__anim-message--text"
                 variants={variantions.variants}
+                animate={controls}
                 initial="hidden"
                 whileInView="visible"
                 // Play in viewport only once.
@@ -31,8 +35,8 @@ const AnimatedMessage: React.FC<iMessage> = ({children, delay, controls, ...prop
                     duration: variantions.duration,
                     delay: delay,
                 }}
-                animate={controls}
-                className="app__anim-message--text"
+                onAnimationStart={() => onStart?.()}
+                onAnimationEnd={() => onEnd?.()}
             >
                 {children}
             </motion.div>

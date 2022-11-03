@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Joke.scss';
 import { AnimatePresence, motion, useAnimation } from 'framer-motion';
-import { AnimatedMessage } from '../../components';
+import { AnimatedMessage, HeadText } from '../../components';
 import { useEffect } from 'react';
 
 interface iJoke {
@@ -63,24 +63,21 @@ const jokes: iJoke[] = [
 ];
 
 
-const Joke: React.FC = () => {
+interface iProps {
+  onStart?: () => void;
+  onEnd?: () => void;
+}
+const Joke: React.FC<iProps> = (props: iProps) => {
   const controls = useAnimation();
   const [counter, setCounter] = useState(0);
   const [randomJoke, setRandomJoke] = useState<iJoke>(jokes[counter]);
-
-  // const touchVariantions = {
-  //   variants: {
-  //     hidden: { opacity: 0, x: 200 },
-  //     visible: { opacity: [0, 0.2, 0.3, 1], x: 0 },
-  //   },
-  //   ease: "easeIn",
-  //   duration: 0.3,
-  //   delay: 0.4,
-  // }
+  const [jokeAnimatedIntoView, setJokeAnimatedIntoView] = useState(false);
 
 
 
   const hideAndRestartAnimation = () => {
+    setJokeAnimatedIntoView(false);
+
     controls.start({
       opacity: 0,
       y: 100,
@@ -89,10 +86,11 @@ const Joke: React.FC = () => {
         delay: 0,
       },
     })
-      .then(() => {
-        setCounter(prev => (prev === jokes.length - 1 ? 0 : prev + 1));
-        controls.start('visible')
-      })
+    .then(() => {
+      setCounter(prev => (prev === jokes.length - 1 ? 0 : prev + 1));
+      props.onStart?.();
+      controls.start('visible')
+    })
   }
 
   useEffect(() => {
@@ -101,39 +99,30 @@ const Joke: React.FC = () => {
 
 
   return (
-    <div className='app__joke' onClick={hideAndRestartAnimation}>
+    <div className='app__joke'>
       <div className='app__flex app__joke--pointer'>
         <AnimatedMessage delay={0} controls={controls}>
-          <h1 className='head-text'><span>{randomJoke.question}</span></h1>
+          <HeadText text={randomJoke.question} />
         </AnimatedMessage>
 
-        <AnimatedMessage delay={randomJoke.punchLineDelay} controls={controls}>
-          <h1 className='head-text'><span>{randomJoke.punchline}</span></h1>
+        <AnimatedMessage delay={randomJoke.punchLineDelay} controls={controls}
+          onEnd={() => {
+            console.log("Joke end");
+            
+            setJokeAnimatedIntoView(true);
+            props.onEnd?.()
+          }}>
+          <HeadText text={randomJoke.punchline} />
         </AnimatedMessage>
+
+        {jokeAnimatedIntoView.toString()}
       </div>
-      
-      {/* <circle></circle> */}
 
-
-      {/* <AnimatePresence>
-        <motion.div
-          className="project__card--item"
-          variants={touchVariantions.variants}
-          initial="hidden"
-          whileInView="visible"
-          // Play in viewport only once.
-          viewport={{ once: true }}
-          transition={{
-            ease: touchVariantions.ease,
-            duration: touchVariantions.duration,
-            // delay: ((index % 3) * touchVariantions.delay),
-          }}
-        >
-          
-        </motion.div>
-      </AnimatePresence> */}
-
-
+      {jokeAnimatedIntoView &&
+        <circle onClick={hideAndRestartAnimation}>
+          <p>✋</p>
+        </circle>
+      }
     </div>
   )
 }

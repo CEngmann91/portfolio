@@ -23,7 +23,7 @@ const ProjectCard: React.FC<iProject> = (item, { ...props }: iProject) => {
             variants={variantions.variants}
             initial="hidden"
             whileInView="visible"
-            style={item.gradient ? { background: `linear-gradient(${item.gradient[0]}, ${item.gradient[1]});` } : {}}
+            style={item.gradient ? { background: `linear-gradient(${item.gradient[0]}, ${item.gradient[1]})` } : {}}
             // Play in viewport only once.
             viewport={{ once: true }}
             transition={{
