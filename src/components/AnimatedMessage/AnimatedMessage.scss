@@ -1,3 +1,5 @@
+@import '../../res/colours.scss';
+
 .app__anim-message {
     display: flex;
     flex-direction: column;
@@ -6,9 +8,16 @@
     justify-content: center;
     align-items: center;
     // background: red;
+    // background: $primary-colour;
     
 
     @media screen and (max-width: 500px) {
         // width: 120%;
+    }
+}
+
+#dark {
+    .app__anim-message {
+        // background: $primary-colour-dark;
     }
 }
