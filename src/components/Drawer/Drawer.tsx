@@ -4,16 +4,9 @@ import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { LINKS, NAVIGATION } from '../../constants/constants';
 
-
-const itemVariants = {
-    closed: {
-        x: 200,
-        opacity: 0,
-    },
-    open: {
-        x: 0,
-        opacity: 1,
-    }
+const overlayVariants = {
+    closed: { opacity: 0 },
+    open:   { opacity: 1 }
 };
 
 const sideVariants = {
@@ -31,6 +24,19 @@ const sideVariants = {
     }
 };
 
+const itemVariants = {
+    closed: {
+        x: 200,
+        opacity: 0,
+    },
+    open: {
+        x: 0,
+        opacity: 1,
+    }
+};
+
+
+
 
 interface iProps {
     // Set id for Modal
@@ -38,7 +44,7 @@ interface iProps {
     // The width of the Modal.
     width?: string | number;
 }
-const Drawer: React.FC<iProps> = (props: iProps) => {
+const Drawer: React.FC<iProps> = ({width = '80%'}: iProps) => {
     const [menuVisible, setMenuVisible] = useState(false);
 
     const show = () => {
@@ -70,53 +76,66 @@ const Drawer: React.FC<iProps> = (props: iProps) => {
 
             <AnimatePresence>
                 {menuVisible && (
-                    <motion.div
-                        className='app__drawer--panel'
-                        initial={{ width: 0 }}
-                        animate={{ width: '70%' }}
-                        exit={{
-                            width: 0,
-                            transition: {
-                                delay: 0.7,
-                                duration: 0.2,
-                                type: 'spring'
-                            }
-                        }}
-                    >
-                        {/* {props.links.length} */}
+                    <>
                         <motion.div
-                            initial="closed"
-                            animate="open"
-                            exit="closed"
-                            variants={sideVariants}
+                            className='app__drawer--panel'
+                            initial={{ width: 0 }}
+                            animate={{ width: width }}
+                            exit={{
+                                width: 0,
+                                transition: {
+                                    delay: 0.7,
+                                    duration: 0.2,
+                                    type: 'spring'
+                                }
+                            }}
                         >
-                            {/* {props.links.map(({ name, to }, index) => ( */}
-                            {NAVIGATION.ROUTE.map(({ title, to }, index) => (
-                                <motion.a
-                                    key={index}
-                                    href={`#${to}`}
-                                    whileHover={{ scale: 1.1 }}
-                                    variants={itemVariants}
-                                    onClick={hide}
-                                >{title}</motion.a>
-                            ))}
+                            {/* {props.links.length} */}
+                            <motion.div
+                                initial="closed"
+                                animate="open"
+                                exit="closed"
+                                variants={sideVariants}
+                            >
+                                {/* {props.links.map(({ name, to }, index) => ( */}
+                                {NAVIGATION.ROUTE.map(({ title, to }, index) => (
+                                    <motion.a
+                                        key={index}
+                                        href={`#${to}`}
+                                        whileHover={{ scale: 1.1 }}
+                                        variants={itemVariants}
+                                        onClick={hide}
+                                    >{title}</motion.a>
+                                ))}
+                            </motion.div>
+
+
+                            <a href={LINKS.RESUME} className="app__drawer--resume" target="_blank" rel="noreferrer">{".résumé();"}</a>
+
                         </motion.div>
 
-
-                        <a href={LINKS.RESUME} className="app__drawer--resume" target="_blank" rel="noreferrer">{".résumé();"}</a>
-
-                    </motion.div>
+                        <motion.div
+                            initial="closed"
+                            whileInView="open"
+                            exit="closed"
+                            transition={{ duration: 0.85 }}
+                            variants={overlayVariants}
+                            className='app__drawer--overlay'
+                            onClick={hide}
+                        />
+                    </>
                 )}
             </AnimatePresence>
 
-            {menuVisible && (
+            {/* {menuVisible && (
                 <motion.div
                     whileInView={{ opacity: [0, 1] }}
                     transition={{ duration: 0.85 }}
+                    exit={{ opacity: 0 }}
                     className='app__drawer--overlay'
                     onClick={hide}
                 />
-            )}
+            )} */}
         </div>
     )
 }
