@@ -1,5 +1,7 @@
 @import '../../res/colours.scss';
 
+$length: 9;
+
 .app__skills {
     flex: 1;
     display: flex;
@@ -59,6 +61,15 @@
             //     border: 0.5px solid $secondary-colour;
             // }
         }
+
+
+        // @for $i from 1 through $length {
+        //     &:nth-child(#{$length}n+#{$i}) {
+        //         .skill__card--item {
+        //             // transform: translateY(-);
+        //         }
+        //     }
+        // }
     }
 }
 

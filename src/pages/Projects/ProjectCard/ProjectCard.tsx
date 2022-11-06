@@ -18,7 +18,7 @@ const ProjectCard: React.FC<iProject> = (item, { ...props }: iProject) => {
     return (
         <motion.div
             layout
-            key={item.id}
+            // key={item.id}
             className="card"
             variants={variantions.variants}
             initial="hidden"

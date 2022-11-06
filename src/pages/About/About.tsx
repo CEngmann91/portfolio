@@ -18,7 +18,7 @@ const About: React.FC = () => {
                     <p className='app__about--text'>In my spare time when I am not busy building apps, I like to take long walks and drives while exploring new places around London and the UK.</p><br />
                 </div>
 
-                <div className="photo">
+                <div className="headshot">
                     <img src={images.Me} alt={"Me"} />
                 </div>
             </div>

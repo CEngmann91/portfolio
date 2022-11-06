@@ -2,12 +2,13 @@ import { AiFillCloseCircle, AiFillInstagram } from 'react-icons/ai';
 import { HiX } from 'react-icons/hi';
 import { FiSun, FiMoon, FiCodepen } from "react-icons/fi";
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { GrSettingsOption } from 'react-icons/gr';
+// import { GrSettingsOption } from 'react-icons/gr';
 import { MdAlternateEmail, MdEmail } from 'react-icons/md';
 
 import { BsTwitter, BsGithub, BsYoutube, BsStarFill, BsFillArrowUpCircleFill, BsFillPencilFill } from 'react-icons/bs';
 import { FaFacebookF, FaLinkedinIn, FaReact, FaUnity, FaMobile, FaRegEye, FaQuoteRight } from 'react-icons/fa';
 import { SiFirebase } from 'react-icons/si';
+import { SlArrowDown } from 'react-icons/sl';
 
 
 export {
@@ -21,6 +22,7 @@ export {
     // MdEmail as Email,
 
     BsFillArrowUpCircleFill as UpArrow,
+    SlArrowDown as DownArrow,
     BsStarFill as Star,
 
 

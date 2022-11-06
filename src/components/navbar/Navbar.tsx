@@ -64,7 +64,9 @@ const Navbar: React.FC = () => {
                 Say Hello
             </p> */}
 
-            <a href={LINKS.RESUME} className={`app__navbar--resume ${resumeVisible && 'anim-bouncy'} app__hover-with-shadow`} target="_blank" rel="noreferrer">{".résumé();"}</a>
+            <div onAnimationEnd={() => setResumeVisible(true)} className={`${resumeVisible && 'anim-bouncy'}`}>
+                <a href={LINKS.RESUME} className={'app__navbar--resume app__hover-with-shadow'} target="_blank" rel="noreferrer">{".résumé();"}</a>
+            </div>
 
 
             <Drawer />

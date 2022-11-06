@@ -86,11 +86,12 @@ const Joke: React.FC<iProps> = (props: iProps) => {
         delay: 0,
       },
     })
-    .then(() => {
-      setCounter(prev => (prev === jokes.length - 1 ? 0 : prev + 1));
-      props.onStart?.();
-      controls.start('visible')
-    })
+      .then(() => {
+        setCounter(prev => (prev === jokes.length - 1 ? 0 : prev + 1));
+        setJokeAnimatedIntoView(false);
+        props.onStart?.();
+        controls.start('visible')
+      })
   }
 
   useEffect(() => {
@@ -100,29 +101,26 @@ const Joke: React.FC<iProps> = (props: iProps) => {
 
   return (
     <div className='app__joke'>
-      <div className='app__flex app__joke--pointer'>
+      <div className='app__flex'>
         <AnimatedMessage delay={0} controls={controls}>
           <HeadText text={randomJoke.question} />
         </AnimatedMessage>
 
         <AnimatedMessage delay={randomJoke.punchLineDelay} controls={controls}
           onEnd={() => {
-            console.log("Joke end");
-            
             setJokeAnimatedIntoView(true);
             props.onEnd?.()
           }}>
           <HeadText text={randomJoke.punchline} />
         </AnimatedMessage>
 
-        {jokeAnimatedIntoView.toString()}
-      </div>
 
-      {jokeAnimatedIntoView &&
-        <circle onClick={hideAndRestartAnimation}>
-          <p>✋</p>
-        </circle>
-      }
+        {jokeAnimatedIntoView &&
+          <div className="touch-ripple" onClick={hideAndRestartAnimation}>
+            <p>✋</p>
+          </div>
+        }
+      </div>
     </div>
   )
 }

@@ -27,7 +27,11 @@
             }
         }
 
-        .photo {
+        .headshot {
+            @media screen and (min-width: 1200px) {
+                margin-top: -20px;
+            }
+
             flex-shrink: 0;
             margin: 20px;
             height: calc(150px + 6vw);
@@ -49,10 +53,9 @@
                 object-position: center center;
             }
 
-            &:hover {
-                cursor: pointer;
-                // transform: scale(1.1);
-            }
+            // &:hover {
+            //     cursor: pointer;
+            // }
         }
     }
 
@@ -67,16 +70,26 @@
 
 #dark {
 
-    div {
-        color: $white-colour;
-    }
+    // div {
+    //     color: $white-colour;
+    // }
 
     .app__about {
 
         .bio {
 
-            .photo {
+            .headshot {
                 background: linear-gradient($secondary-colour-dark, $primary-colour);
+
+                // img {
+                //     filter: grayscale(25%);
+
+                //     transition: 0.3s ease-in;
+
+                //     &:hover {
+                //         filter: grayscale(0%);
+                //     }
+                // }
             }
         }
     }

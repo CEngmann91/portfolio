@@ -10,16 +10,8 @@ interface iSkill {
 
 const skills: iSkill[] = [
   {
-    title: "Firebase",
-    imgSource: images.firebase
-  },
-  {
     title: "GIT",
     imgSource: images.git
-  },
-  {
-    title: "Figma",
-    imgSource: images.figma
   },
   {
     title: "React",
@@ -48,6 +40,14 @@ const skills: iSkill[] = [
   {
     title: "SASS",
     imgSource: images.sass
+  },
+  {
+    title: "Firebase",
+    imgSource: images.firebase
+  },
+  {
+    title: "Figma",
+    imgSource: images.figma
   },
 ]
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import { DownArrow } from '../../utils/icons';
 import { useThemeContext } from '../../utils/providers/ThemeProvider';
 import './Landing.scss';
 
@@ -31,6 +32,11 @@ const Landing: React.FC = () => {
           // background: 'red',
         }}>
         {/* <MagicMouse /> */}
+
+        <div className="app__landing--scroll-arrow anim--bounce-arrow">
+          <DownArrow />
+          {/* <a className="fa fa-arrow-down fa-2x" href="#"></a> */}
+        </div>
       </div>
 
     </div>

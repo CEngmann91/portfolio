@@ -36,7 +36,7 @@ const AnimatedMessage: React.FC<iMessage> = ({ children, delay, controls, onStar
                     delay: delay,
                 }}
                 onAnimationStart={() => onStart?.()}
-                onAnimationEnd={() => onEnd?.()}
+                onAnimationComplete={() => onEnd?.()}
             >
                 {children}
             </motion.div>
