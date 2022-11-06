@@ -224,6 +224,9 @@ $social-link-colours:
             flex: 1;
             display: flex;
             justify-content: space-between;
+            @media screen and (max-width: 900px) {
+                text-align: center;
+            }
 
             .copyright {
                 color: $white-colour;

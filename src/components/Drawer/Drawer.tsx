@@ -60,7 +60,9 @@ const Drawer: React.FC<iProps> = (props: iProps) => {
     return (
         <div className='app__drawer'>
             <div className="app__drawer--menuBtn-container">
-                <button className='app__box-shadow-indent' onClick={toggleVisibility} data-menuVisible={menuVisible}>
+                <button
+                    // className='app__box-shadow-indent'
+                    onClick={toggleVisibility} data-menuVisible={menuVisible}>
                     <i />
                 </button>
             </div>
