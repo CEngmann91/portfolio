@@ -9,6 +9,8 @@
     justify-content: center;
     align-items: flex-start;
     // cursor: none;
+    background: $primary-colour;
+    z-index: 3;
 
 
     /* top | right | bottom | left */
@@ -123,6 +125,7 @@
 
 #dark {
     .app__landing {
+        background: $primary-colour-dark;
 
         div {
             color: $white-colour;

@@ -4,11 +4,12 @@
     @media screen and (max-width: 550px) {
         padding-bottom: 20px;
     }
-
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     padding-bottom: 50px;
+    background: $primary-colour;
+    z-index: 3;
 
 
     .bio {
@@ -75,6 +76,7 @@
     // }
 
     .app__about {
+        background: $primary-colour-dark;
 
         .bio {
 

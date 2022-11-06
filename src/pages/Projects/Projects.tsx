@@ -200,7 +200,7 @@ const projects: iProject[] = [
 ]
 const Projects: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState("All");
-  const filters = ['All', 'UI_UX', 'Web Apps', 'Mobile App', 'React JS', 'Unity'];
+  const filters = ['All', 'UI_UX', 'Web App', 'Mobile App', 'React JS', 'Unity'];
   const [filteredList, setFilteredList] = useState<iProject[]>([]);
 
 
@@ -213,6 +213,12 @@ const Projects: React.FC = () => {
   const handleFilter = useCallback((selectFilter: string) => {
     if (selectFilter === "All")
       setFilteredList(projects);
+    else if (selectFilter === "Web App")
+      setFilteredList(projects.filter((item) => item.tags?.includes(Tag.React || Tag.NodeJS || Tag.Flutter)));
+    else if (selectFilter === "Mobile App")
+      setFilteredList(projects.filter((item) => item.tags?.includes(Tag.ReactNative || Tag.NodeJS || Tag.Flutter || Tag.MobileApp)));
+    else if (selectFilter === "React JS")
+      setFilteredList(projects.filter((item) => item.tags?.includes(Tag.React || Tag.ReactNative)));
     else {
       let selectFilterTag = (Tag as any)[selectFilter];
       setFilteredList(projects.filter((item) => item.tags?.includes(selectFilterTag)));

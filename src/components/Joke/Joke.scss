@@ -2,17 +2,18 @@
 @import '../../res/colours.scss';
 
 .app__joke {
+    @media screen and (max-width: 500px) {
+        width: 80%;
+    }
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 90vh;
     justify-content: center;
     align-items: center;
-    margin-bottom: 2rem;
-
-    @media screen and (max-width: 500px) {
-        width: 80%;
-    }
+    padding-bottom: 2rem;
+    background: $primary-colour;
+    z-index: 3;
 
 
 
@@ -107,6 +108,7 @@
 #dark {
 
     .app__joke {
+        background: $primary-colour-dark;
 
         .touch-ripple:before,
         .touch-ripple:after {

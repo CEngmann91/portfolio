@@ -1,17 +1,30 @@
 @import '../../res/colours.scss';
 
+$social-link-colours:
+    // #0072b1,
+    // #171515,
+    // #171515,
+    #0077b5,
+    #55acee,
+    #dd4b39, // Instagram
+;
+
 .app__footer {
-    flex: 1;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    // flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    // justify-content: space-between;
     width: 100%;
-    height: 120px;
+    height: 110px auto;
+    // line-height: 24px;
     // Center the content.
     align-items: flex-start;
 
     /* top | right | bottom | left */
-    padding: 1em 7em 1em 5em;
+    padding: 2em 7em 1.1em 5em;
 
     background-color: rgba(155, 155, 155, 0.7);
 
@@ -19,7 +32,7 @@
         /* top | right | bottom | left */
         padding: 1em 5em 1em 3em;
     }
-    
+
 
     &--contents {
         @media screen and (max-width: 900px) {
@@ -29,7 +42,21 @@
         display: flex;
         flex-direction: row;
         width: 100%;
-        height: 100%;
+        // height: 100%;
+        // padding: 5px 0px;
+
+
+        .title {
+            // @media screen and (max-width: 900px) {
+
+            // }
+
+            color: #fff;
+            font-size: 22px;
+            text-transform: uppercase;
+            margin-top: 5px;
+            letter-spacing: 2px
+        }
 
 
         .quick-links {
@@ -40,15 +67,7 @@
             width: 70%;
             color: $white-colour;
 
-            .title {
-                @media screen and (max-width: 900px) {
-                    font-size: 14px;
-                }
 
-                font-size: 18px;
-                color: $white-colour;
-                font-weight: bold;
-            }
 
             .page-links {
                 display: flex;
@@ -61,10 +80,11 @@
                 li {
                     display: flex;
                     align-items: center;
-                    // Lets the user know that is it clickable.
-                    cursor: pointer;
+
 
                     a {
+                        // Lets the user know that is it clickable.
+                        cursor: pointer;
                         text-decoration: none;
                         color: $white-colour;
 
@@ -101,6 +121,7 @@
                 width: 100%;
                 align-items: center;
             }
+
             display: flex;
             flex-direction: column;
             align-items: flex-end;
@@ -110,51 +131,77 @@
                 // margin-right: 10px;
             }
 
-            .title {
-                @media screen and (max-width: 900px) {
-                    font-size: 14px;
-                }
-
-                font-size: 18px;
-                color: $white-colour;
-                font-weight: bold;
-            }
-
-            .links {
+            ul {
                 display: flex;
                 align-items: flex-end;
 
-                a {
-                    @media screen and (max-width: 900px) {
-                        width: 15px;
-                        height: 15px;
-                        margin-left: 5px;
-                    }
-                    width: 20px;
-                    height: 20px;
-                    margin-left: 15px;
-                    margin-top: 5px;
-                    cursor: pointer;
-                    transition: 0.3s ease-in-out;
+                li {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 6px;
 
-                    svg {
-                        color: white;
-                        width: 100%;
-                        height: 100%;
-                    }
-                    
-                    // &:active {
-                    //     box-shadow: 0 0.5em 0.5em -0.4em grey;
-                    //     transform: translateY(-0.25em);
+                    a {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        // Lets the user know that is it clickable.
+                        cursor: pointer;
 
-                    //     // svg {
-                    //     //     color: red;
-                    //     // }
-                    // }
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                        background: #33353d;
+                        padding: 7px;
+
+                        transition: 0.3s ease-in;
+
+                        svg {
+                            color: white;
+                            width: 100%;
+                            height: 100%;
+                        }
+
+
+
+
+
+
+
+
+                        // @media screen and (max-width: 900px) {
+                        //     width: 15px;
+                        //     height: 15px;
+                        //     margin-left: 5px;
+                        // }
+
+                        // width: 20px;
+                        // height: 20px;
+                        // margin-left: 15px;
+                        // margin-top: 5px;
+                        // cursor: pointer;
+                        // transition: 0.3s ease-in-out;
+
+                        // svg {
+                        //     color: white;
+                        //     width: 100%;
+                        //     height: 100%;
+                        // }
+                    }
+
+                    @for $i from 1 through length($social-link-colours) {
+                        &:nth-child(#{length($social-link-colours)}n+#{$i}) {
+                            a {
+                                &:hover {
+                                    background: nth($social-link-colours, $i);
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
     }
+
 
     &--baseline {
         display: flex;
@@ -180,11 +227,14 @@
 
             .copyright {
                 color: $white-colour;
+                margin: 0;
+                letter-spacing: 1.5px;
 
                 @media screen and (max-width: 900px) {
                     font-size: 10px;
                 }
-                font-size: 12px;
+
+                // font-size: 12px;
             }
 
 

@@ -5,8 +5,9 @@ import { NAVIGATION } from '../../constants/constants';
 import { NavLink } from 'react-router-dom';
 
 const Footer: React.FC = () => {
+
   return (
-    <footer className='app__footer'>
+    <div className='app__footer'>
       {/* Footer */}
 
 
@@ -23,51 +24,33 @@ const Footer: React.FC = () => {
               </li>
             )}
           </ul>
-
         </div>
-
 
 
         <div className='socials'>
           <p className='title'>Socials</p>
-          <div className='links'>
-            <a className='links-icon'><Facebook /></a>
-            <a className='links-icon'><Twitter /></a>
-            <a className='links-icon'><Linkedin /></a>
-          </div>
+
+          <ul>
+            <li>
+              <a className='links-icon'><Facebook /></a>
+              <a className='links-icon'><Twitter /></a>
+              <a className='links-icon'><Linkedin /></a>
+            </li>
+          </ul>
         </div>
-
-
-        {/* <div className='categories'>
-          <p className='title'>Categories</p>
-          <p className='content'>
-            Insert Text here
-          </p>
-        </div> */}
-
-
       </div>
 
       <div className='app__footer--baseline'>
         <div className='line' />
 
         <div className='container'>
-          <p className='copyright'>Copyright © 2022 All Rights Are Reserved by Christian Engmann</p>
-
-          {/* <div className='socials'>
-            <div className='links'>
-              <div className='links-icon'><Facebook /></div>
-              <div className='links-icon'><Twitter /></div>
-              <div className='links-icon'><Linkedin /></div>
-            </div>
-          </div> */}
-
+          <p className='copyright'>Copyright &copy; 2022 All Rights Reserved by
+            <a href="#"> Christian Engmann</a>.
+          </p>
         </div>
       </div>
 
-
-
-    </footer>
+    </div>
   )
 }
 

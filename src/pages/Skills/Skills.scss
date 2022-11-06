@@ -9,7 +9,8 @@ $length: 9;
     min-height: 50vh;
     justify-content: flex-start;
     align-items: flex-start;
-
+    background: $primary-colour;
+    z-index: 3;
 
     &--title {
 
@@ -33,6 +34,9 @@ $length: 9;
 
 
         .skill__card--item {
+            @media screen and (max-width: 900px) {
+                width: 50px;
+            }
             display: flex;
             flex-direction: column;
             position: relative;
@@ -77,6 +81,7 @@ $length: 9;
 #dark {
 
     .app__skills {
+        background: $primary-colour-dark;
 
         .skill__cards {
             .skill__card--item {

@@ -1,6 +1,6 @@
 @import '../../../res/colours.scss';
 
-$child-colours:
+$social-link-colours:
     linear-gradient(red, yellow),
     #0072b1,
     #171515,
@@ -97,12 +97,12 @@ $anim-start-delay: 0.5s;
             //     }
             // }
             
-            @for $i from 1 through length($child-colours) {
-                &:nth-child(#{length($child-colours)}n+#{$i}) {
+            @for $i from 1 through length($social-link-colours) {
+                &:nth-child(#{length($social-link-colours)}n+#{$i}) {
                     a {
                         animation-delay: $anim-start-delay + ($i * .15s);
                         &:before {
-                            background: nth($child-colours, $i);
+                            background: nth($social-link-colours, $i);
                         }
                     }
                 }

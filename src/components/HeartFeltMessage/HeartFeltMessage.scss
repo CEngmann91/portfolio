@@ -1,3 +1,5 @@
+@import '../../res/colours.scss';
+
 .main {
     display: flex;
     flex-direction: column;
@@ -5,4 +7,12 @@
     align-items: center;
     height: 80vh;
     width: 100%;
+    background: $primary-colour;
+    z-index: 3;
+}
+
+#dark {
+    .main {
+        background: $primary-colour-dark;
+    }
 }
