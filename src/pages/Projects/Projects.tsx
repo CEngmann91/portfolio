@@ -18,6 +18,7 @@ export enum Tag {
   YouTube,
 };
 export enum Link {
+  URL,
   Codepen,
   Github,
   YouTube,
@@ -48,7 +49,11 @@ const projects: iProject[] = [
     links: [
       {
         link: Link.Github,
-        url: "https://github.com"
+        url: "https://github.com/CEngmann91/lash-shack"
+      },
+      {
+        link: Link.URL,
+        url: "https://www.lashshackuk.com"
       }
     ],
     gradient: [

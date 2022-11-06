@@ -9,6 +9,7 @@ import { BsTwitter, BsGithub, BsYoutube, BsStarFill, BsFillArrowUpCircleFill, Bs
 import { FaFacebookF, FaLinkedinIn, FaReact, FaUnity, FaMobile, FaRegEye, FaQuoteRight } from 'react-icons/fa';
 import { SiFirebase } from 'react-icons/si';
 import { SlArrowDown } from 'react-icons/sl';
+import { BiLinkAlt } from 'react-icons/bi';
 
 
 export {
@@ -24,6 +25,7 @@ export {
     BsFillArrowUpCircleFill as UpArrow,
     SlArrowDown as DownArrow,
     BsStarFill as Star,
+    BiLinkAlt as ChainLink,
 
 
     FaRegEye as Eye,

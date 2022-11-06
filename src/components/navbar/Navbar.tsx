@@ -5,7 +5,7 @@ import { LINKS, NAVIGATION } from '../../constants/constants';
 import { ContactModal } from '../Modals';
 import NavbarItem from './NavbarItem/NavbarItem';
 // import { Menu } from '../../utils/icons';
-import { Drawer } from '../../components';
+import { ALink, Drawer } from '../../components';
 import { useThemeContext } from '../../utils/providers/ThemeProvider';
 
 const Navbar: React.FC = () => {
@@ -65,7 +65,7 @@ const Navbar: React.FC = () => {
             </p> */}
 
             <div onAnimationEnd={() => setResumeVisible(true)} className={`${resumeVisible && 'anim-bouncy'}`}>
-                <a href={LINKS.RESUME} className={'app__navbar--resume app__hover-with-shadow'} target="_blank" rel="noreferrer">{".résumé();"}</a>
+                <ALink path={LINKS.RESUME} className='app__navbar--resume app__hover-with-shadow'>{".résumé();"}</ALink>
             </div>
 
 

@@ -35,7 +35,6 @@ const Landing: React.FC = () => {
 
         <div className="app__landing--scroll-arrow anim--bounce-arrow">
           <DownArrow />
-          {/* <a className="fa fa-arrow-down fa-2x" href="#"></a> */}
         </div>
       </div>
 

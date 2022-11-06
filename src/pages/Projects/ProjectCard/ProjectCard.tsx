@@ -2,7 +2,8 @@ import './ProjectCard.scss';
 import React from 'react'
 import { motion } from 'framer-motion'
 import { iProject, Link, Tag } from '../Projects';
-import { Codepen, Github, ReactIcon, FirebaseIcon, UnityIcon, MobileIcon, YoutubeIcon } from '../../../utils/icons';
+import { Codepen, Github, ReactIcon, FirebaseIcon, UnityIcon, MobileIcon, YoutubeIcon, ChainLink } from '../../../utils/icons';
+import { ALink } from '../../../components';
 
 const variantions = {
     variants: {
@@ -52,8 +53,9 @@ const ProjectCard: React.FC<iProject> = (item, { ...props }: iProject) => {
                 <div className='card-footer-techs'>
                     {item.tags?.map((item) => {
                         switch (item) {
-                            case Tag.React: return (<ReactIcon />)
-                            case Tag.ReactNative: return (<ReactIcon />)
+                            case Tag.React:
+                            case Tag.ReactNative:
+                                return (<ReactIcon />)
                             case Tag.Firebase: return (<FirebaseIcon />)
                             case Tag.Unity: return (<UnityIcon />)
                             case Tag.MobileApp: return (<MobileIcon />)
@@ -67,11 +69,14 @@ const ProjectCard: React.FC<iProject> = (item, { ...props }: iProject) => {
                 <div className='card-footer-links'>
                     {item.links?.map((item) => {
                         switch (item.link) {
+                            case Link.URL:
+                                return ( <ALink path={item.url} className='card-links-item app__hover-with-shadow'><ChainLink /></ALink> )
                             case Link.Codepen:
-                                return (<a href={item.url} className='card-links-item app__hover-with-shadow'><Codepen /></a>)
+                                return ( <ALink path={item.url} className='card-links-item app__hover-with-shadow'><Codepen /></ALink> )
                             case Link.Github:
-                                return (<a href={item.url} className='card-links-item app__hover-with-shadow'><Github /></a>)
-                            case Link.YouTube: return (<a href={item.url} className='card-links-item app__hover-with-shadow'><YoutubeIcon /></a>)
+                                return ( <ALink path={item.url} className='card-links-item app__hover-with-shadow'><Github /></ALink> )
+                            case Link.YouTube:
+                                return ( <ALink path={item.url} className='card-links-item app__hover-with-shadow'><YoutubeIcon /></ALink> )
                             default: break;
                         }
                     })}
