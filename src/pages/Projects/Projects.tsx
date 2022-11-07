@@ -16,6 +16,7 @@ export enum Tag {
   NodeJS,
   MobileApp,
   YouTube,
+  Figma,
 };
 export enum Link {
   URL,
@@ -137,7 +138,7 @@ const projects: iProject[] = [
     description: "description5",
     imgUrl: 'https://i.pinimg.com/originals/a0/9b/2f/a09b2f34c1916f0ef332d323f79cbbc7.jpg',
     tags: [
-      Tag.Firebase,
+      Tag.Figma,
       Tag.UI_UX
     ],
     links: [

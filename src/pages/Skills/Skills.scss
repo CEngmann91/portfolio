@@ -57,6 +57,9 @@ $length: 9;
             }
 
             &-text {
+                @media screen and (max-width: 900px) {
+                    font-size: 11px;
+                }
                 font-size: 13px;
                 font-weight: bold;
             }

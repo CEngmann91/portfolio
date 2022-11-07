@@ -10,6 +10,7 @@ import { FaFacebookF, FaLinkedinIn, FaReact, FaUnity, FaMobile, FaRegEye, FaQuot
 import { SiFirebase } from 'react-icons/si';
 import { SlArrowDown } from 'react-icons/sl';
 import { BiLinkAlt } from 'react-icons/bi';
+import { CgFigma } from 'react-icons/cg';
 
 
 export {
@@ -21,11 +22,13 @@ export {
     // FaFacebookF as Facebook,
     // FaLinkedinIn as Linkedin,
     // MdEmail as Email,
+    CgFigma as Figma,
 
     BsFillArrowUpCircleFill as UpArrow,
     SlArrowDown as DownArrow,
     BsStarFill as Star,
     BiLinkAlt as ChainLink,
+    
 
 
     FaRegEye as Eye,

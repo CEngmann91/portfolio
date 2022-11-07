@@ -2,7 +2,7 @@ import './ProjectCard.scss';
 import React from 'react'
 import { motion } from 'framer-motion'
 import { iProject, Link, Tag } from '../Projects';
-import { Codepen, Github, ReactIcon, FirebaseIcon, UnityIcon, MobileIcon, YoutubeIcon, ChainLink } from '../../../utils/icons';
+import { Codepen, Github, ReactIcon, FirebaseIcon, UnityIcon, MobileIcon, YoutubeIcon, ChainLink, Figma } from '../../../utils/icons';
 import { ALink } from '../../../components';
 
 const variantions = {
@@ -60,13 +60,14 @@ const ProjectCard: React.FC<iProject> = (item, { ...props }: iProject) => {
                             case Tag.Unity: return (<UnityIcon />)
                             case Tag.MobileApp: return (<MobileIcon />)
                             case Tag.YouTube: return (<YoutubeIcon />)
+                            case Tag.Figma: return (<Figma />)
                             default: break;
                         }
                     })}
                 </div>
 
                 {/* Links for the project/website. */}
-                <div className='card-footer-links'>
+                <div className="card-footer-links">
                     {item.links?.map((item) => {
                         switch (item.link) {
                             case Link.URL:
