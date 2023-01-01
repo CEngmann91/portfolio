@@ -2,7 +2,7 @@ import './ProjectCard.scss';
 import React from 'react'
 import { motion } from 'framer-motion'
 import { iProject, Link, Tag } from '../Projects';
-import { Codepen, Github, ReactIcon, FirebaseIcon, UnityIcon, MobileIcon, YoutubeIcon, ChainLink, Figma, MongoDBIcon, NodeJSIcon, ExpressIcon } from '../../../utils/icons';
+import { Codepen, Github, ReactIcon, FirebaseIcon, UnityIcon, MobileIcon, YoutubeIcon, ChainLink, Figma, MongoDBIcon, NodeJSIcon, ExpressIcon, CSharpIcon } from '../../../utils/icons';
 import { ALink } from '../../../components';
 
 const variantions = {
@@ -15,11 +15,10 @@ const variantions = {
     delay: 0.4,
 }
 
-const ProjectCard: React.FC<iProject> = (item, { ...props }: iProject) => {
+const ProjectCard: React.FC<iProject> = (item: iProject) => {
     return (
         <motion.div
             layout
-            // key={item.id}
             className="card"
             variants={variantions.variants}
             initial="hidden"
@@ -61,6 +60,7 @@ const ProjectCard: React.FC<iProject> = (item, { ...props }: iProject) => {
                             case Tag.NodeJS: return (<NodeJSIcon />)
                             case Tag.Unity: return (<UnityIcon />)
                             case Tag.MobileApp: return (<MobileIcon />)
+                            case Tag.CSharp: return ( <CSharpIcon /> )
                             case Tag.YouTube: return (<YoutubeIcon />)
                             case Tag.Figma: return (<Figma />)
                             default: break;

@@ -1,7 +1,14 @@
 @import './theme.scss';
 
+
+@font-face {
+    font-family: 'WixMadeforTextRegular';
+    src: local('WixMadeforTextRegular'),
+        url('../assets/fonts/WixMadeforText/WixMadeforDisplayRegular.ttf') format('ttf'),
+}
+
 body {
-    font-family: var(--font-base);
+    font-family: WixMadeforTextRegular;
     // background: $background-colour;
 
 

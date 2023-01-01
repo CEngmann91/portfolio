@@ -10,6 +10,7 @@ import Sun_Light from '../assets/images/Misc/sun.png';
 import LashShack from '../assets/images/pages/projects/LashShack/Photo62.jpg';
 import Pallion_Mern from '../assets/images/pages/projects/Pallion/Mern.png';
 import Pallion_RF from '../assets/images/pages/projects/Pallion/React and Firebase.png';
+import Choosic from '../assets/images/pages/projects/Choosic/Choosic.jpeg';
 
 
 // Skills
@@ -17,6 +18,7 @@ import figma from '../assets/images/pages/skills/figma.png';
 import flutter from '../assets/images/pages/skills/flutter.png';
 import git from '../assets/images/pages/skills/git.png';
 import javascript from '../assets/images/pages/skills/javascript.png';
+import cSharp from '../assets/images/pages/skills/C#.png';
 import node from '../assets/images/pages/skills/node.png';
 import react from '../assets/images/pages/skills/react.png';
 import redux from '../assets/images/pages/skills/redux.png';
@@ -35,12 +37,14 @@ export default {
     LashShack,
     Pallion_Mern,
     Pallion_RF,
+    Choosic,
 
     // Skills
     figma,
     flutter,
     git,
     javascript,
+    cSharp,
     node,
     react,
     redux,

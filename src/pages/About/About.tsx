@@ -12,7 +12,7 @@ const About: React.FC = () => {
 
             <div className="bio">
                 <div className="info">
-                    <p className='app__about--text'>Hello! My name is Christian, I am a web developer who is passionate about everything code related.</p><br />
+                    <p className='app__about--text'>Hello! My name is Christian, I am a Full Stack developer who is passionate about everything code related.</p><br />
                     <p className='app__about--text'>My inspiration comes from knowing that my growth over the years has lead me to be the person I am today. To put simply, I love to learn and improve my existing knowledge and this project is a great demonstration of that.</p><br />
                     <p className='app__about--text'>I am currently looking for an opportunity to work with a Javascript framework. Ultimately, I aim to find a position that allows me to use new technologies.</p><br />
                     <p className='app__about--text'>In my spare time when I am not busy building apps, I like to take long walks and drives while exploring new places around London and the UK.</p><br />

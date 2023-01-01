@@ -15,6 +15,7 @@ export enum Tag {
   NodeJS,
   MongoDB, Express,
   MobileApp,
+  CSharp,
   YouTube,
   Figma,
 };
@@ -81,21 +82,14 @@ const projects: iProject[] = [
       }
     ]
   },
-  // {
-  //   id: 3,
-  //   title: 'Test3',
-  //   description: "description3",
-  //   imgUrl: 'https://c4.wallpaperflare.com/wallpaper/1003/738/330/yakusoku-no-neverland-ray-the-promised-neverland-emma-the-promised-neverland-the-promised-neverland-anime-hd-wallpaper-preview.jpg',
-  //   tags: [
-  //     Tag.React, Tag.Firebase
-  //   ],
-  //   links: [
-  //     {
-  //       link: Link.Codepen,
-  //       url: "https://codepen.io"
-  //     }
-  //   ]
-  // },
+  {
+    id: 3,
+    title: 'Choosic',
+    description: "description3",
+    imgUrl: images.Choosic,
+    tags: [ Tag.MobileApp, Tag.CSharp ],
+    links: []
+  },
   // {
   //   id: 4,
   //   title: 'Test4',
@@ -206,17 +200,17 @@ const Projects: React.FC = () => {
         temp = projects.filter((item) => item.tags?.includes(Tag.UI || Tag.Figma));
       break;
       case "Front-End":
-        temp = projects.filter((item) => item.tags?.includes(Tag.React));
+        temp = projects.filter((item) => item.tags?.includes(Tag.React || Tag.MobileApp));
       break;
       case "Full Stack":
         temp = projects.filter((item) => item.tags?.includes(
-          (Tag.MongoDB && Tag.Express || Tag.NodeJS || Tag.React)
+          (Tag.MongoDB && Tag.Express && Tag.NodeJS && Tag.React)
           || (Tag.React && Tag.Firebase)
           || Tag.React || Tag.Firebase
           ));
       break;
       case "Mobile":
-        temp = projects.filter((item) => item.tags?.includes(Tag.ReactNative || Tag.MobileApp));
+        temp = projects.filter((item) => item.tags?.includes(Tag.ReactNative || Tag.MobileApp || Tag.CSharp));
       break;
       case "Other":
         temp = projects.filter((item) => item.tags?.includes(Tag.Unity));
@@ -259,6 +253,7 @@ const Projects: React.FC = () => {
   return (
     <Page id='projects' className='app__projects app__page--padtop' pageTitle='.projects();'>
 
+      {activeFilter}
       {renderFilters()}
 
 

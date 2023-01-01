@@ -38,6 +38,10 @@ const skills: iSkill[] = [
     imgSource: images.javascript
   },
   {
+    title: "C#",
+    imgSource: images.cSharp
+  },
+  {
     title: "SASS",
     imgSource: images.sass
   },

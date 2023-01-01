@@ -36,7 +36,7 @@ $length: 9;
 
         .skill__card--item {
             @media screen and (max-width: 900px) {
-                width: 55px;
+                width: 60px;
             }
             display: flex;
             flex-direction: column;
@@ -58,6 +58,7 @@ $length: 9;
             }
 
             &-text {
+                margin-top: 5px;
                 @media screen and (max-width: 900px) {
                     font-size: 11px;
                 }
