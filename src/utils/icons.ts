@@ -7,7 +7,7 @@ import { MdAlternateEmail, MdEmail } from 'react-icons/md';
 
 import { BsTwitter, BsGithub, BsYoutube, BsStarFill, BsFillArrowUpCircleFill, BsFillPencilFill, BsHandIndex } from 'react-icons/bs';
 import { FaFacebookF, FaLinkedinIn, FaReact, FaUnity, FaMobile, FaRegEye, FaQuoteRight } from 'react-icons/fa';
-import { SiFirebase } from 'react-icons/si';
+import { SiFirebase, SiMongodb, SiExpress, SiNodedotjs } from 'react-icons/si';
 import { SlArrowDown } from 'react-icons/sl';
 import { BiLinkAlt } from 'react-icons/bi';
 import { CgFigma } from 'react-icons/cg';
@@ -63,4 +63,7 @@ export {
     FaUnity as UnityIcon,
     FaMobile as MobileIcon,
     BsYoutube as YoutubeIcon,
+    SiMongodb as MongoDBIcon,
+    SiExpress as ExpressIcon,
+    SiNodedotjs as NodeJSIcon,
 };

@@ -8,6 +8,9 @@ import Sun_Light from '../assets/images/Misc/sun.png';
 
 // Projects
 import LashShack from '../assets/images/pages/projects/LashShack/Photo62.jpg';
+import Pallion_Mern from '../assets/images/pages/projects/Pallion/Mern.png';
+import Pallion_RF from '../assets/images/pages/projects/Pallion/React and Firebase.png';
+
 
 // Skills
 import figma from '../assets/images/pages/skills/figma.png';
@@ -30,6 +33,8 @@ export default {
 
     // Projects
     LashShack,
+    Pallion_Mern,
+    Pallion_RF,
 
     // Skills
     figma,

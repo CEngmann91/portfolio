@@ -7,13 +7,13 @@ import { useEffect } from 'react';
 import images from '../../utils/images';
 
 export enum Tag {
-  UI_UX,
+  UI,
   React,
   ReactNative,
-  Flutter,
   Unity,
   Firebase,
   NodeJS,
+  MongoDB, Express,
   MobileApp,
   YouTube,
   Figma,
@@ -43,9 +43,7 @@ const projects: iProject[] = [
     title: 'Lash Shack',
     description: "description",
     imgUrl: images.LashShack,
-    tags: [
-      Tag.React, Tag.Firebase,
-    ],
+    tags: [ Tag.React, Tag.Firebase ],
     links: [
       {
         link: Link.Github,
@@ -57,40 +55,32 @@ const projects: iProject[] = [
       }
     ],
   },
-  // {
-  //   id: 1,
-  //   title: 'Test',
-  //   description: "description",
-  //   imgUrl: 'https://images4.alphacoders.com/819/819837.png',
-  //   tags: [
-  //     Tag.React, Tag.Firebase, Tag.Unity,
-  //   ],
-  //   links: [
-  //     {
-  //       link: Link.Codepen,
-  //       url: "https://codepen.io"
-  //     },
-  //     {
-  //       link: Link.Github,
-  //       url: "https://github.com"
-  //     }
-  //   ]
-  // },
-  // {
-  //   id: 2,
-  //   title: 'Test2',
-  //   description: "description2",
-  //   imgUrl: 'https://wallpaperaccess.com/full/938178.jpg',
-  //   tags: [
-  //     Tag.React, Tag.MobileApp
-  //   ],
-  //   links: [
-  //     {
-  //       link: Link.Github,
-  //       url: "https://github.com"
-  //     }
-  //   ]
-  // },
+  {
+    id: 1,
+    title: 'Pallion Digital Solutions Ltd',
+    description: "12 Month Contract",
+    imgUrl: images.Pallion_Mern,
+    tags: [ Tag.MongoDB, Tag.Express, Tag.React, Tag.NodeJS ],
+    links: [
+      {
+        link: Link.URL,
+        url: "https://palliondigital.solutions/"
+      }
+    ]
+  },
+  {
+    id: 2,
+    title: 'Pallion Digital Solutions Ltd',
+    description: "12 Month Contract",
+    imgUrl: images.Pallion_RF,
+    tags: [ Tag.React, Tag.Firebase ],
+    links: [
+      {
+        link: Link.URL,
+        url: "https://palliondigital.solutions/"
+      }
+    ]
+  },
   // {
   //   id: 3,
   //   title: 'Test3',
@@ -134,7 +124,7 @@ const projects: iProject[] = [
   //   imgUrl: 'https://i.pinimg.com/originals/a0/9b/2f/a09b2f34c1916f0ef332d323f79cbbc7.jpg',
   //   tags: [
   //     Tag.Figma,
-  //     Tag.UI_UX
+  //     Tag.UI
   //   ],
   //   links: [
   //     {
@@ -196,7 +186,7 @@ const projects: iProject[] = [
 ]
 const Projects: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState("All");
-  const filters = ['All', 'UI_UX', 'Web App', 'Mobile App', 'React JS', 'Unity'];
+  const filters = ['All', 'Design', 'Front-End', 'Full Stack', 'Mobile', 'Other'];
   const [filteredList, setFilteredList] = useState<iProject[]>([]);
 
 
@@ -207,51 +197,78 @@ const Projects: React.FC = () => {
 
 
   const handleFilter = useCallback((selectFilter: string) => {
-    if (selectFilter === "All")
-      setFilteredList(projects);
-    else if (selectFilter === "Web App")
-      setFilteredList(projects.filter((item) => item.tags?.includes(Tag.React || Tag.NodeJS || Tag.Flutter)));
-    else if (selectFilter === "Mobile App")
-      setFilteredList(projects.filter((item) => item.tags?.includes(Tag.ReactNative || Tag.NodeJS || Tag.Flutter || Tag.MobileApp)));
-    else if (selectFilter === "React JS")
-      setFilteredList(projects.filter((item) => item.tags?.includes(Tag.React || Tag.ReactNative)));
-    else {
-      let selectFilterTag = (Tag as any)[selectFilter];
-      setFilteredList(projects.filter((item) => item.tags?.includes(selectFilterTag)));
-    }
-    setActiveFilter(selectFilter)
+    let temp: iProject[] = projects;
+    switch (selectFilter) {
+      case "All":
+        temp = projects;
+      break;
+      case "Design":
+        temp = projects.filter((item) => item.tags?.includes(Tag.UI || Tag.Figma));
+      break;
+      case "Front-End":
+        temp = projects.filter((item) => item.tags?.includes(Tag.React));
+      break;
+      case "Full Stack":
+        temp = projects.filter((item) => item.tags?.includes(
+          (Tag.MongoDB && Tag.Express || Tag.NodeJS || Tag.React)
+          || (Tag.React && Tag.Firebase)
+          || Tag.React || Tag.Firebase
+          ));
+      break;
+      case "Mobile":
+        temp = projects.filter((item) => item.tags?.includes(Tag.ReactNative || Tag.MobileApp));
+      break;
+      case "Other":
+        temp = projects.filter((item) => item.tags?.includes(Tag.Unity));
+      break;
+      default:
+        let selectFilterTag = (Tag as any)[selectFilter];
+        temp = projects.filter((item) => item.tags?.includes(selectFilterTag));
+      break;
+    };
+    setFilteredList(temp);
+    setActiveFilter(selectFilter);
   }, []);
+
+
+  const renderFilters = () => (
+    <div className="app__projects--filters">
+      {filters.map((item, key) => (
+        <div key={key} className={`app__projects--filters-item app__flex p-text app__hover-with-shadow ${activeFilter === item ? "app__projects--filters-item-active" : ""}`} onClick={() => handleFilter(item)}>
+          {item}
+        </div>
+      ))}
+    </div>
+  )
+
+  const renderCards = () => (
+    <div className='project__cards'>
+      {/* <div className='box' /> */}
+
+      {filteredList.map(({ id, title, description, imgUrl, tags, links }, key) => (
+        <div key={key}>
+          {/* <AnimatePresence> */}
+            <ProjectCard id={id} title={title} description={description} imgUrl={imgUrl} tags={tags} links={links} />
+          {/* </AnimatePresence> */}
+        </div>
+      ))}
+    </div>
+  )
 
 
   return (
     <Page id='projects' className='app__projects app__page--padtop' pageTitle='.projects();'>
 
-      <div className="app__projects--filters">
-        {filters.map((item, index) => (
-          <div key={index} className={`app__projects--filters-item app__flex p-text app__hover-with-shadow ${activeFilter === item ? "app__projects--filters-item-active" : ""}`} onClick={() => handleFilter(item)}>
-            {item}
-          </div>
-        ))}
-      </div>
+      {renderFilters()}
 
-      <p className='app__projects--text'>Here are a few projects I've worked on recently.</p>
 
-      <div className='project__cards'>
-        {/* <div className='box' /> */}
+      {filteredList.length > 0 ?
+        <p className='app__projects--text'>Here are a few projects I've worked on recently.</p>
+        :
+        <p className='app__projects--text'>No Pojects Found!</p>
+      }
 
-        {filteredList.map((item) => (
-          <AnimatePresence key={item.id}>
-            <ProjectCard
-              id={item.id}
-              title={item.title}
-              description={item.description}
-              imgUrl={item.imgUrl}
-              tags={item.tags}
-              links={item.links}
-            />
-          </AnimatePresence>
-        ))}
-      </div>
+      {renderCards()}
     </Page>
   )
 }

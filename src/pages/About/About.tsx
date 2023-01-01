@@ -5,7 +5,7 @@ import { useThemeContext } from '../../utils/providers/ThemeProvider';
 import images from '../../utils/images';
 
 const About: React.FC = () => {
-    const { theme } = useThemeContext();
+    // const { theme } = useThemeContext();
 
     return (
         <Page id='about' className='app__about app__page--padtop' pageTitle='.aboutMe();'>

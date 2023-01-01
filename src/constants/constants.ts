@@ -31,5 +31,5 @@ export const LINKS = {
         Facebook:   'https://www.facebook.com/cengmann',
         Twitter:    'https://twitter.com/cengmann',
     },
-    RESUME: "https://docs.google.com/document/d/1pDRImf8JdFXr7jXyuF0u2QCWEKMz9DAR/edit?usp=share_link&ouid=113453345274789424431&rtpof=true&sd=true"
+    RESUME: "https://docs.google.com/document/d/1yIcgaagsueOZLQvt6t_Vi74XnyshgH6j/edit?usp=share_link&ouid=113453345274789424431&rtpof=true&sd=true"
 }

@@ -7,29 +7,14 @@ import NavbarItem from './NavbarItem/NavbarItem';
 // import { Menu } from '../../utils/icons';
 import { ALink, Drawer } from '../../components';
 import { useThemeContext } from '../../utils/providers/ThemeProvider';
+import { useScroller } from '../../helpers/hooks/useScroller';
 
 const Navbar: React.FC = () => {
     const { theme } = useThemeContext();
+    const scrolledDown = useScroller();
     const [currentRoute, setCurrentRoute] = useState(NAVIGATION.ROUTE[0]);
-    const [scrolledDown, setScrolledDown] = useState(false);
     const [resumeVisible, setResumeVisible] = useState(false);
     const [contactModelOpen, setContactModelOpen] = useState(false);
-
-
-    useEffect(() => {
-        window.addEventListener('scroll', onScroll)
-        // window.addEventListener('keydown', onKeyDown)
-        return () => {
-            window.removeEventListener('scroll', onScroll)//, { passive: true })
-            // window.removeEventListener('keydown', onKeyDown)
-        }
-    }, [])
-
-    const onScroll = () => setScrolledDown((window.scrollY > 100))
-
-    // const onKeyDown = (e) => {
-    //     if (e.code === "Escape") hideMenu();
-    // };
 
 
 

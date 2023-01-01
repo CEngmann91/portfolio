@@ -1,0 +1,11 @@
+@import '../../../res/colours.scss';
+
+#Line {
+    @media screen and (max-width: 900px) {
+        top: -0.8em;
+    }
+
+    border-bottom: 3px solid rgba($secondary-colour, 0.4);
+    position: relative;
+    top: -1.3em;
+}

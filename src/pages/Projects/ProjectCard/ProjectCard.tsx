@@ -2,7 +2,7 @@ import './ProjectCard.scss';
 import React from 'react'
 import { motion } from 'framer-motion'
 import { iProject, Link, Tag } from '../Projects';
-import { Codepen, Github, ReactIcon, FirebaseIcon, UnityIcon, MobileIcon, YoutubeIcon, ChainLink, Figma } from '../../../utils/icons';
+import { Codepen, Github, ReactIcon, FirebaseIcon, UnityIcon, MobileIcon, YoutubeIcon, ChainLink, Figma, MongoDBIcon, NodeJSIcon, ExpressIcon } from '../../../utils/icons';
 import { ALink } from '../../../components';
 
 const variantions = {
@@ -56,6 +56,9 @@ const ProjectCard: React.FC<iProject> = (item, { ...props }: iProject) => {
                             case Tag.ReactNative:
                                 return (<ReactIcon />)
                             case Tag.Firebase: return (<FirebaseIcon />)
+                            case Tag.MongoDB: return (<MongoDBIcon />)
+                            case Tag.Express: return (<ExpressIcon />)
+                            case Tag.NodeJS: return (<NodeJSIcon />)
                             case Tag.Unity: return (<UnityIcon />)
                             case Tag.MobileApp: return (<MobileIcon />)
                             case Tag.YouTube: return (<YoutubeIcon />)

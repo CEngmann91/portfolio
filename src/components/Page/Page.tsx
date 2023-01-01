@@ -1,5 +1,6 @@
 import './Page.scss';
 import React from 'react';
+import Line from './Line/Line';
 
 interface iProps {
     id: string;
@@ -12,9 +13,9 @@ const Page: React.FC<iProps> = ({id, className, pageTitle, children, ...props}: 
     return (
         <div id={id} className={`app__flex app__pad-hor page ${className}`}>
             <header>
-                <line className="cell" />
-                <div className="cell text"><h1 className='head-text app__underline-anim'><span>{pageTitle}</span></h1></div>
-                <line className="cell" />
+                <Line className="cell" />
+                <div className="cell text"><h1 className='head-text'><span>{pageTitle}</span></h1></div>
+                <Line className="cell" />
             </header>
             {children}
         </div>

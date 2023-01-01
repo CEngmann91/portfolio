@@ -16,16 +16,6 @@
             width: 1%;
             padding: 0 10px;
         }
-
-        line {
-            @media screen and (max-width: 900px) {
-                top: -0.8em;
-            }
-
-            border-bottom: 3px solid rgba($secondary-colour, 0.4);
-            position: relative;
-            top: -1.3em;
-        }
     }
 
 }
@@ -36,7 +26,7 @@
 
         header {
 
-            line {
+            Line {
                 border-bottom: 3px solid rgba($secondary-colour-dark, 0.4);
             }
         }

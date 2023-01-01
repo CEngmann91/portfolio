@@ -1,5 +1,6 @@
 import './RootModal.scss';
 import React, { useState, useEffect, useCallback } from 'react'
+import { useScrollLock } from '../../../helpers/hooks/useScrollLock';
 
 interface iProps {
   // Set id for Modal
@@ -23,12 +24,23 @@ interface iProps {
   showCloseButton?: boolean;
 }
 const RootModal: React.FC<iProps> = ({ id, width = '60%', height = '80vh', shown, children, onClose, lockScrolling = true, suppressed, dismissOnEscKey = true, closeButtonClassName, showCloseButton = true, ...props}: iProps) => {
+  const { lockScroll, unlockScroll } = useScrollLock();
   const STATE = { HIDDEN: "Hidden", ANIMATING: "Animating", VISIBLE: "Visible" }
   const [state, setState] = useState(STATE.HIDDEN);
 
 
 
-  useEffect(() => {
+  if (shown) {
+    lockScroll();
+  }
+  if (!shown)
+  {
+    unlockScroll();
+  }
+
+
+
+  /*useEffect(() => {
     if (lockScrolling && shown)
       // Prevents scrolling whilst the menu is visible.
       document.body.style.overflow = "hidden";
@@ -41,7 +53,7 @@ const RootModal: React.FC<iProps> = ({ id, width = '60%', height = '80vh', shown
     //     window.removeEventListener('keydown', onKeyDown, true)
     //   }
     // }
-  }, [shown])
+  }, [shown])*/
 
 
   // const onKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
