@@ -1,7 +1,7 @@
 import './res/styles.scss';
 import React, { useLayoutEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useThemeContext } from './utils/providers/ThemeProvider';
+import { useThemeContext } from './providers/ThemeProvider';
 import { IntroScreen, Landing, About, Projects, Skills } from './pages';
 import { Navbar, Footer, FloatingButton, Joke, HeartFeltMessage } from './components';
 import { Widgets_Settings, Widgets_SocialMedia } from './components/Widgets';

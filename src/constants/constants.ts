@@ -1,17 +1,5 @@
 export const APP_NAME = 'Christian Engmann';
 
-// type iNavigation {
-//     id: number;
-//     title: string;
-//     to: string;
-//     onClick?: (e?: React.MouseEvent<HTMLElement>) => void;
-// }
-// var arr: iNavigation[] = [
-//     { id: 0, title: "Available", to: "" },
-//     { id: 1, title: "Ready", to: "" },
-//     { id: 2, title: "Started", to: "" }
-// ];
-
 export const NAVIGATION = {
     ROUTE: [
         { id: 0, title: '.home();',         to: 'home'},

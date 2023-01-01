@@ -1,6 +1,5 @@
 import './Skills.scss';
 import React from 'react'
-import { useThemeContext } from '../../utils/providers/ThemeProvider';
 import images from '../../utils/images';
 
 interface iSkill {

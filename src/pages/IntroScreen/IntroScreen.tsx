@@ -1,5 +1,5 @@
 import React from 'react'
-import { useThemeContext } from '../../utils/providers/ThemeProvider';
+import { useThemeContext } from '../../providers/ThemeProvider';
 import './IntroScreen.scss';
 
 export interface iProps {

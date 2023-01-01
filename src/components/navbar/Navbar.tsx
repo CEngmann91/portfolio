@@ -6,7 +6,7 @@ import { ContactModal } from '../Modals';
 import NavbarItem from './NavbarItem/NavbarItem';
 // import { Menu } from '../../utils/icons';
 import { ALink, Drawer } from '../../components';
-import { useThemeContext } from '../../utils/providers/ThemeProvider';
+import { useThemeContext } from '../../providers/ThemeProvider';
 import { useScroller } from '../../helpers/hooks/useScroller';
 
 const Navbar: React.FC = () => {

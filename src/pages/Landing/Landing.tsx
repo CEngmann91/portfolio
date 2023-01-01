@@ -1,11 +1,8 @@
 import React from 'react'
 import { DownArrow } from '../../utils/icons';
-import { useThemeContext } from '../../utils/providers/ThemeProvider';
 import './Landing.scss';
 
 const Landing: React.FC = () => {
-  const { theme } = useThemeContext();
-
   const tags = ['Computer Scientist', 'Freelancer', 'Web & Mobile Developer', 'Designer', 'And Finally...A Comedian']
 
 

@@ -18,7 +18,7 @@ import figma from '../assets/images/pages/skills/figma.png';
 import flutter from '../assets/images/pages/skills/flutter.png';
 import git from '../assets/images/pages/skills/git.png';
 import javascript from '../assets/images/pages/skills/javascript.png';
-import cSharp from '../assets/images/pages/skills/C#.png';
+import cSharp from '../assets/images/pages/skills/CSharp.png';
 import node from '../assets/images/pages/skills/node.png';
 import react from '../assets/images/pages/skills/react.png';
 import redux from '../assets/images/pages/skills/redux.png';

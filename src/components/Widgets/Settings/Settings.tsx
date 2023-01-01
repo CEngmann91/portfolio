@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Settings.scss';
 
-import { useThemeContext } from '../../../utils/providers/ThemeProvider';
+import { useThemeContext } from '../../../providers/ThemeProvider';
 import Switch from "react-switch";
 import { Crescent, Sun } from '../../../utils/icons';
 

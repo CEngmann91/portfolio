@@ -1,7 +1,7 @@
 import './About.scss';
 import React from 'react';
 import { Page } from '../../components/';
-import { useThemeContext } from '../../utils/providers/ThemeProvider';
+// import { useThemeContext } from '../../providers/ThemeProvider';
 import images from '../../utils/images';
 
 const About: React.FC = () => {
