@@ -5,7 +5,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 // import { GrSettingsOption } from 'react-icons/gr';
 import { MdAlternateEmail, MdEmail } from 'react-icons/md';
 
-import { BsTwitter, BsGithub, BsYoutube, BsStarFill, BsFillArrowUpCircleFill, BsFillPencilFill } from 'react-icons/bs';
+import { BsTwitter, BsGithub, BsYoutube, BsStarFill, BsFillArrowUpCircleFill, BsFillPencilFill, BsHandIndex } from 'react-icons/bs';
 import { FaFacebookF, FaLinkedinIn, FaReact, FaUnity, FaMobile, FaRegEye, FaQuoteRight } from 'react-icons/fa';
 import { SiFirebase } from 'react-icons/si';
 import { SlArrowDown } from 'react-icons/sl';
@@ -24,11 +24,12 @@ export {
     // MdEmail as Email,
     CgFigma as Figma,
 
+    
+    BsHandIndex as Hand,
     BsFillArrowUpCircleFill as UpArrow,
     SlArrowDown as DownArrow,
     BsStarFill as Star,
     BiLinkAlt as ChainLink,
-    
 
 
     FaRegEye as Eye,

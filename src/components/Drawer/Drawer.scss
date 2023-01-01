@@ -98,21 +98,7 @@
                 }
             }
 
-            // &[data-menuVisible="false"] {
-                // &:hover {
-                //     i {
-                //         &::before {
-                //             top: -7px;
-                //         }
-
-                //         &::after {
-                //             bottom: -7px;
-                //         }
-                //     }
-                // }
-            // }
-
-            &[data-menuVisible="true"] {
+            &[data-menuvisible="true"] {
                 i {
                     // Hide the center line.
                     background: transparent;

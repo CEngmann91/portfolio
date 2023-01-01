@@ -44,8 +44,9 @@ interface iProps {
     // The width of the Modal.
     width?: string | number;
 }
-const Drawer: React.FC<iProps> = ({width = '80%'}: iProps) => {
+const Drawer: React.FC<iProps> = ({ width = '80%' }: iProps) => {
     const [menuVisible, setMenuVisible] = useState(false);
+    const [isOpen, toggleOpen] = useCycle(false, true);
 
     const show = () => {
         // Prevents scrolling whilst the menu is visible.
@@ -68,7 +69,7 @@ const Drawer: React.FC<iProps> = ({width = '80%'}: iProps) => {
             <div className="app__drawer--menuBtn-container">
                 <button
                     // className='app__box-shadow-indent'
-                    onClick={toggleVisibility} data-menuVisible={menuVisible}>
+                    onClick={toggleVisibility} data-menuvisible={menuVisible}>
                     <i />
                 </button>
             </div>

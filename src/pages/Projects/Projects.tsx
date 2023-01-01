@@ -35,7 +35,6 @@ export interface iProject {
   imgUrl: string;
   tags?: Tag[];
   links?: iLink[];
-  gradient?: string[];
 }
 
 const projects: iProject[] = [
@@ -57,97 +56,93 @@ const projects: iProject[] = [
         url: "https://www.lashshackuk.com"
       }
     ],
-    gradient: [
-      "#efb3b7",
-      '#102879'
-    ]
   },
-  {
-    id: 1,
-    title: 'Test',
-    description: "description",
-    imgUrl: 'https://images4.alphacoders.com/819/819837.png',
-    tags: [
-      Tag.React, Tag.Firebase, Tag.Unity,
-    ],
-    links: [
-      {
-        link: Link.Codepen,
-        url: "https://codepen.io"
-      },
-      {
-        link: Link.Github,
-        url: "https://github.com"
-      }
-    ]
-  },
-  {
-    id: 2,
-    title: 'Test2',
-    description: "description2",
-    imgUrl: 'https://wallpaperaccess.com/full/938178.jpg',
-    tags: [
-      Tag.React, Tag.MobileApp
-    ],
-    links: [
-      {
-        link: Link.Github,
-        url: "https://github.com"
-      }
-    ]
-  },
-  {
-    id: 3,
-    title: 'Test3',
-    description: "description3",
-    imgUrl: 'https://c4.wallpaperflare.com/wallpaper/1003/738/330/yakusoku-no-neverland-ray-the-promised-neverland-emma-the-promised-neverland-the-promised-neverland-anime-hd-wallpaper-preview.jpg',
-    tags: [
-      Tag.React, Tag.Firebase
-    ],
-    links: [
-      {
-        link: Link.Codepen,
-        url: "https://codepen.io"
-      }
-    ]
-  },
-  {
-    id: 4,
-    title: 'Test4',
-    description: "description4",
-    imgUrl: 'https://images7.alphacoders.com/722/722029.png',
-    tags: [Tag.YouTube],
-    links: [
-      {
-        link: Link.Codepen,
-        url: "https://codepen.io"
-      },
-      {
-        link: Link.Github,
-        url: "https://github.com"
-      },
-      {
-        link: Link.YouTube,
-        url: "https://youtube.com"
-      }
-    ]
-  },
-  {
-    id: 5,
-    title: 'Test5',
-    description: "description5",
-    imgUrl: 'https://i.pinimg.com/originals/a0/9b/2f/a09b2f34c1916f0ef332d323f79cbbc7.jpg',
-    tags: [
-      Tag.Figma,
-      Tag.UI_UX
-    ],
-    links: [
-      {
-        link: Link.Github,
-        url: "https://github.com"
-      }
-    ]
-  },
+  // {
+  //   id: 1,
+  //   title: 'Test',
+  //   description: "description",
+  //   imgUrl: 'https://images4.alphacoders.com/819/819837.png',
+  //   tags: [
+  //     Tag.React, Tag.Firebase, Tag.Unity,
+  //   ],
+  //   links: [
+  //     {
+  //       link: Link.Codepen,
+  //       url: "https://codepen.io"
+  //     },
+  //     {
+  //       link: Link.Github,
+  //       url: "https://github.com"
+  //     }
+  //   ]
+  // },
+  // {
+  //   id: 2,
+  //   title: 'Test2',
+  //   description: "description2",
+  //   imgUrl: 'https://wallpaperaccess.com/full/938178.jpg',
+  //   tags: [
+  //     Tag.React, Tag.MobileApp
+  //   ],
+  //   links: [
+  //     {
+  //       link: Link.Github,
+  //       url: "https://github.com"
+  //     }
+  //   ]
+  // },
+  // {
+  //   id: 3,
+  //   title: 'Test3',
+  //   description: "description3",
+  //   imgUrl: 'https://c4.wallpaperflare.com/wallpaper/1003/738/330/yakusoku-no-neverland-ray-the-promised-neverland-emma-the-promised-neverland-the-promised-neverland-anime-hd-wallpaper-preview.jpg',
+  //   tags: [
+  //     Tag.React, Tag.Firebase
+  //   ],
+  //   links: [
+  //     {
+  //       link: Link.Codepen,
+  //       url: "https://codepen.io"
+  //     }
+  //   ]
+  // },
+  // {
+  //   id: 4,
+  //   title: 'Test4',
+  //   description: "description4",
+  //   imgUrl: 'https://images7.alphacoders.com/722/722029.png',
+  //   tags: [Tag.YouTube],
+  //   links: [
+  //     {
+  //       link: Link.Codepen,
+  //       url: "https://codepen.io"
+  //     },
+  //     {
+  //       link: Link.Github,
+  //       url: "https://github.com"
+  //     },
+  //     {
+  //       link: Link.YouTube,
+  //       url: "https://youtube.com"
+  //     }
+  //   ]
+  // },
+  // {
+  //   id: 5,
+  //   title: 'Test5',
+  //   description: "description5",
+  //   imgUrl: 'https://i.pinimg.com/originals/a0/9b/2f/a09b2f34c1916f0ef332d323f79cbbc7.jpg',
+  //   tags: [
+  //     Tag.Figma,
+  //     Tag.UI_UX
+  //   ],
+  //   links: [
+  //     {
+  //       link: Link.Github,
+  //       url: "https://github.com"
+  //     }
+  //   ]
+  // },
   // {
   //   id: 6,
   //   title: 'Test6',
@@ -253,7 +248,6 @@ const Projects: React.FC = () => {
               imgUrl={item.imgUrl}
               tags={item.tags}
               links={item.links}
-              gradient={item.gradient}
             />
           </AnimatePresence>
         ))}

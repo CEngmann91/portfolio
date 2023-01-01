@@ -3,6 +3,7 @@ import './Joke.scss';
 import { AnimatePresence, motion, useAnimation } from 'framer-motion';
 import { AnimatedMessage, HeadText } from '../../components';
 import { useEffect } from 'react';
+import { Hand } from '../../utils/icons';
 
 interface iJoke {
   question: string;
@@ -118,6 +119,7 @@ const Joke: React.FC<iProps> = (props: iProps) => {
         {jokeAnimatedIntoView &&
           <div className="touch-ripple" onClick={hideAndRestartAnimation}>
             <p>✋</p>
+            <Hand />
           </div>
         }
       </div>

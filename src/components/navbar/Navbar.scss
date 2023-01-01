@@ -1,5 +1,6 @@
 @import '../../res/colours.scss';
 @import '../../utils/Animations/animations.scss';
+@import '../../res/mixin.scss';
 
 $count: 5;
 
@@ -14,9 +15,7 @@ $count: 5;
     padding: 1rem 2rem;
 
     // Add a blur
-    backdrop-filter: blur(4px);
-    // Makes it compatible with all browsers.
-    -webkit-backdrop-filter: blur(4px);
+    @include blur(4px);
     // box-shadow: 0 0 20px rgba(128, 128, 128, 0);
 
     // Ensures that it stays at the top of the screen.

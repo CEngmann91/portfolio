@@ -2,7 +2,7 @@ import React from 'react'
 
 interface iProp {
     path: string;
-    className: string;
+    className?: string;
     children?: React.ReactNode;
 }
 const ALink: React.FC<iProp> = ({ children, path, className, ...props}: iProp) => {

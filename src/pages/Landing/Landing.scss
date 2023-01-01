@@ -114,6 +114,15 @@
         position: absolute;
         bottom: 0px;
 
+        // @include animation(fade-in);
+        // animation-duration: 0.3s;
+        // animation-delay: 3s;
+        // transition-timing-function: ease-out;
+
+        // animation: fade-in 1s 4s ease-out;
+        // animation-fill-mode: both;
+
+
         svg {
             color: $secondary-colour;
             width: 20px;
@@ -151,9 +160,14 @@
 
 
 .anim--bounce-arrow {
-    -moz-animation: arrow-bounce 2s infinite;
-    -webkit-animation: arrow-bounce 2s infinite;
-    animation: arrow-bounce 2s infinite;
+    -moz-animation: fade-in 1s 4s, arrow-bounce 2s 6s infinite;
+    -webkit-animation: fade-in 1s 4s, arrow-bounce 2s 6s infinite;
+    animation: fade-in 1s 4s, arrow-bounce 2s 6s infinite;
+
+
+    // -moz-animation: arrow-bounce 2s infinite;
+    // -webkit-animation: arrow-bounce 2s infinite;
+    // animation: arrow-bounce 2s infinite;
 }
 
 @include keyframes(arrow-bounce) {
