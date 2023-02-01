@@ -16,8 +16,8 @@ export const LINKS = {
         Linkedin:   'https://www.linkedin.com/in/cengmann/',
         Github:     'https://github.com/CEngmann91',
         Codepen:    'https://codepen.io/CEngmann91',
-        Facebook:   'https://www.facebook.com/cengmann',
-        Twitter:    'https://twitter.com/cengmann',
+        // Facebook:   'https://www.facebook.com/cengmann',
+        // Twitter:    'https://twitter.com/cengmann',
     },
     RESUME: "https://docs.google.com/document/d/1yIcgaagsueOZLQvt6t_Vi74XnyshgH6j/edit?usp=share_link&ouid=113453345274789424431&rtpof=true&sd=true"
 }

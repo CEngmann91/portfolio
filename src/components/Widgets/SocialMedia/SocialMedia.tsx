@@ -31,7 +31,7 @@ const socials: iSocial[] = [
         children: <Codepen className="icon" />,
         // children: <Instagram className="icon" />,
     },
-    {
+    /*{
         path: LINKS.SOCIAL.Facebook,
         colour: '#0077b5',
         children: <Facebook className="icon" />,
@@ -40,7 +40,7 @@ const socials: iSocial[] = [
         path: LINKS.SOCIAL.Twitter,
         colour: '#55acee',
         children: <Twitter className="icon" />,
-    }
+    }*/
 ]
 
 const SocialMedia: React.FC = () => {

@@ -253,7 +253,7 @@ const Projects: React.FC = () => {
   return (
     <Page id='projects' className='app__projects app__page--padtop' pageTitle='.projects();'>
 
-      {activeFilter}
+      {/* {activeFilter} */}
       {renderFilters()}
 
 
